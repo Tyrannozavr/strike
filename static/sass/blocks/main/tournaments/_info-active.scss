@@ -1,0 +1,255 @@
+.tournaments-info-active {
+    width: 100%;
+    min-height: 100vh;
+    &__nav {
+        display: flex;
+        flex-direction: row;
+        column-gap: 20px;
+        width: 100%;
+        height: 60px;
+        border-radius: 5px;
+        background-color: #131315;
+        align-items: center;
+        a {
+            margin-left: 30px;
+            color: #fff;
+            font-size: 16px;
+            transition: .3s ease;
+            &:hover {
+                color: $base-color;
+                margin-bottom: 3px;
+            }
+        }
+        .active {
+            color: $base-color;
+            margin-bottom: 3px;
+        }
+    }
+    img {
+        width: 100%;
+        height: 300px;
+        margin-top: 30px;
+    }
+    .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .left {
+            width: 330px;
+            &-top {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                margin-bottom: 20px;
+                img {
+                    width: 100px;
+                    height: 100px;
+                }
+                h1 {
+                    font-size: 20px;
+                    color: #fff;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                }
+            }
+            
+            &__text {
+                margin-top: 12px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                column-gap: 5px;
+                p {
+                    color: $base-color;
+                    font-size: 16px;
+                    font-weight: 700;
+                }
+                i {
+                    color: $base-color;
+                    font-size: 16px;
+                    position: relative;
+                    &::after {
+                        content: "┃";
+                        position: absolute;
+                        top: 90%;
+                        left: 50%;
+                        transform: translate(-50%);
+                    }
+                }
+                span {
+                    font-weight: 300;
+                }
+                &-a {
+                    p {
+                        font-size: 17px;
+                    }
+                    i {
+                        font-size: 17px;
+                    }
+                }
+                &-nonactive {
+                    p {
+                        color: #3f4043;
+                    }
+                    i {
+                        color: #3f4043;
+                    }
+                    &-l {
+                        i {
+                            &::after {
+                                content: " ";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .center {
+            margin-top: 50px;
+            width: 300px;
+            height: 320px;
+            background: url('../img/dropdowncsbgc.jpg') center (center / cover) no-repeat;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            &__title {
+                color: #fff;
+                font-size: 17px;
+                font-family: 'Play';
+                margin-top: 50px;
+                text-align: center;
+                font-weight: 700;
+            }
+            &__text {
+                color: #fff;
+                font-size: 15px;
+                font-weight: 700;
+                font-family: 'Play';
+                margin-top: 30px;
+                span {
+                    color: $base-color;
+                }
+            }
+        }
+        .right {
+            width: 300px;
+            &__title {
+                // margin-top: 30px;
+                font-size: 25px;
+                color: #fff;
+            }
+            &__pool {
+                margin-top: 30px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                &-text {
+                    font-size: 25px;
+                    font-family: "Play";
+                    font-weight: 700;
+                    color: #fff;
+                }
+                &-price {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    .img {
+                        width: 20px;
+                        height: 20px;
+                        img {
+                            margin-top: 0;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    p {
+                        color: #fff;
+                        font-size: 18px;
+                    }
+                }
+            }
+            &__cart {
+                height: 40px;
+                width: 100%;
+                margin-top: 10px;
+                &:first-child {
+                    margin-top: 30px;
+                }
+                background: rgb(245,198,97);
+background: linear-gradient(90deg, rgba(245,198,97,1) 38%, rgba(0,0,0,1) 100%);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                &-2 {
+                    background: rgb(220,220,220);
+background: linear-gradient(90deg, rgba(220,220,220,1) 38%, rgba(0,0,0,1) 100%);
+                }
+                &-3 {
+                    background: rgb(188,110,83);
+background: linear-gradient(90deg, rgba(188,110,83,1) 38%, rgba(0,0,0,1) 100%);
+                }
+                &-text {
+                    margin-left: 20px;
+                    font-weight: 700;
+                    position: relative;
+                    span {
+                        font-size: 13px;
+                        position: absolute;
+                        top: -3px;
+                        left: 10px;
+                    }
+                }
+                &-img {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    margin-right: 20px;
+                    img {
+                        width: 20px;
+                        height: 20px;
+                        margin-top: 0;
+                    }
+                    p {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+    .info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        &__title {
+            color: #fff;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        h1 {
+            margin-top: 20px;
+            color: #363739;
+            font-size: 15px;
+            font-family: 'Play';
+            font-weight: 700;
+            width: 250px;
+        }
+        p {
+            margin-top: 10px;
+            color: #fff;
+            font-size: 17px;
+            font-weight: 700;
+        }
+    }
+    .img-last {
+        width: 100%;
+        height: 200px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+}

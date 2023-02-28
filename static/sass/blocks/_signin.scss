@@ -1,0 +1,80 @@
+.signin {
+    background: url('../img/back-signin.webp') center (center / cover) no-repeat;
+    min-height: 100vh;
+    // min-width: 100vh;
+    &__logo {
+        img {
+            width: 70px;
+            height: 70px;
+        }
+        margin-left: 200px;
+        @media (max-width: 1024px) {
+            margin-left: 0;
+        }
+    }
+    &__cart {
+        height: 400px;
+        width: 470px;
+        margin-top: 40px;
+        background-color: #171a20;
+        padding-top: 20px;
+        display: flex;
+        align-items: center;
+        border-radius: 7px;
+        flex-direction: column;
+        @media (max-width: 650px) {
+            height: 370px;
+            width: 400px;
+        }
+        @media (max-width: 420px) {
+            height: 340px;
+            width: 350px;
+        }
+        &-text {
+            color: #40434f;
+            font-size: 13px;
+            padding-left: 217px;
+            padding-top: 20px;
+            a {
+                color: #fff;
+                text-decoration: none;
+                &:hover {
+                    color: $base-color;
+                }
+            }
+            margin-bottom: 20px;
+            @media (max-width: 650px) {
+                padding-left: 202px;
+            }
+            @media (max-width: 650px) {
+                padding-left: 180px;
+                font-size: 11px;
+            }
+        }
+        &-wrapper {
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 300;
+            margin-top: 15px;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            &::before {
+                content: ' ';
+                width: 120px;
+                height: 1px;
+                background-color: #545761;
+                margin-top: 6px;
+                margin-right: 22px;
+            }
+            &::after {
+                content: ' ';
+                width: 120px;
+                height: 1px;
+                background-color: #545761;
+                margin-top: 6px;
+                margin-left: 22px;
+            }
+        }
+    }
+}

@@ -1,0 +1,104 @@
+.back {
+    z-index: 3;
+    min-height: 80px;
+    background-color: $back-color;
+    position: fixed;
+    width: 100%;
+    // left: 0;
+    // top: 0;
+    &-user {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+        gap: 20px;
+        &-wallet {
+            display: flex;
+            flex-direction: row;
+            &-el {
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                width: 178px;
+                height: 38px;
+                border: 1px solid #323234;
+                border-radius: 0px;
+            }
+            &__item {
+                display: flex;
+                flex-direction: row;
+                column-gap: 5px;
+                align-items: center;
+                img {
+                    height: 15px;
+                    width: 15px;
+                }
+                p {
+                    color: #fff;
+                    font-size: 13px;
+                }
+                i {
+                    color: #7b61ff;
+                    font-size: 13px;
+                }
+            }
+        }
+        &-rank {
+            position: relative;
+            width: 65px;
+            height: 40px;
+            color: #fff;
+            background-color: #262628;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            border-radius: 3px;
+            &__cart {
+                font-size: 11px;
+                width: 28px;
+                height: 14px;
+                background-color: #43454a;
+                border: 1px solid #626576;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 5px;
+            }
+            &:hover {
+                .back-user-rank-ans {
+                    right: -30px;
+                    opacity: 1;
+                }
+            }
+            &-ans {
+                position: absolute;
+                right: -9999px;
+                opacity: 0;
+                font-size: 11px;
+                color: #fff;
+                width: 100px;
+                padding: 8px 10px;
+                text-align: center;
+                height: 12px;
+                border: 1px solid $base-color;
+                border-radius: 25px;
+                background-color: #000;
+                margin-top: 55px;
+                transition: .2s opacity;
+            }
+        }
+        &-user {
+            height: 38px;
+            width: 38px;
+            border-radius: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+                border: 2px solid $base-color;
+                border-radius: 100%;
+            }
+        }
+    }
+    @media (max-width: 1024px) {
+        display: none;
+    }
+}

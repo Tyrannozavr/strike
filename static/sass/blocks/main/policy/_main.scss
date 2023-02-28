@@ -1,0 +1,44 @@
+.policy { 
+    min-height: 100%;
+    width: 100%;
+    font-family: 'Play';
+    &__title {
+        font-size: 24px;
+        color: #fff;
+    }
+    &__text {
+        font-family: 'Lato';
+        font-weight: 300;
+        font-size: 15px;
+        color: #5c5f6e;
+        line-height: 1.3em;
+        a {
+            color: #fff;
+            &:hover {
+                color: $base-color;
+            } 
+        }
+        h5 {
+            font-weight: 700;
+            margin-top: 20px;
+            margin-left: 30px;
+        }
+        h6 {
+            font-weight: 700;
+            margin-top: 5px;
+            margin-left: 50px;
+        }
+        &-t {
+            margin-top: 5px;
+            margin-left: 50px;
+            margin-bottom: 10px;
+        }
+        &-i {
+            font-style: italic;
+            margin-bottom: 30px;
+            &:last-child {
+                margin-top: 20px;
+            }
+        }
+    }
+}

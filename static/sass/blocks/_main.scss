@@ -1,0 +1,56 @@
+main {
+    top: 80px;
+    left: 290px;
+    right: 85px;
+    position: absolute;
+    background-color: #000;
+    height: 100vh;
+    overflow-x: hidden;
+    // padding-top: 40px;
+    // padding-left: 40px;
+    // padding-right: 40px;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    // width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    // z-index: 4;
+    @import 'main/swiper';
+    @import 'main/leagues';
+    @import 'main/tournament';
+    @import 'main/pool';
+    @import 'main/balance';
+    @import 'main/shop';
+    @import 'main/line';
+    @import 'main/footer';
+
+    @import 'main/matches/main';
+    @import 'main/elo-client/main';
+    @import 'main/promo/main';
+    @import 'main/blog/main';
+    @import 'main/goods/main';
+    @import 'main/skins/main';
+    @import 'main/terms/main';
+    @import 'main/policy/main';
+    @import 'main/lobby/main';
+    @import 'main/wallet/main';
+    @import 'main/tournaments/main';
+    @import 'main/tournaments/info';
+    @import 'main/tournaments/info-active';
+
+    @media (max-width: 1024px) {
+        width: 100%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+    // @media (max-width: 950px) {
+    //     // width: 90%;
+    //     top: 0;
+    //     left: 0;
+    //     bottom: 0;
+    //     right: -6%;
+    // }
+}

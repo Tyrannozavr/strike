@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Play:wght@400;700&family=Roboto+Mono:wght@200&display=swap');
+html {
+    font-family: 'Lato';
+    font-weight: 400;
+    &::-webkit-scrollbar {
+        width: 0px;
+    }
+}
+
+h2 {
+    color: #fff;
+    font-size: 27px;
+
+    @media (max-width: 1024px) {
+        font-size: 24px;
+    }
+    @media (max-width: 950px) {
+        font-size: 20px;
+    }
+    @media (max-width: 820px) {
+        font-size: 17px;
+    }
+}
+a {
+    text-decoration: none;
+}
+
+@import 'vars/mixins';
+@import 'vars/variables';
+
+.container {
+    min-width: 100vh;
+    &-top {
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    &-nav {
+        padding-left: 15px;
+    }
+    &-signin {
+        padding-top: 135px;
+        padding-left: 270px;
+        @media (max-width: 1024px) {
+            padding-left: 0px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        @media (max-width: 700px) {
+            padding-top: 90px;
+        }
+    }
+    &-signup {
+        display: flex;
+        flex-direction: row;
+        column-gap: 70px;
+        padding-top: 15px;
+        padding-left: 220px;
+        @media (max-width: 1024px) {
+            padding-left: 0px;
+            align-items: center;
+            flex-direction: column;
+            column-gap: 0px;
+        }
+    }
+    &-back {
+        padding-left: 290px;
+        padding-right: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &-main {
+        padding-top: 40px;
+        padding-left: 40px;
+        padding-right: 40px;
+        // width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        @media (max-width: 1024px) {
+            width: calc(100% - 80px);
+        }
+        // @media (max-width: 950px) {
+        //     width: 820px;
+        //     // padding: 0;
+        // }
+    }
+    &-client {
+        margin: 80px;
+        border: 1px solid grey;
+        padding: 0 40px 40px 40px;
+        margin-bottom: 0px;
+        z-index: 1;
+    }
+    &-footer {
+        padding: 40px;
+    }
+    &-steam {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    // &-matches {
+    //     padding-top: 40px;
+    //     padding-left: 40px;
+    //     padding-right: 40px;
+    // }
+    // &-small {
+    //     position: relative;
+    // }
+}
+// .black {
+//         background-color: #000;
+//         position: fixed;
+//         left: 290px;
+//         top: 80px;
+//         right: 85px;
+//         // z-index: 3;
+//         min-height: 100vh;
+// }
+body {
+    position: relative;
+    background-color: $back-color;
+    @media (max-width: 1024px) {
+        background-color: #000;
+    }
+    // overflow-x: hidden;
+}
+
+// .x {
+//     overflow-x: hidden;
+// }
+// .none {
+//     display: none;
+// }
+
+@import 'blocks/static';
+@import 'blocks/small';
+@import 'blocks/btn';
+@import 'blocks/input';
+@import 'blocks/back';
+@import 'blocks/nav';
+@import 'blocks/signin';
+@import 'blocks/dropcs';
+@import 'blocks/signup';
+@import 'blocks/list';
+@import 'blocks/main';
+@import 'blocks/success';
+@import 'blocks/steam';

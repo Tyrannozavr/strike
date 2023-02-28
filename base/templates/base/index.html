@@ -1,0 +1,639 @@
+{% extends 'base/main.html' %}
+{% load static %}
+
+{% block title %}
+    Main
+{% endblock title %}
+
+{% block swiper %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+{% endblock swiper %}
+
+{% block success %}
+    <section class="success">
+        <div class="success__cross">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="success__line"></div>
+        <div class="success-column">
+            <div class="success__title">Successfuly copied</div>
+            <div class="success__text">to clipboard ;)</div>
+        </div>
+    </section>
+{% endblock success %}
+
+{% block active_nav-main %}
+    nav-links__item-active
+{% endblock active_nav-main %}
+
+{% block content %}
+    <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <a href="">   
+                    <img src="{% static 'img/banner.png' %}" alt="">
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="">   
+                    <img src="{% static 'img/slide3.png' %}" alt="">
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="">   
+                    <img src="{% static 'img/slide1.png' %}" alt="">
+                </a>
+            </div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+    <section class="leagues">
+        <div class="leagues-left">
+            <div class="leagues-left__titles">
+                <h2>Leagues</h2>
+                <a href="#">All Leagues</a>
+            </div>
+            <div class="leagues-left__line">
+                <a href="">
+                    <div class="leagues-left__cart">
+                        <div class="leagues-left__cart__season">
+                            Season 1
+                        </div>
+                        <div class="leagues-left__cart__text">
+                            <div class="leagues-left__cart__text-title">
+                                March 20 2023: Top10 of the Day by Games Played
+                            </div>
+                            <div class="leagues-left__cart__text-price">
+                                <div class="leagues-left__cart__text-price__icon">
+                                    <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                                </div>
+                                <div class="leagues-left__cart__text-price__n">
+                                    1,000
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="leagues-left__cart">
+                        <div class="leagues-left__cart__season">
+                            Season 1
+                        </div>
+                        <div class="leagues-left__cart__text">
+                            <div class="leagues-left__cart__text-title">
+                                March 20 2023: Top10 of the Day by Games Played
+                            </div>
+                            <div class="leagues-left__cart__text-price">
+                                <div class="leagues-left__cart__text-price__icon">
+                                    <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                                </div>
+                                <div class="leagues-left__cart__text-price__n">
+                                    1,000
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="leagues-left__line">
+                <a href="">
+                    <div class="leagues-left__cart">
+                        <div class="leagues-left__cart__season">
+                            Season 1
+                        </div>
+                        <div class="leagues-left__cart__text">
+                            <div class="leagues-left__cart__text-title">
+                                March 20 2023: Top10 of the Day by Games Played
+                            </div>
+                            <div class="leagues-left__cart__text-price">
+                                <div class="leagues-left__cart__text-price__icon">
+                                    <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                                </div>
+                                <div class="leagues-left__cart__text-price__n">
+                                    1,000
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="leagues-left__cart">
+                        <div class="leagues-left__cart__season">
+                            Season 1
+                        </div>
+                        <div class="leagues-left__cart__text">
+                            <div class="leagues-left__cart__text-title">
+                                March 20 2023: Top10 of the Day by Games Played
+                            </div>
+                            <div class="leagues-left__cart__text-price">
+                                <div class="leagues-left__cart__text-price__icon">
+                                    <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                                </div>
+                                <div class="leagues-left__cart__text-price__n">
+                                    1,000
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="leagues-right">
+            <div class="leagues-right__title">
+                <h2>Open lobbies</h2>
+            </div>
+            <a href="">
+                <div class="leagues-right__cart">
+                    <div class="leagues-right__cart__title">
+                        Try Yourself
+                    </div>
+                    <div class="leagues-right__cart__text">
+                        In other modes
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+    <section class="tournament">
+        <div class="tournaments">
+            <div class="tournaments-top">
+                <h2>Tournaments</h2>
+                <a href="">All tournaments</a>
+            </div>
+            <a href=""></a>
+            <div class="tournaments__cart">
+                <div class="tournaments__cart__title">
+                    Neo Tournament 1x1 25.03.2023
+                </div>
+                <div class="tournaments__cart-elements">
+                    <div class="tournaments__cart-elements__server">
+                        <img src="{% static 'img/icons/server1.png' %}" alt="">
+                        <p>CIS</p>
+                    </div>
+                    <div class="tournaments__cart-elements__circle">
+                        <i class="fa-solid fa-circle"></i>
+                    </div>
+                    <div class="tournaments__cart-elements__people">
+                        1x1
+                    </div>
+                    <div class="tournaments__cart-elements__circle">
+                        <i class="fa-solid fa-circle"></i>
+                    </div>
+                    <div class="tournaments__cart-elements__client">
+                        Neo.Control Client
+                    </div>
+                </div>
+                <div class="tournaments__cart__reg">
+                    Registration of participants
+                </div>
+                <div class="tournaments__cart__line"></div>
+                <div class="tournaments__cart__prelast">
+                    <p>Reg In</p>
+                    <p>Prize</p>
+                    <p>Participants</p>
+                </div>
+                <div class="tournaments__cart__last">
+                    <div class="tournaments__cart__last-reg">
+                        <img src="{% static 'img/icons/coin-green.svg' %}" alt="">
+                        <p>50</p>
+                    </div>
+                    <div class="tournaments__cart__last-prize">
+                        <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                        <p>100</p>
+                    </div>
+                    <div class="tournaments__cart__last-participants">
+                        <img src="{% static 'img/icons/participants.png' %}" alt="">
+                        <p>3/24</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tournaments__cart">
+                <div class="tournaments__cart__title">
+                    Neo Tournament 1x1 25.03.2023
+                </div>
+                <div class="tournaments__cart-elements">
+                    <div class="tournaments__cart-elements__server">
+                        <img src="{% static 'img/icons/server1.png' %}" alt="">
+                        <p>CIS</p>
+                    </div>
+                    <div class="tournaments__cart-elements__circle">
+                        <i class="fa-solid fa-circle"></i>
+                    </div>
+                    <div class="tournaments__cart-elements__people">
+                        1x1
+                    </div>
+                    <div class="tournaments__cart-elements__circle">
+                        <i class="fa-solid fa-circle"></i>
+                    </div>
+                    <div class="tournaments__cart-elements__client">
+                        Neo.Control Client
+                    </div>
+                </div>
+                <div class="tournaments__cart__reg">
+                    Registration of participants
+                </div>
+                <div class="tournaments__cart__line"></div>
+                <div class="tournaments__cart__prelast">
+                    <p>Reg In</p>
+                    <p>Prize</p>
+                    <p>Participants</p>
+                </div>
+                <div class="tournaments__cart__last">
+                    <div class="tournaments__cart__last-reg">
+                        <img src="{% static 'img/icons/coin-green.svg' %}" alt="">
+                        <p>50</p>
+                    </div>
+                    <div class="tournaments__cart__last-prize">
+                        <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                        <p>100</p>
+                    </div>
+                    <div class="tournaments__cart__last-participants">
+                        <img src="{% static 'img/icons/participants.png' %}" alt="">
+                        <p>2/24</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="csdm">
+            <div class="csdm__title"><h2>CSDM</h2></div>
+            <div class="csdm__cart">
+                <div class="csdm__cart__title">
+                    CIS - Neo.Control [DM FFA] 128 tickrate
+                </div>
+                <div class="csdm__cart-elements">
+                    <div class="csdm__cart-elements__server">
+                        <img src="{% static 'img/icons/server1.png' %}" alt="">
+                        <div class="csdm__cart-elements__server-ans">
+                            Server region: Moscow
+                        </div>
+                    </div>
+                    <div class="csdm__cart-elements__latency">
+                        <h3>Latency</h3>
+                        <div class="wrapper">
+                            <i class="fa-solid fa-wifi"></i>
+                            <p>51</p>
+                        </div>
+                        
+                    </div>
+                    <div class="csdm__cart-elements__map">
+                        <h3>Map</h3>
+                        <p>de_dust2</p>
+                    </div>
+                </div>
+                <a href="" class="btn btn-connect">
+                    Connect
+                </a>
+                <div class="csdm__cart-link">
+                    <p>csdm.ggwp.cc:27184</p>
+                    <div class="csdm__cart-link__copy">
+                        <i class="fa-solid fa-copy"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="csdm__cart csdm__cart-2">
+                <div class="csdm__cart__title">
+                    EU - Neo.Control [DM FFA] 128 tickrate
+                </div>
+                <div class="csdm__cart-elements">
+                    <div class="csdm__cart-elements__server">
+                        <img src="{% static 'img/icons/server2.png' %}" alt="">
+                        <div class="csdm__cart-elements__server-ans">
+                            Server region: Oslo
+                        </div>
+                    </div>
+                    <div class="csdm__cart-elements__latency">
+                        <h3>Latency</h3>
+                        <div class="wrapper wrapper-2">
+                            <i class="fa-solid fa-wifi"></i>
+                            <p>23</p>
+                        </div>
+                        
+                    </div>
+                    <div class="csdm__cart-elements__map">
+                        <h3>Map</h3>
+                        <p>de_mirage</p>
+                    </div>
+                </div>
+                <a href="" class="btn btn-connect">
+                    Connect
+                </a>
+                <div class="csdm__cart-link">
+                    <p>csdm-eu.ggwp.cc:27485</p>
+                    <div class="csdm__cart-link__copy">
+                        <i class="fa-solid fa-copy"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="matches">
+            <div class="matches__title">
+                <h2>
+                    Active matches
+                </h2>
+            </div>
+            <div class="matches__cart">
+                <div class="matches__cart__title">
+                    W
+                    <p>vs</p>
+                    L
+                </div>
+                <div class="matches__cart__sub">
+                    <p>1x1</p>
+                    <div class="matches__cart__sub-right">
+                        <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                        0
+                    </div>
+                </div>
+            </div>
+            <a href="" class="btn btn-black">
+                All matches
+            </a>
+        </div>
+    </section>
+    <section class="pool">
+        <div class="pool__title">
+            <h2>Prize pool</h2>
+        </div>
+        <div class="pool-row">
+            <div class="pool-bomb">
+                <div class="pool-bomb__title">
+                    Neo.Control daily prize pool
+                </div>
+                <div class="pool-bomb__img">
+                    <img src="{% static 'img/bomb.webp' %}" alt="">
+                </div>
+                <div class="pool-bomb__line"></div>
+                <div class="pool-bomb__percent">
+                    <div class="pool-row pool-row-p">
+                        <div class="pool-bomb__percent-1">
+                            <p>25%</p>
+                        </div>
+                        <div class="pool-bomb__percent-2">
+                            <p>50%</p>
+                        </div>
+                        <div class="pool-bomb__percent-3">
+                            <p>75%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pool-valentine">
+                <div class="pool-valentine__title">
+                    Valentine's day Neo.Control event 2023
+                </div>
+                <div class="pool-valentine__date">
+                    2/14/2023
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="balance">
+        <div class="balance-left">
+            <div class="balance-left__titles">
+                <h2>Top up balance</h2>
+                <a href="">All offers</a>
+            </div>
+            <div class="balance-left-row">
+                <a href="">
+                    <div class="balance-left__cart">
+                        <div class="balance-left__cart__card">
+                            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                            <div class="balance-left__cart__card-wrapper">
+                                <div class="balance-left__cart__card-wrapper__n">
+                                    100
+                                </div>
+                                <div class="balance-left__cart__card-wrapper__elo">
+                                    neo.points
+                                </div>
+                            </div>
+                        </div>
+                        <div class="balance-left__cart__title">
+                            Force buy puck. That's enough to have some fun!
+                        </div>
+                        <div class="balance-left__cart__sub">
+                            <img src="{% static 'img/icons/coin-green.svg' %}" alt="">
+                            <p>Neo.Rewards Discount</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="balance-left__cart">
+                        <div class="balance-left__cart__card">
+                            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                            <div class="balance-left__cart__card-wrapper">
+                                <div class="balance-left__cart__card-wrapper__n">
+                                    500
+                                </div>
+                                <div class="balance-left__cart__card-wrapper__elo">
+                                    neo.points
+                                </div>
+                            </div>
+                        </div>
+                        <div class="balance-left__cart__title">
+                            TEAM PLAY PUCK. Push them with your bank!
+                        </div>
+                        <div class="balance-left__cart__sub">
+                            <img src="{% static 'img/icons/coin-green.svg' %}" alt="">
+                            <p>Neo.Rewards Discount</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="balance-left__cart">
+                        <div class="balance-left__cart__card">
+                            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                            <div class="balance-left__cart__card-wrapper">
+                                <div class="balance-left__cart__card-wrapper__n">
+                                    2,000
+                                </div>
+                                <div class="balance-left__cart__card-wrapper__elo">
+                                    neo.points
+                                </div>
+                            </div>
+                        </div>
+                        <div class="balance-left__cart__title">
+                            ALL IN. <br> Lets's play big <br> bruh!
+                        </div>
+                        <div class="balance-left__cart__sub">
+                            <img src="{% static 'img/icons/coin-green.svg' %}" alt="">
+                            <p>Neo.Rewards Discount</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="balance-righ">
+            <div class="balance-rigth__title">
+                <h2>Promo Code</h2>
+            </div>
+            <div class="balance-right__cart">
+                <div class="balance-right__cart__title">
+                    Do you have a Promo Code? <br> Use it!
+                </div>
+                <div class="balance-right__cart__text">
+                    Activate promotinal codes and get skins, case keys, premium quests or currency Neo.Points/Neo.Rewards
+                </div>
+                <a href="" class="btn btn-activate">Activate</a>
+            </div>
+        </div>
+    </section>
+    <section class="shop">
+        <div class="shop__title">
+            <h2>Shop</h2>
+        </div>
+        <div class="shop-wrapper">
+            <div class="shop-left">
+                <a href="">
+                    <div class="shop-left__cart">
+                        <div class="shop-left__cart-wrapper">
+                            <div class="shop-left__cart-img">
+                                <img src="{% static 'img/mouse1.png' %}" alt="">
+                            </div>
+                            <div class="shop-left__cart__title">
+                                HyperX Pulsefire haste
+                            </div>
+                            <div class="shop-left__cart__price">
+                                <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                                <p>8,527</p>
+                            </div>
+                        </div>
+                        <div class="shop-left__cart-blur">
+                            <p>BUY</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="shop-left__cart">
+                        <div class="shop-left__cart-wrapper">
+                            <div class="shop-left__cart-img">
+                                <img src="{% static 'img/headphones.png' %}" alt="">
+                            </div>
+                            <div class="shop-left__cart__title">
+                                HyperX cloudx stinger core wireless
+                            </div>
+                            <div class="shop-left__cart__price">
+                                <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                                <p>13,630</p>
+                            </div>
+                        </div>
+                        <div class="shop-left__cart-blur">
+                            <p>BUY</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="shop-left__cart">
+                        <div class="shop-left__cart-wrapper">
+                            <div class="shop-left__cart-img">
+                                <img src="{% static 'img/mouse.png' %}" alt="">
+                            </div>
+                            <div class="shop-left__cart__title">
+                                HyperX Pulsefire haste
+                            </div>
+                            <div class="shop-left__cart__price">
+                                <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                                <p>14,377</p>
+                            </div>
+                        </div>
+                        <div class="shop-left__cart-blur">
+                            <p>BUY</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="shop-right">
+                <div class="shop-right__cart">
+                    <div class="shop-right__cart__title">
+                        Skins and devises
+                    </div>
+                    <div class="shop-right__cart__text">
+                        Large selection of skins and devices for every taste. Our products are constantly replenished, visit us often!
+                    </div>
+                    <div class="btn btn-activate btn-activate-shop">your profit!</div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <a href="">   
+                    <img src="{% static 'img/slide4.png' %}" alt="">
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="">   
+                    <img src="{% static 'img/slide5.png' %}" alt="">
+                </a>
+            </div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+    <section class="line">
+        <div class="line__item">
+            <div class="line__item-icon">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="line__item-name">
+                Online
+            </div>
+            <div class="line__item-n">
+                180
+            </div>
+        </div>
+        <div class="line__item">
+            <div class="line__item-icon">
+                <i class="fa-regular fa-face-frown"></i>
+            </div>
+            <div class="line__item-name">
+                Banned
+            </div>
+            <div class="line__item-n">
+                1,122
+            </div>
+        </div>
+        <div class="line__item">
+            <div class="line__item-icon">
+                <i class="fa-solid fa-dollar-sign"></i>                    </div>
+            <div class="line__item-name">
+                Paid by platform
+            </div>
+            <div class="line__item-n">
+                179,831
+            </div>
+        </div>
+        <div class="line__item">
+            <div class="line__item-icon">
+                <i class="fa-solid fa-gun"></i>
+            </div>
+            <div class="line__item-name">
+                Matches played
+            </div>
+            <div class="line__item-n">
+                117,737
+            </div>
+        </div>
+        <div class="line__item">
+            <div class="line__item-icon">
+                <i class="fa-solid fa-dollar-sign"></i>                    </div>
+            <div class="line__item-name">
+                Referral income
+            </div>
+            <div class="line__item-n">
+                419
+            </div>
+        </div>
+    </section>
+{% endblock content %}
+
+{% block js %}
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+{% endblock js %}

@@ -1,0 +1,97 @@
+.goods {
+    height: 100vh;
+    width: 100%;
+    .skins {
+        &:hover {
+            transform: scale(1.02);
+            border-color: #4afd73;
+            .goods__see {
+                color: #4afd73;
+            }
+        }
+    }
+    a {
+        @include cart;
+        &:hover {
+            transform: scale(1.02);
+            border-color: rgb(171, 0, 0);
+            .goods__see {
+                color: rgb(171, 0, 0);
+            }
+        }
+        position: relative;
+    }
+    &-first {
+        display: flex;
+        flex-direction: row;
+        column-gap: 20px;
+        a {
+            width: 480px;
+            height: 240px;
+        }
+    }
+    &-second {
+        display: flex;
+        flex-direction: row;
+        column-gap: 20px;
+        margin-top: 20px;
+        a {
+            width: 230px;
+            height: 240px;
+        }
+    }
+    
+    &__cart {
+        opacity: .4;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        &-skins {
+            background: url('../img/shop.jpg') center (center / cover) no-repeat;
+        }
+        &-coins {
+            background: url('../img/coins.jpg') center (center / cover) no-repeat;
+        }
+        &-mouse {
+            background: url('../img/mouse-goods.png') left (center / cover) no-repeat;
+        }
+        &-head {
+            background: url('../img/headphones.png') left (center / cover) no-repeat;
+        }
+        &-keyboard {
+            background: url('../img/keyboard.png') left (center / cover) no-repeat;
+        }
+        &-monitors {
+            background: url('../img/monitor.png') left (center / cover) no-repeat;
+        }
+        &-chairs {
+            background: url('../img/chair.png') left (center / cover) no-repeat;
+        }
+    }
+    &__title {
+        position: absolute;
+        top: 50px;
+        color: #fff;
+        font-size: 20px;
+        text-transform: uppercase;
+        font-weight: 700;
+        left: 50px;
+    }
+    &__text {
+        position: absolute;
+        top: 90px;
+        color: #606165;
+        font-size: 16px;
+        left: 50px;
+        width: 400px;
+    }
+    &__see {
+        position: absolute;
+        bottom: 50px;
+        color: #606165;
+        font-size: 17px;
+        text-transform: uppercase;
+        left: 50px;
+        letter-spacing: 1px;
+    }
+}

@@ -1,0 +1,141 @@
+.tournaments-page {
+    min-height: 100%;
+    width: 100%;
+    a {
+        margin-top: 10px;
+        display: block;
+    }
+    form {
+        width: 100%;
+        background-color: #151617;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        height: 70px;
+        select {
+            margin-left: 30px;
+            border-radius: 3px;
+            height: 40px;
+            width: 260px;
+            color: #fff;
+            background-color: #262628;
+            border: none;
+            padding: 0 10px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            &:focus {
+                outline: none;
+            }
+        }
+        option {
+            letter-spacing: 1px;
+            height: 40px;
+            width: 260px;
+            margin-top: 20px;
+            color: #fff;
+            background-color: #262628;
+            border: none;
+            padding: 0 20px;
+            font-size: 14px;
+        }
+        margin-bottom: 50px;
+    }
+    .img {
+        width: 100%;
+        height: 200px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .cart {
+        transition: .2s ease;
+        &:hover {
+            cursor: pointer;
+            background-color: #171717;
+        }
+        background-color: #151617;
+        width: 100%;
+        height: 155px;
+        &-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &-top {
+            width: 300px;
+            margin-left: 20px;
+            padding-top: 10px;
+        }
+        &__img {
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &-text {
+            &__title {
+                color: #fff;
+                font-weight: 700;
+                font-size: 15px;
+            }
+            &__sub {
+                margin-top: 10px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: #8f8f90;
+                font-size: 12px;
+                i {
+                    font-size: 6px;
+                    color: #8f8f90;
+                }
+                img {
+                    width: 30px;
+                    height: 20px;
+                    border-radius: 5px;
+                }
+            }
+        }
+        &-bottom {
+            margin-top: 20px;
+            width: calc(100%-40px);
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        &__el {
+            &__img {
+                margin-top: 10px;
+                display: flex;
+                flex-direction: row;
+                column-gap: 5px;
+                align-items: center;
+                font-weight: 700;
+                .red {
+                    color: red;
+                }
+                p {
+                    font-size: 15px;
+                    color: #7b7b7c;
+                }
+                &-2 {
+                    img {
+                        width: 35px;
+                        height: 30px;
+                    }
+                }
+            }
+            &__title {
+                color: #575757;
+                font-size: 11px;
+                font-weight: 700;
+                &-2 {
+                    color: #ffcc34;
+                }
+            }
+        }
+    }
+}

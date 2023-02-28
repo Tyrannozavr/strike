@@ -1,0 +1,97 @@
+.signup {
+    min-height: 100vh;
+    background: url('../img/back-signin.webp') center (center / cover) no-repeat;
+    &__logo {
+        margin-left: 195px;
+        img{
+            width: 70px;
+            height: 70px;
+        }
+        @media (max-width: 650px) {
+            margin-left: 170px;
+        }
+        @media (max-width: 420px) {
+            margin-left: 140px;
+        }
+    }
+    &-right {
+        @media (max-width: 1024px) {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+    &__cart {
+        margin-top: 35px;
+        min-height: 550px;
+        width: 460px;
+        border-radius: 7px;
+        background-color: $back-color;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        @media (max-width: 650px) {
+            min-height: 450px;
+            width: 390px;
+        }
+        @media (max-width: 420px) {
+            min-height: 400px;
+            width: 340px;
+        }
+    }
+    &__title {
+        color: #fff;
+        font-size: 100px;
+        width: 600px;
+        margin-top: 100px;
+        @media (max-width: 1024px) {
+            font-size: 70px;
+            margin-top: 30px;
+        }
+        @media (max-width: 650px) {
+            width: 370px;
+            // font-size: 60px;
+        }
+        @media (max-width: 650px) {
+            font-size: 60px;
+        }
+    }
+    &__subtitle {
+        color: #fff;
+        font-size: 18px;
+        margin-top: 60px;
+        width: 310px;
+        line-height: 1.5rem;
+        letter-spacing: 1px;
+        @media (max-width: 1024px) {
+            margin-top: 40px;
+        }
+        @media (max-width: 650px) {
+            width: 260px;
+            // font-size: 60px;
+        }
+    }
+    &__social {
+        color: #fff;
+        font-size: 15px;
+        margin-top: 80px;
+        width: 250px;
+        letter-spacing: 1px;
+        line-height: 2rem;
+        span {
+            color: #858588;
+            a {
+                color: $base-color;
+                text-decoration: none;
+            }
+        }
+        @media (max-width: 1024px) {
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+    }
+}

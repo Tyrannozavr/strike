@@ -1,0 +1,75 @@
+// * {
+//     box-sizing: border-box;
+//     margin: 0;
+//     padding: 0;
+// }
+
+.dropcs {
+    transition: .5s all;
+    position: absolute;
+    z-index: 4;
+    top: -999px;
+    height: 500px;
+    background: url('../img/dropdowncsbgc.jpg') center center/cover no-repeat;
+    width: 100%;
+    padding-top: 50px;
+    &__top {
+        padding-left: 50px;
+        color: #fff;
+        margin-bottom: 25px;
+        font-size: 18px;
+        &-cross {
+            position: absolute;
+            top: 36px;
+            right: 30px;
+            opacity: 0.2;
+            cursor: pointer;
+            transition: opacity ease 0.1s;
+            color: #fff;
+            font-size: 23px;
+            &:hover {
+                opacity: .8;
+            }
+        }
+    }
+    &__games {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 25px;
+        margin-bottom: 40px;
+        border-radius: 14px;
+        img {
+            width: 140px;
+            height: 190px;
+            opacity: .2;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .csgo {
+            img {
+                opacity: 1;
+                border: 2px solid $base-color;
+            }
+        }
+    }
+    &__logo {
+        display: flex;
+        justify-content: center;
+        img {
+            width: 50px;
+            height: 50px;
+        }
+    }
+    &__text {
+        margin: 0 auto;
+        letter-spacing: 1px;
+        line-height: 1.5em;
+        text-align: center;
+        font-size: 16px;
+        margin-top: 50px;
+        width: 1000px;
+        color: #8c8c8d;
+    }
+}

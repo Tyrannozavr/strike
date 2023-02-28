@@ -1,0 +1,50 @@
+.promo {
+  background: #000;
+  width: 100%;
+  height: 500px;
+  padding-top: 90px;
+  @media (max-width: 1024px) {
+    height: 243px;
+    padding-top: 50px;
+  }
+  &__title {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 50px;
+    text-align: center;
+    font-weight: 700;
+    font-family: "Play";
+  }
+  &__subtitle {
+    margin-top: 75px;
+    font-size: 16px;
+    text-align: center;
+    color: #8c867c;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    @media (max-width: 1024px) {
+      margin-top: 43px;
+    }
+  }
+  &__text {
+    margin-top: 45px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    @media (max-width: 1024px) {
+      margin-top: 25px;
+    }
+  }
+  &__wrapper {
+    margin-top: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    @media (max-width: 1024px) {
+      margin-top: 20px;
+    }
+  }
+}

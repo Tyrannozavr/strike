@@ -1,0 +1,51 @@
+.steam {
+    background: url('../img/back-signin.webp') center (center / cover) no-repeat;
+    min-height: 100vh;
+    &__cart {
+        margin-top: 20px;
+        height: 310px;
+        width: 470px;
+        background-color: $back-color;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 5px;
+        &__title {
+            color: #fff;
+            font-size: 35px;
+            font-family: 'Play';
+
+            // i {
+            //     font-size: 40px;
+            // }
+            font-weight: 700;
+            margin-top: 50px;
+        }
+        &__text {
+            color: #fff;
+            margin-top: 35px;
+            font-size: 15px;
+            text-align: center;
+            width: 400px;
+            line-height: 1.2em;
+            letter-spacing: 1px;
+            font-family: 'Roboto Mono';
+        }
+    }
+    &-img {
+        position: relative;
+        img {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+    }
+    &-img2 {
+        position: relative;
+        img {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+    }
+}

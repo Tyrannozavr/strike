@@ -1,0 +1,101 @@
+.input {
+  position: relative;
+
+  input {
+    margin-top: 20px;
+    width: 390px;
+    height: 46px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #171a20;
+    background-clip: padding-box;
+    border: 1px solid #393e4d;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 1px;
+    @media (max-width: 650px) {
+      width: 365px;
+      height: 40px;
+      // margin-left: 12px;
+    }
+    @media (max-width: 420px) {
+      width: 330px;
+      height: 40px;
+      // margin-left: 23px;
+    }
+    &::placeholder {
+      font-family: "Roboto Mono";
+      color: #454854;
+    }
+    &:focus {
+      outline: none;
+      border: 1px solid $base-color;
+      // transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      &::placeholder {
+        opacity: 0;
+        transition: 0.15s ease-in-out;
+      }
+      // label {
+      //     display: flex;
+      // }
+    }
+  }
+  // input:invalid {
+  //     border-color: red;
+  // }
+  // input:valid {
+  //     border-color: #1a9f59;
+  // }
+  &-checkbox {
+    display: flex;
+    flex-direction: row;
+    column-gap: 13px;
+    input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      background-color: #373a45;
+      // &:focus {
+      //     background-color: $base-color;
+      // }
+    }
+    p {
+      padding-top: 24px;
+      color: #373a45;
+      font-size: 13px;
+      a {
+        padding-left: 5px;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 300;
+        text-decoration: none;
+        &:hover {
+          color: $base-color;
+        }
+      }
+    }
+  }
+  &-promo {
+    input {
+      border: 2px solid #323234;
+      border-radius: 5px;
+      background-color: #000;
+      color: $base-color;
+      &::placeholder {
+        font-family: "Roboto Mono";
+        color: #6a6967;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+  &-search {
+    width: 380px;
+    height: 30px;
+    background-color: #323234;
+    border-radius: 5px;
+    margin-left: 5px;
+    border: none;
+    color: $base-color;
+    font-size: 15px;
+  }
+}
