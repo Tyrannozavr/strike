@@ -1,0 +1,85 @@
+{% extends 'base/main.html' %}
+{% load static %}
+
+{% block title %}
+    Create lobby
+{% endblock title %}
+
+{% block active_nav-play %}
+    nav-links__item-active
+{% endblock active_nav-play %}
+
+{% block content %}
+    <div class="lobby">
+        <div class="lobby-left">
+            <div class="lobby-nav">
+                <a href="{% url 'matchmaking' %}" {% block active_nav-matchmaking %}{% endblock active_nav-matchmaking %}>Matchmaking</a>
+                <a href="{% url 'open' %}" {% block active_nav-open %}{% endblock active_nav-open %}>Open lobbies</a>
+                <a href="{% url 'create' %}" {% block active_nav-lobby %} class="active" {% endblock active_nav-lobby %}>Creating lobby</a>
+                <a href="{% url 'coliseum' %}" {% block active_nav-coliseum %}{% endblock active_nav-coliseum %}>Coliseum</a>
+            </div>
+            <div class="lobby-subnav">
+                {% block lobby_sub %} Your lobby {% endblock lobby_sub %}
+            </div>
+        </div>
+        {% block content_lobby %}
+            <div class="lobby-right">
+                <form action="#">
+                    <div class="element">
+                        <label for="mode">
+                            Game mode
+                        </label>
+                        <select name="status" id="status">
+                            <option value="preparation">1x1</option>
+                            <option value="active">2x2</option>
+                            <option value="complited">3x3</option>
+                            <option value="complited">4x4</option>
+                            <option value="complited">5x5</option>
+                        </select>
+                    </div>
+                    <div class="element">
+                        <label for="map">
+                            Map selection
+                        </label>
+                        <select name="map" id="map">
+                            <option value="redline">aim_redline</option>
+                            <option value="aimawp">aim_awp_row</option>
+                            <option value="aimak">Aim_ak47</option>
+                            <option value="aimusp">aim_usp</option>
+                            <option value="aimmap">aim_map</option>
+                            <option value="aimpistol">aim_pistol_csgo</option>
+                        </select>
+                    </div>
+                    <div class="element">
+                        <label for="region">
+                            Choosing the region
+                        </label>
+                        <select name="region" id="region">
+                            <option value="cis">CIS</option>
+                            <option value="europe">Europe</option>
+                        </select>
+                    </div>
+                    <div class="element">
+                        <label for="points">Points</label>
+                        <div class="points">
+                            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                            <input type="text" id="points" value="10">
+                        </div>
+                    </div>
+                    <div class="element">
+                        <label for="password">Password</label>
+                        <input type="text" id="password" placeholder="Password">
+                    </div>
+                    <div class="element">
+                        <label for="switcher">Client</label>
+                        <label class="switch" id="switcher">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <a href="steam.html" class="btn btn-create">Create a lobby</a>
+                </form>
+            </div>
+        {% endblock content_lobby %}
+    </div>
+{% endblock content %}

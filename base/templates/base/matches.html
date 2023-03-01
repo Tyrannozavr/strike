@@ -1,0 +1,94 @@
+{% extends 'base/main.html' %}
+{% load static %}
+
+{% block title %}
+    Matches
+{% endblock title %}
+
+{% block active_nav-play %}
+    nav-links__item-active
+{% endblock active_nav-play %}
+
+{% block content %}
+    <div class="first">
+        <div class="first-left">
+            <div class="first-left-form">
+                <form action="#">
+                    <div class="element">
+                        <label for="status">
+                            Match Status
+                        </label>
+                        <select name="status" id="status">
+                            <option value="preparation">Preparation</option>
+                            <option value="active">Active</option>
+                            <option value="complited">Complited</option>
+                        </select>
+                    </div>
+                    <div class="element">
+                        <label for="mode">
+                            Choose the game mode
+                        </label>
+                        <select name="status" id="status">
+                            <option value="preparation">1x1</option>
+                            <option value="active">2x2</option>
+                            <option value="complited">3x3</option>
+                            <option value="complited">4x4</option>
+                            <option value="complited">5x5</option>
+                        </select>
+                    </div>
+                    <div class="element">
+                        <label for="status">
+                            Map selection
+                        </label>
+                        <select name="status" id="status">
+                            <option value="all maps">All Maps</option>
+                            <option value="redline">aim_redline</option>
+                            <option value="aimawp">aim_awp_row</option>
+                            <option value="aimak">Aim_ak47</option>
+                            <option value="aimusp">aim_usp</option>
+                            <option value="aimmap">aim_map</option>
+                            <option value="aimpistol">aim_pistol_csgo</option>
+                        </select>
+                    </div>
+                    <div class="element">
+                        <div class="row">
+                            <div class="el">
+                                <label for="switcher">Password</label>
+                                <label class="switch" id="switcher">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div class="el">
+                                <label for="switcher">Client</label>
+                                <label class="switch" id="switcher">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="element">
+                        <label for="bet">Bet on your victory</label>
+                        <div class="row">
+                            <input type="text" id="bet" placeholder="From">
+                            <input type="text" id="bet" placeholder="To">
+                        </div>
+                    </div>
+                    <input type="reset" value="Clear filter" id="reset">
+                </form>
+            </div>
+        </div>
+        <div class="first-rigth">
+            <div class="first-rigth__img">
+                <div class="white"></div>
+                <div class="text">
+                    No matches founded :(
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="second">
+        <a href="{% url 'create' %}"><img src="{% static 'img/banner.png' %}" alt=""></a>
+    </div>
+{% endblock content %}

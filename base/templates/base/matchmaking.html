@@ -1,0 +1,43 @@
+{% extends 'base/create.html' %}
+{% load static %}
+
+{% block active_nav-lobby %} 
+{% endblock active_nav-lobby %}
+
+{% block active_nav-matchmaking %}
+    class="active"
+{% endblock active_nav-matchmaking %}
+
+{% block lobby_sub %}
+    <a href="{% url 'matchmaking' %}" {% block active_subnav-1 %} class="active" {% endblock active_subnav-1 %}>Play 1x1</a>
+    <a href="{% url 'matchmaking2' %}" {% block active_subnav-2 %}{% endblock active_subnav-2 %}>Play 2x2</a>
+    <a href="{% url 'matchmaking3' %}" {% block active_subnav-3 %}{% endblock active_subnav-3 %}>Play 5x5</a>
+{% endblock lobby_sub %}
+
+{% block content_lobby %}
+    <div class="lobby-right">
+        <div class="lobby-right__text">
+            If you are a born cyber samurai, then you have only one conscious choice - the Path of Elo.
+        </div>
+        <div class="lobby-right__price">
+            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+            <span>0</span>
+            <p>Points from the player</p>
+        </div>
+        <div class="lobby-right__green">
+            <div class="lobby-right__green-el">competitive match</div>
+            <div class="lobby-right__green-el">1x1</div>
+            <div class="lobby-right__green-el">pick / ban</div>
+            <div class="lobby-right__green-el">128 tickrate</div>
+        </div>
+        <div class="lobby-right__grey">
+            <div class="lobby-right__grey-el">aim_redline</div>
+            <div class="lobby-right__grey-el">aim_awp_row</div>
+            <div class="lobby-right__grey-el">aim_ak47</div>
+            <div class="lobby-right__grey-el">aim_usp</div>
+            <div class="lobby-right__grey-el">aim_map</div>
+            <div class="lobby-right__grey-el">aim_pistol</div>
+        </div>
+        <a href="steam.html" class="btn btn-create">Play</a>
+    </div>
+{% endblock content_lobby %}

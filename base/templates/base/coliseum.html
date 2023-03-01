@@ -1,0 +1,99 @@
+{% extends 'base/create.html' %}
+{% load static %}
+
+{% block success %}
+    <section class="success">
+        <div class="success__cross">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="success__line"></div>
+        <div class="success-column">
+            <div class="success__title">Successfuly copied</div>
+            <div class="success__text">to clipboard ;)</div>
+        </div>
+    </section>
+{% endblock success %}
+
+{% block active_nav-lobby %} 
+{% endblock active_nav-lobby %}
+
+{% block active_nav-coliseum %}
+    class="active"
+{% endblock active_nav-coliseum %}
+
+{% block lobby_sub %}
+    CSDM
+{% endblock lobby_sub %}
+
+{% block content_lobby %}
+    <div class="lobby-right">
+        <div class="lobby-cart">
+            <div class="lobby-cart-row">
+                <div class="lobby-cart__title">
+                    CIS - Elo.pub [DM FFA] 128 tickrate
+                </div>
+                <a href="steam.html" class="btn btn-lobby">Connect</a>
+            </div>
+            <div class="lobby-cart-row lobby-cart-row-2">
+                <p>Region</p>
+                <p>Latency</p>
+                <p>Map</p>
+            </div>
+            <div class="lobby-cart-row">
+                <div class="lobby-cart__img">
+                    <img src="{% static 'img/icons/server1.png' %}" alt="">
+                    <div class="lobby-cart__img-ans">
+                        Server region: Moscow
+                    </div>
+                </div>
+                <div class="lobby-cart-row lobby-cart-row-3">
+                    <i class="fa-solid fa-wifi"></i>
+                    <span>37</span>
+                </div>
+                <p>de_dust2</p>
+                <div class="lobby-cart__link">
+                    <p>csdm.ggwp.cc:27184</p>
+                    <div class="lobby-cart__link__copy">
+                        <i class="fa-solid fa-copy"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lobby-cart lobby-cart-2">
+            <div class="lobby-cart-row">
+                <div class="lobby-cart__title">
+                    Europe - Elo.pub [DM FFA] 128 tickrate
+                </div>
+                <a href="steam.html" class="btn btn-lobby">Connect</a>
+            </div>
+            <div class="lobby-cart-row lobby-cart-row-2">
+                <p>Region</p>
+                <p>Latency</p>
+                <p>Map</p>
+            </div>
+            <div class="lobby-cart-row">
+                <div class="lobby-cart__img">
+                    <img src="{% static 'img/icons/server2.png' %}" alt="">
+                    <div class="lobby-cart__img-ans">
+                        Server region: Oslo
+                    </div>
+                </div>
+                <div class="lobby-cart-row lobby-cart-row-3 lobby-cart-row-3-2">
+                    <i class="fa-solid fa-wifi"></i>
+                    <span>79</span>
+                </div>
+                <p>de_mirage</p>
+                <div class="lobby-cart__link">
+                    <p>csdm.ggwp.cc:27372</p>
+                    <div class="lobby-cart__link__copy">
+                        <i class="fa-solid fa-copy"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content_lobby %}
+
+{% block js %}
+    <script src="{% static 'js/success.script.js' %}"></script>
+{% endblock js %}

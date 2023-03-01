@@ -1,0 +1,42 @@
+{% extends 'base/matchmaking.html' %}
+{% load static %}
+
+{% block active_subnav-1 %}
+{% endblock active_subnav-1 %}
+
+{% block active_subnav-2 %}
+    class="active"
+{% endblock active_subnav-2 %}
+
+{% block active_subnav-3 %}
+{% endblock active_subnav-3 %}
+
+{% block content_lobby %}
+    <div class="lobby-right">
+        <div class="lobby-right__text">
+            A real command fight. Sweat, virtual blood and a sea of emotions. Team up stack, have patience, morale and go into Battle!                    </div>
+        <div class="lobby-right__price">
+            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+            <span>10</span>
+            <p>Points from the player</p>
+        </div>
+        <div class="lobby-right__green">
+            <div class="lobby-right__green-el">competitive match</div>
+            <div class="lobby-right__green-el">2x2</div>
+            <div class="lobby-right__green-el">pick / ban</div>
+            <div class="lobby-right__green-el">wingman</div>
+            <div class="lobby-right__green-el">128 tickrate</div>
+        </div>
+        <div class="lobby-right__grey">
+            <div class="lobby-right__grey-el">de_overpass</div>
+            <div class="lobby-right__grey-el">de_vertigo</div>
+            <div class="lobby-right__grey-el">aim_usp</div>
+            <div class="lobby-right__grey-el">aim_map</div>
+            <div class="lobby-right__grey-el">de_inferno</div>
+            <div class="lobby-right__grey-el">de_nuke</div>
+            <div class="lobby-right__grey-el">de_shortdust</div>
+            <div class="lobby-right__grey-el">aim_awp_row</div>
+        </div>
+        <a href="steam.html" class="btn btn-create">Play</a>
+    </div>
+{% endblock content_lobby %}
