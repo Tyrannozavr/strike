@@ -79,7 +79,7 @@
                         <div class="nav-links__sub">
                             <a href="{% url 'matches' %}">Matches</a>
                             <a href="leagues.html">Leagues</a>
-                            <a href="tournaments.html">Tournaments</a>
+                            <a href="{% url 'tournaments' %}">Tournaments</a>
                         </div>
                         <div class="nav-links__item nav-links__item-d {% block active_nav-shop %}{% endblock active_nav-shop %}">
                             <a>
@@ -88,29 +88,29 @@
                             </a>
                         </div>
                         <div class="nav-links__sub">
-                            <a href="goods.html">All goods</a>
-                            <a href="skins.html">CS:GO Skins</a>
+                            <a href="{% url 'goods' %}">All goods</a>
+                            <a href="{% url 'skins' %}">CS:GO Skins</a>
                         </div>
                         <div class="nav-links__item {% block active_nav-client %}{% endblock active_nav-client %}">
-                            <a href="client.html">
+                            <a href="{% url 'client' %}">
                                 <i class="fa-solid fa-shield"></i>
                                 Client
                             </a>
                         </div>
                         <div class="nav-links__item {% block active_nav-promo %}{% endblock active_nav-promo %}">
-                            <a href="promo.html">
+                            <a href="{% url 'promo' %}">
                                 <i class="fa-solid fa-ticket-simple"></i>
                                 Promo codes
                             </a>
                         </div>
                         <div class="nav-links__item {% block active_nav-blog %}{% endblock active_nav-blog %}">
-                            <a href="blog.html">
+                            <a href="{% url 'blog' %}">
                                 <i class="fa-solid fa-heart-pulse"></i>
                                 Blog
                             </a>
                         </div>
                         <div class="nav-links__item">
-                            <a href="#">
+                            <a href="https://discord.com/invite/xaY6889">
                                 <i class="fa-brands fa-discord"></i>
                                 Support
                                 <div class="nav-links__item-link">
@@ -140,10 +140,10 @@
                 Play
             </a>
             <div class="back-user">
-                <a href="sign_in.html" class="btn btn-login">
+                <a href="{% url 'login' %}" class="btn btn-login">
                     Sign In
                 </a>
-                <a href="sign_up.html" class="btn btn-signup">
+                <a href="{% url 'sign_up' %}" class="btn btn-signup">
                     Create free account
                 </a>
                 {% comment %} <div class="back-user-wallet">
@@ -198,7 +198,7 @@
                                 <div class="list__friends-content__list-item__del">
                                     <i class="fa-solid fa-trash"></i>
                                 </div>
-                                <a href="steam.html" class="list__friends-content__list-item__invite">
+                                <a href="{% url 'steam' %}" class="list__friends-content__list-item__invite">
                                     <i class="fa-solid fa-user-plus"></i>
                                 </a>
                             </div>
@@ -215,7 +215,7 @@
                                 <div class="list__friends-content__list-item__del">
                                     <i class="fa-solid fa-trash"></i>
                                 </div>
-                                <a href="steam.html" class="list__friends-content__list-item__invite">
+                                <a href="{% url 'steam' %}" class="list__friends-content__list-item__invite">
                                     <i class="fa-solid fa-user-plus"></i>
                                 </a>
                             </div>
@@ -232,7 +232,7 @@
                                 <div class="list__friends-content__list-item__del">
                                     <i class="fa-solid fa-trash"></i>
                                 </div>
-                                <a href="steam.html" class="list__friends-content__list-item__invite">
+                                <a href="{% url 'steam' %}" class="list__friends-content__list-item__invite">
                                     <i class="fa-solid fa-user-plus"></i>
                                 </a>
                             </div>
@@ -249,7 +249,7 @@
                                 <div class="list__friends-content__list-item__del">
                                     <i class="fa-solid fa-trash"></i>
                                 </div>
-                                <a href="steam.html" class="list__friends-content__list-item__invite">
+                                <a href="{% url 'steam' %}" class="list__friends-content__list-item__invite">
                                     <i class="fa-solid fa-user-plus"></i>
                                 </a>
                             </div>
@@ -266,7 +266,7 @@
                                 <div class="list__friends-content__list-item__del">
                                     <i class="fa-solid fa-trash"></i>
                                 </div>
-                                <a href="steam.html" class="list__friends-content__list-item__invite">
+                                <a href="{% url 'steam' %}" class="list__friends-content__list-item__invite">
                                     <i class="fa-solid fa-user-plus"></i>
                                 </a>
                             </div>
@@ -300,7 +300,7 @@
                                 <i class="fa-sharp fa-solid fa-up-right-from-square"></i>
                             </div>
                         </a>
-                        <a href="steam.html" class="list__friends-content__bottom-item list__friends-content__bottom-item-3">
+                        <a href="{% url 'steam' %}" class="list__friends-content__bottom-item list__friends-content__bottom-item-3">
                             <div class="list__friends-content__bottom-item__title">
                                 <div class="list__friends-content__bottom-item__title-title">
                                     <span>Steam</span> Connect
@@ -355,7 +355,7 @@
                                 <i class="fa-sharp fa-solid fa-up-right-from-square"></i>
                             </div>
                         </a>
-                        <a href="steam.html" class="list__friends-content__bottom-item list__friends-content__bottom-item-3">
+                        <a href="{% url 'steam' %}" class="list__friends-content__bottom-item list__friends-content__bottom-item-3">
                             <div class="list__friends-content__bottom-item__title">
                                 <div class="list__friends-content__bottom-item__title-title">
                                     <span>Steam</span> Connect
@@ -372,7 +372,7 @@
                 </div>
             </div>
 
-            <a href="steam.html" class="list__user">
+            <a href="{% url 'steam' %}" class="list__user">
                 <i class="fa-brands fa-teamspeak"></i>
             </a>
             <div class="list__user list__user-friends">
@@ -402,9 +402,9 @@
                                 NEO.CONTROL LTD, C 100446, 86 THE OFF. LELI FALZON STR. NXR2609, NAXXAR, MALTA © 2023 IP РОВНЫЙ А.В. INN 234606684054 OGRNIP 321237500364281
                             </div>
                             <div class="footer-left__links">
-                                <a href="terms.html">Terms of Use</a>
+                                <a href="{% url 'terms' %}">Terms of Use</a>
                                 <i class="fa-solid fa-circle"></i>
-                                <a href="policy.html">Privacy policy</a>
+                                <a href="{% url 'policy' %}">Privacy policy</a>
                                 <i class="fa-solid fa-circle"></i>
                                 <a href="">Support</a>
                             </div>
@@ -416,10 +416,10 @@
                                 </div>
                                 <div class="footer-right-col__links">
                                     <a href="{% url 'index' %}">Main</a>
-                                    <a href="tournaments.html">Tournaments</a>
+                                    <a href="{% url 'tournaments' %}">Tournaments</a>
                                     <a href="{% url 'matches' %}">Matches</a>
                                     <a href="leagues.html">Leagues</a>
-                                    <a href="steam.html">Quests</a>
+                                    <a href="{% url 'steam' %}">Quests</a>
                                 </div>
                             </div>
                             <div class="footer-right-col">
@@ -427,8 +427,8 @@
                                     Shop
                                 </div>
                                 <div class="footer-right-col__links">
-                                    <a href="steam.html">Currencies</a>
-                                    <a href="skins.html">CS:GO Skins</a>
+                                    <a href="{% url 'steam' %}">Currencies</a>
+                                    <a href="{% url 'skins' %}">CS:GO Skins</a>
                                 </div>
                             </div>
                             <div class="footer-right-col">
@@ -436,9 +436,9 @@
                                     Servises
                                 </div>
                                 <div class="footer-right-col__links">
-                                    <a href="client.html">Client</a>
-                                    <a href="promo.html">Promo codes</a>
-                                    <a href="steam.html">Achievments</a>
+                                    <a href="{% url 'client' %}">Client</a>
+                                    <a href="{% url 'promo' %}">Promo codes</a>
+                                    <a href="{% url 'steam' %}">Achievments</a>
                                 </div>
                             </div>
                         </div>

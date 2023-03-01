@@ -1,0 +1,479 @@
+{% extends 'base/main.html' %}
+{% load static %}
+
+{% block title %}
+    Shop
+{% endblock title %}
+
+{% block active_nav-shop %}
+nav-links__item-active
+{% endblock active_nav-shop %}
+
+{% block content %}
+<div class="skins">
+    <div class="skins-left">
+        <form action="#">
+            <div class="element">
+                <label for="sorting">
+                    Sorting
+                </label>
+                <select name="sorting" id="sorting">
+                    <option value="price">Time added</option>
+                    <option value="price">Price (Descending)</option>
+                    <option value="price">Price (In ascending order)</option>
+                </select>
+            </div>
+            <div class="element">
+                <label for="price">Price</label>
+                <div class="row">
+                    <input type="text" id="price" placeholder="From">
+                    <input type="text" id="price" placeholder="To">
+                </div>
+            </div>
+            <div class="element">
+                <label for="quality">
+                    Quality
+                </label>
+                <select name="quality" id="quality">
+                    <option value="all">All</option>
+                    <option value="battle">Battle-hardened</option>
+                    <option value="well">Well-Worn</option>
+                    <option value="used">Slightly used</option>
+                    <option value="field">Field-Tested</option>
+                    <option value="new">Factory New</option>
+                </select>
+            </div>
+            <div class="element">
+                <label for="rarity">
+                    Rarity
+                </label>
+                <select name="rarity" id="rarity">
+                    <option value="all">All</option>
+                    <option value="secret">Secret</option>
+                    <option value="classified">Classified</option>
+                    <option value="mil">Mil-Spec grade</option>
+                    <option value="restricted">Restricted</option>
+                    <option value="type">Extraordinary type</option>
+                    <option value="master">Master</option>
+
+                </select>
+            </div>
+            <input type="reset" value="Clear filter" id="reset">
+        </form>
+    </div>
+    <div class="skins-right">
+        <div class="skins-right__title">
+            <a href="{% url 'goods' %}">
+                Shop
+            </a>
+            /
+            <a href="{% url 'skins' %}">
+                CS:GO Skins
+            </a>
+            /
+            <p>Counter-Strike: Global Offensive</p>
+        </div>
+        <div class="skins-right__elements">
+            <a href="{% url 'steam' %}">
+                <div class="skins-right__elements-cart">
+                    <div class="skins-right__elements-cart__el">
+                        <div class="skins-right__elements-cart__el__img">
+                            <img src="{% static 'img/skins/ak47-asimov.png' %}" alt="">
+                        </div>
+                        <div class="skins-right__elements-cart__el__title">
+                            <span>ak47</span> | Asiimov
+                        </div>
+                        <div class="skins-right__elements-cart__el__price">
+                            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                            <p>2373.10</p>
+                        </div>
+                    </div>
+                    <div class="skins-right__elements-cart__blur">
+                        BUY
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'steam' %}">
+                <div class="skins-right__elements-cart">
+                    <div class="skins-right__elements-cart__el">
+                        <div class="skins-right__elements-cart__el__img">
+                            <img src="{% static 'img/skins/awp-neonoir.png' %}" alt="">
+                        </div>
+                        <div class="skins-right__elements-cart__el__title">
+                            <span>awp</span> | Neo Noir
+                        </div>
+                        <div class="skins-right__elements-cart__el__price">
+                            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                            <p>2644.50</p>
+                        </div>
+                    </div>
+                    <div class="skins-right__elements-cart__blur">
+                        BUY
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'steam' %}">
+                <div class="skins-right__elements-cart">
+                    <div class="skins-right__elements-cart__el">
+                        <div class="skins-right__elements-cart__el__img">
+                            <img src="{% static 'img/skins/usps-targetfound.png' %}" alt="">
+                        </div>
+                        <div class="skins-right__elements-cart__el__title">
+                            <span>usp-s</span> | Target Acquired
+                        </div>
+                        <div class="skins-right__elements-cart__el__price">
+                            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                            <p>1040.21</p>
+                        </div>
+                    </div>
+                    <div class="skins-right__elements-cart__blur">
+                        BUY
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'steam' %}">
+                <div class="skins-right__elements-cart">
+                    <div class="skins-right__elements-cart__el">
+                        <div class="skins-right__elements-cart__el__img">
+                            <img src="{% static 'img/skins/desertEagle-informationflow.png' %}" alt="">
+                        </div>
+                        <div class="skins-right__elements-cart__el__title">
+                            <span>Desert eagle</span> | Printstream
+                        </div>
+                        <div class="skins-right__elements-cart__el__price">
+                            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                            <p>7349.07</p>
+                        </div>
+                    </div>
+                    <div class="skins-right__elements-cart__blur">
+                        BUY
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'steam' %}">
+                <div class="skins-right__elements-cart">
+                    <div class="skins-right__elements-cart__el">
+                        <div class="skins-right__elements-cart__el__img">
+                            <img src="{% static 'img/skins/skeletonKnife-surface.png' %}" alt="">
+                        </div>
+                        <div class="skins-right__elements-cart__el__title">
+                            <span>Skeleton</span> | Case Hardenet
+                        </div>
+                        <div class="skins-right__elements-cart__el__price">
+                            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                            <p>68030.01</p>
+                        </div>
+                    </div>
+                    <div class="skins-right__elements-cart__blur">
+                        BUY
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'steam' %}">
+                <div class="skins-right__elements-cart">
+                    <div class="skins-right__elements-cart__el">
+                        <div class="skins-right__elements-cart__el__img">
+                            <img src="{% static 'img/skins/aug-bengaltiger.png' %}" alt="">
+                        </div>
+                        <div class="skins-right__elements-cart__el__title">
+                            <span>aug</span> | Bengal Tiger
+                        </div>
+                        <div class="skins-right__elements-cart__el__price">
+                            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                            <p>844.00</p>
+                        </div>
+                    </div>
+                    <div class="skins-right__elements-cart__blur">
+                        BUY
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'steam' %}">
+                <div class="skins-right__elements-cart">
+                    <div class="skins-right__elements-cart__el">
+                        <div class="skins-right__elements-cart__el__img">
+                            <img src="{% static 'img/skins/glock18-fashion.png' %}" alt="">
+                        </div>
+                        <div class="skins-right__elements-cart__el__title">
+                            <span>glock-18</span> | Vogue
+                        </div>
+                        <div class="skins-right__elements-cart__el__price">
+                            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                            <p>1100.01</p>
+                        </div>
+                    </div>
+                    <div class="skins-right__elements-cart__blur">
+                        BUY
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'steam' %}">
+                <div class="skins-right__elements-cart">
+                    <div class="skins-right__elements-cart__el">
+                        <div class="skins-right__elements-cart__el__img">
+                            <img src="{% static 'img/skins/m4a1s-nitro.png' %}" alt="">
+                        </div>
+                        <div class="skins-right__elements-cart__el__title">
+                            <span>m4a1-s</span> | Nitro
+                        </div>
+                        <div class="skins-right__elements-cart__el__price">
+                            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                            <p>178309.12</p>
+                        </div>
+                    </div>
+                    <div class="skins-right__elements-cart__blur">
+                        BUY
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'steam' %}">
+                <div class="skins-right__elements-cart">
+                    <div class="skins-right__elements-cart__el">
+                        <div class="skins-right__elements-cart__el__img">
+                            <img src="{% static 'img/skins/m4a4-imperator.png' %}" alt="">
+                        </div>
+                        <div class="skins-right__elements-cart__el__title">
+                            <span>m4a4</span> | The Emperor
+                        </div>
+                        <div class="skins-right__elements-cart__el__price">
+                            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                            <p>2734.01</p>
+                        </div>
+                    </div>
+                    <div class="skins-right__elements-cart__blur">
+                        BUY
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'steam' %}">
+                <div class="skins-right__elements-cart">
+                    <div class="skins-right__elements-cart__el">
+                        <div class="skins-right__elements-cart__el__img">
+                            <img src="{% static 'img/skins/ak47-empress.png' %}" alt="">
+                        </div>
+                        <div class="skins-right__elements-cart__el__title">
+                            <span>ak47</span> | The Empress
+                        </div>
+                        <div class="skins-right__elements-cart__el__price">
+                            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                            <p>10320.23</p>
+                        </div>
+                    </div>
+                    <div class="skins-right__elements-cart__blur">
+                        BUY
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'steam' %}">
+                <div class="skins-right__elements-cart">
+                    <div class="skins-right__elements-cart__el">
+                        <div class="skins-right__elements-cart__el__img">
+                            <img src="{% static 'img/skins/awp-asimov.png' %}" alt="">
+                        </div>
+                        <div class="skins-right__elements-cart__el__title">
+                            <span>awp</span> | Asiimov
+                        </div>
+                        <div class="skins-right__elements-cart__el__price">
+                            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                            <p>11643.02</p>
+                        </div>
+                    </div>
+                    <div class="skins-right__elements-cart__blur">
+                        BUY
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'steam' %}">
+                <div class="skins-right__elements-cart">
+                    <div class="skins-right__elements-cart__el">
+                        <div class="skins-right__elements-cart__el__img">
+                            <img src="{% static 'img/skins/usps-neonoir.png' %}" alt="">
+                        </div>
+                        <div class="skins-right__elements-cart__el__title">
+                            <span>usp-s</span> | Neo Noir
+                        </div>
+                        <div class="skins-right__elements-cart__el__price">
+                            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                            <p>1800.01</p>
+                        </div>
+                    </div>
+                    <div class="skins-right__elements-cart__blur">
+                        BUY
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'steam' %}">
+                <div class="skins-right__elements-cart">
+                    <div class="skins-right__elements-cart__el">
+                        <div class="skins-right__elements-cart__el__img">
+                            <img src="{% static 'img/skins/ak47-neonracer.png' %}" alt="">
+                        </div>
+                        <div class="skins-right__elements-cart__el__title">
+                            <span>ak47</span> | Neon Rider
+                        </div>
+                        <div class="skins-right__elements-cart__el__price">
+                            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                            <p>2765.00</p>
+                        </div>
+                    </div>
+                    <div class="skins-right__elements-cart__blur">
+                        BUY
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'steam' %}">
+                <div class="skins-right__elements-cart">
+                    <div class="skins-right__elements-cart__el">
+                        <div class="skins-right__elements-cart__el__img">
+                            <img src="{% static 'img/skins/awp-speedbeast.png' %}" alt="">
+                        </div>
+                        <div class="skins-right__elements-cart__el__title">
+                            <span>awp</span> | Hyper Beast
+                        </div>
+                        <div class="skins-right__elements-cart__el__price">
+                            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                            <p>3499.99</p>
+                        </div>
+                    </div>
+                    <div class="skins-right__elements-cart__blur">
+                        BUY
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'steam' %}">
+                <div class="skins-right__elements-cart">
+                    <div class="skins-right__elements-cart__el">
+                        <div class="skins-right__elements-cart__el__img">
+                            <img src="{% static 'img/skins/usps-royalblue.png' %}" alt="">
+                        </div>
+                        <div class="skins-right__elements-cart__el__title">
+                            <span>usp-s</span> | Royal Blue
+                        </div>
+                        <div class="skins-right__elements-cart__el__price">
+                            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                            <p>800.33</p>
+                        </div>
+                    </div>
+                    <div class="skins-right__elements-cart__blur">
+                        BUY
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'steam' %}">
+                <div class="skins-right__elements-cart">
+                    <div class="skins-right__elements-cart__el">
+                        <div class="skins-right__elements-cart__el__img">
+                            <img src="{% static 'img/skins/boui-steal.png' %}" alt="">
+                        </div>
+                        <div class="skins-right__elements-cart__el__title">
+                            <span>Bowie</span> | Stained
+                        </div>
+                        <div class="skins-right__elements-cart__el__price">
+                            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                            <p>14783.00</p>
+                        </div>
+                    </div>
+                    <div class="skins-right__elements-cart__blur">
+                        BUY
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'steam' %}">
+                <div class="skins-right__elements-cart">
+                    <div class="skins-right__elements-cart__el">
+                        <div class="skins-right__elements-cart__el__img">
+                            <img src="{% static 'img/skins/aug-dynamics.png' %}" alt="">
+                        </div>
+                        <div class="skins-right__elements-cart__el__title">
+                            <span>aug</span> | Momentum
+                        </div>
+                        <div class="skins-right__elements-cart__el__price">
+                            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                            <p>678.87</p>
+                        </div>
+                    </div>
+                    <div class="skins-right__elements-cart__blur">
+                        BUY
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'steam' %}">
+                <div class="skins-right__elements-cart">
+                    <div class="skins-right__elements-cart__el">
+                        <div class="skins-right__elements-cart__el__img">
+                            <img src="{% static 'img/skins/glock18-nucleargarden.png' %}" alt="">
+                        </div>
+                        <div class="skins-right__elements-cart__el__title">
+                            <span>glock-18</span> | Nuclear Garden
+                        </div>
+                        <div class="skins-right__elements-cart__el__price">
+                            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                            <p>1011.45</p>
+                        </div>
+                    </div>
+                    <div class="skins-right__elements-cart__blur">
+                        BUY
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'steam' %}">
+                <div class="skins-right__elements-cart">
+                    <div class="skins-right__elements-cart__el">
+                        <div class="skins-right__elements-cart__el__img">
+                            <img src="{% static 'img/skins/m4a1s-cannon.png' %}" alt="">
+                        </div>
+                        <div class="skins-right__elements-cart__el__title">
+                            <span>m4a1-s</span> | Mecha Industries
+                        </div>
+                        <div class="skins-right__elements-cart__el__price">
+                            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                            <p>3847.00</p>
+                        </div>
+                    </div>
+                    <div class="skins-right__elements-cart__blur">
+                        BUY
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'steam' %}">
+                <div class="skins-right__elements-cart">
+                    <div class="skins-right__elements-cart__el">
+                        <div class="skins-right__elements-cart__el__img">
+                            <img src="{% static 'img/skins/m4a4-dragonking.png' %}" alt="">
+                        </div>
+                        <div class="skins-right__elements-cart__el__title">
+                            <span>m4a4</span> | Dragon King
+                        </div>
+                        <div class="skins-right__elements-cart__el__price">
+                            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                            <p>8300.00</p>
+                        </div>
+                    </div>
+                    <div class="skins-right__elements-cart__blur">
+                        BUY
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'steam' %}">
+                <div class="skins-right__elements-cart">
+                    <div class="skins-right__elements-cart__el">
+                        <div class="skins-right__elements-cart__el__img">
+                            <img src="{% static 'img/skins/ak47-riotofcolors.png' %}" alt="">
+                        </div>
+                        <div class="skins-right__elements-cart__el__title">
+                            <span>ak47</span> | Point Disarray
+                        </div>
+                        <div class="skins-right__elements-cart__el__price">
+                            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                            <p>1253.00</p>
+                        </div>
+                    </div>
+                    <div class="skins-right__elements-cart__blur">
+                        BUY
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

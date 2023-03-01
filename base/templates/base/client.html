@@ -1,0 +1,47 @@
+{% extends 'base/main.html' %}
+{% load static %}
+
+{% block title %}
+    Client
+{% endblock title %}
+
+{% block active_nav-client %}
+nav-links__item-active
+{% endblock active_nav-client %}
+
+{% block content %}
+    <div class="client">
+        <div class="container-client">
+        <div class="client__title">
+            Neo.Control
+            <span> client</span>
+        </div>
+        <div class="client__subtitle">
+            Our platform is equipped with a built-in anticheat. No cheater
+            will be able to return back to the platform and spoil our game. NO
+            multi-accounting! NO cheaters! Yes, fair play!
+        </div>
+        <div class="row">
+            <div class="client__games">
+            <div class="client__games__cs">
+                <img src="{% static 'img/icons/cslogo.png' %}" alt="cs" />
+            </div>
+            <div class="client__games__valorant">
+                <img src="{% static 'img/icons/valorantlogo.png' %}" alt="valorant" />
+            </div>
+            <div class="client__games__dota">
+                <img src="{% static 'img/icons/dotalogo.png' %}" alt="dota" />
+            </div>
+            <div class="client__games__league">
+                <img src="{% static 'img/icons/leaguelogo.png' %}" alt="league" />
+            </div>
+            </div>
+            <a class="btn btn-download">Download</a>
+        </div>
+        <div class="client__right">
+            <img src="{% static 'img/girl.png' %}" alt="girl" />
+        </div>
+        <div class="client__text">Release #17</div>
+        </div>
+    </div>
+{% endblock content %}

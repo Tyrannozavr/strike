@@ -1,0 +1,127 @@
+{% extends 'base/main.html' %}
+{% load static %}
+
+{% block title %}
+    Info
+{% endblock title %}
+
+{% block active_nav-play %}
+    nav-links__item-active
+{% endblock active_nav-play %}
+
+{% block content %}
+    <div class="tournaments-info-active">
+        <div class="tournaments-info-active__nav">
+            <a href="{% url 'tournaments-info-active' %}" {% block active_nav-tournament1 %}class="active"{% endblock active_nav-tournament1 %}>Overview</a>
+            <a href="{% url 'tournaments-info-active2' %}" {% block active_nav-tournament2 %}{% endblock active_nav-tournament2 %}>Matches</a>
+            <a href="{% url 'tournaments-info-active3' %}" {% block active_nav-tournament3 %}{% endblock active_nav-tournament3 %}>Bracket</a>
+        </div>
+        <img src="{% static 'img/icons/workers.png' %}" alt="">
+        {% block content_tournaments %}
+            <div class="row">
+                <div class="left">
+                    <div class="left-top">
+                        <img src="{% static 'img/icons/logo-nav.svg' %}" alt="">
+                        <h1>Neo Tournament</h1>
+                    </div>
+                    <div class="left__text">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <p>01/03/23, 5:14 PM <span> · Open</span></p>
+                    </div>
+                    <div class="left__text left__text-a">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <p>02/03/23, 6:00 PM <span>· Opening registration</span></p>
+                    </div>
+                    <div class="left__text left__text-nonactive">
+                        <i class="fa-solid fa-circle"></i>                            <p>08/03/23, 3:00 PM <span>· Confirmation</span></p>
+                    </div>
+                    <div class="left__text left__text-nonactive">
+                        <i class="fa-solid fa-circle"></i>                            <p>10/03/23, 3:30 PM <span>· Closing registration</span></p>
+                    </div>
+                    <div class="left__text left__text-nonactive">
+                        <i class="fa-solid fa-circle"></i>                            <p>12/03/23, 3:00 PM <span>· Start</span></p>
+                    </div>
+                    <div class="left__text left__text-nonactive left__text-nonactive-l">
+                        <i class="fa-solid fa-circle"></i>                            <p>14/03/23, 3:00 PM <span>· Finish</span></p>
+                    </div>
+                </div>
+                <div class="center">
+                    <div class="center__title">
+                        Hello! Try your hand at the NEO Tournament!
+                    </div>
+                    <a href="{% url 'steam' %}" class="btn btn-join">Join the tournament</a>
+                    <div class="center__text">
+                        <span>12 / 32</span> Players in the tournament
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="right__title">Rewards</div>
+                    <div class="right__pool">
+                        <div class="right__pool-text">Prize pool:</div>
+                        <div class="right__pool-price">
+                            <div class="img">
+                                <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                            </div>
+                            <p>600</p>
+                        </div>
+                    </div>
+                    <div class="right__cart">
+                        <div class="right__cart-text">
+                            1 <span>place</span>
+                        </div>
+                        <div class="right__cart-img">
+                            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                            <p>500</p>
+                        </div>
+                    </div>
+                    <div class="right__cart right__cart-2">
+                        <div class="right__cart-text">
+                            2 <span>place</span>
+                        </div>
+                        <div class="right__cart-img">
+                            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                            <p>100</p>
+                        </div>
+                    </div>
+                    <div class="right__cart right__cart-3">
+                        <div class="right__cart-text">
+                            1 <span>place</span>
+                        </div>
+                        <div class="right__cart-img">
+                            <img src="{% static 'img/icons/coin-green.svg' %}" alt="">
+                            <p>100</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="info">
+                <div class="info__title">
+                    Tournament Information
+                </div>
+                <h1>The tournament will begin</h1>
+                <p>12/03/2023, 4:00 PM</p>
+                <h1>The tournament will finish</h1>
+                <p>15/03/2023, 4:00 PM</p>
+                <h1>Region</h1>
+                <p>CIS</p>
+                <h1>Reward</h1>
+                <p>600 neo</p>
+                <h1>Tpurnament Mode</h1>
+                <p>1x1</p>
+                <h1>Anticheat</h1>
+                <p>Neo.Control Client</p>
+                <h1>Neo.Rewards from the player</h1>
+                <p>50</p>
+                <h1>Participants</h1>
+                <p>32</p>
+                <div class="info__title">
+                    Tournament description
+                </div>
+                <h1>Quick buy-in tournaments. Compete with the same strong players as you! Your chance to prove that you are the best and strongest</h1>
+            </div>
+            <div class="img-last">
+                <img src="{% static 'img/icons/tournamentspage.png' %}" alt="">
+            </div>
+        {% endblock content_tournaments %}
+    </div>
+{% endblock content %}

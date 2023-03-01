@@ -1,0 +1,27 @@
+{% extends 'base/main.html' %}
+{% load static %}
+
+{% block title %}
+    Promo
+{% endblock title %}
+
+{% block active_nav-promo %}
+nav-links__item-active
+{% endblock active_nav-promo %}
+
+{% block content %}
+    <div class="promo">
+    <div class="promo__title">HAVE A PROMO CODE? USE IT!</div>
+    <div class="promo__subtitle">
+      Here you can enter a promo code to get Neo Points (Neo), get a skin
+      or join the ranks of referrals!
+    </div>
+    <div class="promo__text">Log in to activate the promo code</div>
+    <div class="promo__wrapper">
+      <div class="input input-promo">
+        <input type="text" placeholder="Enter the code" />
+      </div>
+      <a href="#" class="btn btn-promo">Use</a>
+    </div>
+  </div>
+{% endblock content %}

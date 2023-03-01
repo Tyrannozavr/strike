@@ -1,0 +1,590 @@
+{% extends 'base/main.html' %}
+{% load static %}
+
+{% block title %}
+    Tournaments
+{% endblock title %}
+
+{% block active_nav-play %}
+    nav-links__item-active
+{% endblock active_nav-play %}
+
+{% block content %}
+    <div class="tournaments-page">
+        <form action="#">
+            <div class="element">
+                <select name="status" id="status">
+                    <option value="availible">Available Tournaments</option>
+                    <option value="current">Current Tournaments</option>
+                </select>
+            </div>
+            <div class="element">
+                <select name="regions" id="regions">
+                    <option value="cis">CIS</option>
+                    <option value="all">All regions</option>
+                    <option value="europe">Europe</option>
+                    <option value="asia">Central Asia (Kazakhstan)</option>
+                </select>
+            </div>
+        </form>
+        <a href="{% url 'tournaments-info-active' %}">
+            <div class="cart">
+                <div class="cart-top">
+                    <div class="cart-row">
+                        <div class="cart__img">
+                            <img src="{% static 'img/icons/logo-nav.svg' %}" alt="">
+                        </div>
+                        <div class="cart-text">
+                            <div class="cart-text__title">
+                                Neo Tournament 1x1 12.03.2023
+                            </div>
+                            <div class="cart-text__sub">
+                                <img src="{% static 'img/icons/server1.png' %}" alt="">
+                                <p>CIS</p>
+                                <i class="fa-solid fa-circle"></i>
+                                <p>1x1</p>
+                                <i class="fa-solid fa-circle"></i>
+                                <p>Neo.Control Client</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-bottom">
+                    <div class="cart-row">
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                Reg in
+                            </div>
+                            <div class="cart__el__img">
+                                <img src="{% static 'img/icons/coin-green.svg' %}" alt="">
+                                <p class="red">50</p>
+                            </div>
+                        </div>
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                Prize
+                            </div>
+                            <div class="cart__el__img">
+                                <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                                <p>100</p>
+                            </div>
+                        </div>
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                Participants
+                            </div>
+                            <div class="cart__el__img cart__el__img-2">
+                                <img src="{% static 'img/icons/participants2.png' %}" alt="">
+                                <p>12/32</p>
+                            </div>
+                        </div>
+                        <div class="cart__el">
+                            <div class="cart__el__title cart__el__title-2">
+                                Registration of participants
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="{% url 'tournaments-info-active' %}">
+            <div class="cart">
+                <div class="cart-top">
+                    <div class="cart-row">
+                        <div class="cart__img">
+                            <img src="{% static 'img/icons/logo-nav.svg' %}" alt="">
+                        </div>
+                        <div class="cart-text">
+                            <div class="cart-text__title">
+                                Neo Tournament 2x2 15.03.2023
+                            </div>
+                            <div class="cart-text__sub">
+                                <img src="{% static 'img/icons/server1.png' %}" alt="">
+                                <p>CIS</p>
+                                <i class="fa-solid fa-circle"></i>
+                                <p>1x1</p>
+                                <i class="fa-solid fa-circle"></i>
+                                <p>Neo.Control Client</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-bottom">
+                    <div class="cart-row">
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                Reg in
+                            </div>
+                            <div class="cart__el__img">
+                                <img src="{% static 'img/icons/coin-green.svg' %}" alt="">
+                                <p class="red">50</p>
+                            </div>
+                        </div>
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                Prize
+                            </div>
+                            <div class="cart__el__img">
+                                <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                                <p>100</p>
+                            </div>
+                        </div>
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                Participants
+                            </div>
+                            <div class="cart__el__img cart__el__img-2">
+                                <img src="{% static 'img/icons/participants2.png' %}" alt="">
+                                <p>2/16</p>
+                            </div>
+                        </div>
+                        <div class="cart__el">
+                            <div class="cart__el__title cart__el__title-2">
+                                Registration of participants
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <div class="img">
+            <img src="{% static 'img/icons/tournamentspage.png' %}" alt="">
+        </div>
+        <form action="#">
+            <div class="element">
+                <select name="status" id="status">
+                    <option value="availible">Completed Tournaments</option>
+                </select>
+            </div>
+            <div class="element">
+                <select name="regions" id="regions">
+                    <option value="cis">CIS</option>
+                    <option value="all">All regions</option>
+                    <option value="europe">Europe</option>
+                    <option value="asia">Central Asia (Kazakhstan)</option>
+                </select>
+            </div>
+        </form>
+        <a href="{% url 'tournaments-info' %}">
+            <div class="cart">
+                <div class="cart-top">
+                    <div class="cart-row">
+                        <div class="cart__img">
+                            <img src="{% static 'img/icons/logo-nav.svg' %}" alt="">
+                        </div>
+                        <div class="cart-text">
+                            <div class="cart-text__title">
+                                Neo Tournament 5x5 Finished
+                            </div>
+                            <div class="cart-text__sub">
+                                <img src="{% static 'img/icons/server1.png' %}" alt="">
+                                <p>CIS</p>
+                                <i class="fa-solid fa-circle"></i>
+                                <p>1x1</p>
+                                <i class="fa-solid fa-circle"></i>
+                                <p>Neo.Control Client</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-bottom">
+                    <div class="cart-row">
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                Reg in
+                            </div>
+                            <div class="cart__el__img">
+                                <img src="{% static 'img/icons/coin-green.svg' %}" alt="">
+                                <p class="red">50</p>
+                            </div>
+                        </div>
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                Prize
+                            </div>
+                            <div class="cart__el__img">
+                                <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                                <p>225</p>
+                            </div>
+                        </div>
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                Participants
+                            </div>
+                            <div class="cart__el__img cart__el__img-2">
+                                <img src="{% static 'img/icons/participants2.png' %}" alt="">
+                                <p>50/128</p>
+                            </div>
+                        </div>
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                The tournament is over
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="{% url 'tournaments-info' %}">
+            <div class="cart">
+                <div class="cart-top">
+                    <div class="cart-row">
+                        <div class="cart__img">
+                            <img src="{% static 'img/icons/logo-nav.svg' %}" alt="">
+                        </div>
+                        <div class="cart-text">
+                            <div class="cart-text__title">
+                                Neo Tournament 1x1 Finished
+                            </div>
+                            <div class="cart-text__sub">
+                                <img src="{% static 'img/icons/server1.png' %}" alt="">
+                                <p>CIS</p>
+                                <i class="fa-solid fa-circle"></i>
+                                <p>1x1</p>
+                                <i class="fa-solid fa-circle"></i>
+                                <p>Neo.Control Client</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-bottom">
+                    <div class="cart-row">
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                Reg in
+                            </div>
+                            <div class="cart__el__img">
+                                <img src="{% static 'img/icons/coin-green.svg' %}" alt="">
+                                <p class="red">50</p>
+                            </div>
+                        </div>
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                Prize
+                            </div>
+                            <div class="cart__el__img">
+                                <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                                <p>225</p>
+                            </div>
+                        </div>
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                Participants
+                            </div>
+                            <div class="cart__el__img cart__el__img-2">
+                                <img src="{% static 'img/icons/participants2.png' %}" alt="">
+                                <p>20/40</p>
+                            </div>
+                        </div>
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                The tournament is over
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="{% url 'tournaments-info' %}">
+            <div class="cart">
+                <div class="cart-top">
+                    <div class="cart-row">
+                        <div class="cart__img">
+                            <img src="{% static 'img/icons/logo-nav.svg' %}" alt="">
+                        </div>
+                        <div class="cart-text">
+                            <div class="cart-text__title">
+                                Neo Tournament 2x2 Finished
+                            </div>
+                            <div class="cart-text__sub">
+                                <img src="{% static 'img/icons/server1.png' %}" alt="">
+                                <p>CIS</p>
+                                <i class="fa-solid fa-circle"></i>
+                                <p>1x1</p>
+                                <i class="fa-solid fa-circle"></i>
+                                <p>Neo.Control Client</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-bottom">
+                    <div class="cart-row">
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                Reg in
+                            </div>
+                            <div class="cart__el__img">
+                                <img src="{% static 'img/icons/coin-green.svg' %}" alt="">
+                                <p class="red">50</p>
+                            </div>
+                        </div>
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                Prize
+                            </div>
+                            <div class="cart__el__img">
+                                <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                                <p>225</p>
+                            </div>
+                        </div>
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                Participants
+                            </div>
+                            <div class="cart__el__img cart__el__img-2">
+                                <img src="{% static 'img/icons/participants2.png' %}" alt="">
+                                <p>98/200</p>
+                            </div>
+                        </div>
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                The tournament is over
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="{% url 'tournaments-info' %}">
+            <div class="cart">
+                <div class="cart-top">
+                    <div class="cart-row">
+                        <div class="cart__img">
+                            <img src="{% static 'img/icons/logo-nav.svg' %}" alt="">
+                        </div>
+                        <div class="cart-text">
+                            <div class="cart-text__title">
+                                Neo Tournament 5x5 Finished
+                            </div>
+                            <div class="cart-text__sub">
+                                <img src="{% static 'img/icons/server1.png' %}" alt="">
+                                <p>CIS</p>
+                                <i class="fa-solid fa-circle"></i>
+                                <p>1x1</p>
+                                <i class="fa-solid fa-circle"></i>
+                                <p>Neo.Control Client</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-bottom">
+                    <div class="cart-row">
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                Reg in
+                            </div>
+                            <div class="cart__el__img">
+                                <img src="{% static 'img/icons/coin-green.svg' %}" alt="">
+                                <p class="red">10</p>
+                            </div>
+                        </div>
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                Prize
+                            </div>
+                            <div class="cart__el__img">
+                                <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                                <p>225</p>
+                            </div>
+                        </div>
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                Participants
+                            </div>
+                            <div class="cart__el__img cart__el__img-2">
+                                <img src="{% static 'img/icons/participants2.png' %}" alt="">
+                                <p>50/128</p>
+                            </div>
+                        </div>
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                The tournament is over
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="{% url 'tournaments-info' %}">
+            <div class="cart">
+                <div class="cart-top">
+                    <div class="cart-row">
+                        <div class="cart__img">
+                            <img src="{% static 'img/icons/logo-nav.svg' %}" alt="">
+                        </div>
+                        <div class="cart-text">
+                            <div class="cart-text__title">
+                                Neo Tournament 1x1 Finished
+                            </div>
+                            <div class="cart-text__sub">
+                                <img src="{% static 'img/icons/server1.png' %}" alt="">
+                                <p>CIS</p>
+                                <i class="fa-solid fa-circle"></i>
+                                <p>1x1</p>
+                                <i class="fa-solid fa-circle"></i>
+                                <p>Neo.Control Client</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-bottom">
+                    <div class="cart-row">
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                Reg in
+                            </div>
+                            <div class="cart__el__img">
+                                <img src="{% static 'img/icons/coin-green.svg' %}" alt="">
+                                <p class="red">10</p>
+                            </div>
+                        </div>
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                Prize
+                            </div>
+                            <div class="cart__el__img">
+                                <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                                <p>225</p>
+                            </div>
+                        </div>
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                Participants
+                            </div>
+                            <div class="cart__el__img cart__el__img-2">
+                                <img src="{% static 'img/icons/participants2.png' %}" alt="">
+                                <p>20/60</p>
+                            </div>
+                        </div>
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                The tournament is over
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="{% url 'tournaments-info' %}">
+            <div class="cart">
+                <div class="cart-top">
+                    <div class="cart-row">
+                        <div class="cart__img">
+                            <img src="{% static 'img/icons/logo-nav.svg' %}" alt="">
+                        </div>
+                        <div class="cart-text">
+                            <div class="cart-text__title">
+                                Neo Tournament 2x2 Finished
+                            </div>
+                            <div class="cart-text__sub">
+                                <img src="{% static 'img/icons/server1.png' %}" alt="">
+                                <p>CIS</p>
+                                <i class="fa-solid fa-circle"></i>
+                                <p>1x1</p>
+                                <i class="fa-solid fa-circle"></i>
+                                <p>Neo.Control Client</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-bottom">
+                    <div class="cart-row">
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                Reg in
+                            </div>
+                            <div class="cart__el__img">
+                                <img src="{% static 'img/icons/coin-green.svg' %}" alt="">
+                                <p class="red">10</p>
+                            </div>
+                        </div>
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                Prize
+                            </div>
+                            <div class="cart__el__img">
+                                <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                                <p>225</p>
+                            </div>
+                        </div>
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                Participants
+                            </div>
+                            <div class="cart__el__img cart__el__img-2">
+                                <img src="{% static 'img/icons/participants2.png' %}" alt="">
+                                <p>98/200</p>
+                            </div>
+                        </div>
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                The tournament is over
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="{% url 'tournaments-info' %}">
+            <div class="cart">
+                <div class="cart-top">
+                    <div class="cart-row">
+                        <div class="cart__img">
+                            <img src="{% static 'img/icons/logo-nav.svg' %}" alt="">
+                        </div>
+                        <div class="cart-text">
+                            <div class="cart-text__title">
+                                Neo Tournament 1x1 Finished
+                            </div>
+                            <div class="cart-text__sub">
+                                <img src="{% static 'img/icons/server1.png' %}" alt="">
+                                <p>CIS</p>
+                                <i class="fa-solid fa-circle"></i>
+                                <p>1x1</p>
+                                <i class="fa-solid fa-circle"></i>
+                                <p>Neo.Control Client</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-bottom">
+                    <div class="cart-row">
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                Reg in
+                            </div>
+                            <div class="cart__el__img">
+                                <img src="{% static 'img/icons/coin-green.svg' %}" alt="">
+                                <p class="red">10</p>
+                            </div>
+                        </div>
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                Prize
+                            </div>
+                            <div class="cart__el__img">
+                                <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                                <p>225</p>
+                            </div>
+                        </div>
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                Participants
+                            </div>
+                            <div class="cart__el__img cart__el__img-2">
+                                <img src="{% static 'img/icons/participants2.png' %}" alt="">
+                                <p>16/32</p>
+                            </div>
+                        </div>
+                        <div class="cart__el">
+                            <div class="cart__el__title">
+                                The tournament is over
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+{% endblock content %}

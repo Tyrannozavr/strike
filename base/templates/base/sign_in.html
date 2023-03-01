@@ -1,0 +1,36 @@
+{% extends 'base/sign_up.html' %}
+{% load static %}
+
+{% block content %}
+<section class="signin">
+    <div class="container-signin">
+        <a href="{% url 'index' %}" class="signin__logo">
+            <img src="{% static 'img/icons/logo-nav.svg' %}" alt="">
+        </a>
+        <div class="signin__cart">
+            <form action="">
+                <div class="input">
+                    <!-- <label for="login">Nickname</label> -->
+                    <input name="login" type="text" placeholder="Nickname" required>
+                </div>
+                <div class="input">
+                    <!-- <label for="password">Password</label> -->
+                    <input name="password" type="password" placeholder="Password" required>
+                </div>
+                <div class="signin__cart-text">
+                    Can't Sign in? <a href="">Recover account</a>
+                </div>
+                <a href="{% url 'login' %}" class="btn btn-signin">
+                    Sign In
+                </a>
+                <div class="signin__cart-wrapper">
+                    or
+                </div>
+                <a href="{% url 'sign_up' %}" class="btn btn-grey">
+                    Create Account
+                </a>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock content %}

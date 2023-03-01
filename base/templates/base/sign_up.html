@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/icons/logo-nav.svg" type="image/svg">
+
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    {% block content %}
+    <section class="signup">
+        <div class="container-signup">
+            <div class="signup-left">
+                <a href="{% url 'index' %}" class="signup__logo">
+                    <img src="{% static 'img/icons/logo-nav.svg' %}" alt="">
+                </a>
+                <div class="signup__cart">
+                    <form action="">
+                        <div class="input">
+                            <!-- <label for="login">Nickname</label> -->
+                            <input name="email" type="email" placeholder="Email" required>
+                        </div>
+                        <div class="input">
+                            <!-- <label for="login">Nickname</label> -->
+                            <input name="login" type="text" placeholder="Nickname" required>
+                        </div>
+                        <div class="input">
+                            <!-- <label for="password">Password</label> -->
+                            <input name="password" type="password" placeholder="Password" required>
+                        </div>
+                        <div class="input">
+                            <!-- <label for="password">Password</label> -->
+                            <input name="ref" type="text" placeholder="Referal Code">
+                        </div>
+    
+                        <div class="input input-checkbox">
+                            <input type="checkbox" required>
+                            <p>I accept <a href="{% url 'policy' %}">Terms of the privacy policy</a></p>
+                        </div>
+                        <div class="input input-checkbox">
+                            <input type="checkbox" required>
+                            <p>I accept<a href="{% url 'terms' %}">Terms of Use</a></p>
+                        </div>
+                        <button href="{% url 'sign_up' %}" class="btn btn-signin">
+                            Create Account
+                        </button>
+                        <div class="signin__cart-wrapper">
+                            or
+                        </div>
+                        <a href="{% url 'login' %}" class="btn btn-grey">
+                            Sign In
+                        </a>
+                    </form>
+                </div>
+            </div>
+            <div class="signup-right">
+                <div class="signup__title">
+                    Welcome to Neo.Control
+                </div>
+                <div class="signup__subtitle">
+                    Fast & Fun Activities with a GREAT Prizes and Rewards  - EVERYDAY!!
+                    <br>
+                    <br>
+                    Reg-In and START rigth NOW!!!
+                </div>
+                <div class="signup__social">
+                    <p>YOU CAN alco CHECK: </p>
+                    <span>Project INFO and GOALS - <a href="{% url 'policy' %}">Link</a></span>
+                    <span>OUR DISCORD Community</span>
+                    <a href="https://discord.com/invite/xaY6889" class="btn btn-discord">
+                        <i class="fa-brands fa-discord"></i>
+                        <p>Discord</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock content %}
+</body>
+</html>

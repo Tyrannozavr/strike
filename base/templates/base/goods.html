@@ -1,0 +1,83 @@
+{% extends 'base/main.html' %}
+{% load static %}
+
+{% block title %}
+    Shop
+{% endblock title %}
+
+{% block active_nav-shop %}
+nav-links__item-active
+{% endblock active_nav-shop %}
+
+
+{% block content %}
+    <div class="goods">
+        <div class="goods-first">
+            <a href="{% url 'steam' %}">
+                <div class="goods__cart goods__cart-coins">
+                </div>
+                <div class="goods__title">
+                    Neo points
+                </div>
+                <div class="goods__text">
+                    NEO Points is the main currency on our platform, which you can play for, buy skins and cool gaming devices.
+                </div>
+                <div class="goods__see">
+                    see all
+                </div>
+            </a>
+            <a href="{% url 'skins' %}" class="skins">
+                <div class="goods__cart goods__cart-skins">
+                </div>
+                <div class="goods__title">
+                    cs:go skins
+                </div>
+                <div class="goods__text">
+                    Large selection of skins and devices for every taste. Our products are constantly replenished, visit us often!
+                </div>
+                <div class="goods__see">
+                    see all
+                </div>
+            </a>
+        </div>
+        <div class="goods-second">
+            <a href="{% url 'steam' %}">
+                <div class="goods__cart goods__cart-mouse"></div>
+                <div class="goods__title">
+                    mouse
+                </div>
+                <div class="goods__see">See all</div>
+            </a>
+            <a href="{% url 'steam' %}">
+                <div class="goods__cart goods__cart-head"></div>
+                <div class="goods__title">
+                    headsets
+                </div>
+                <div class="goods__see">See all</div>
+            </a>
+            <a href="{% url 'steam' %}">
+                <div class="goods__cart goods__cart-keyboard"></div>
+                <div class="goods__title">
+                    keyboard
+                </div>
+                <div class="goods__see">See all</div>
+            </a>
+            <a href="{% url 'steam' %}">
+                <div class="goods__cart goods__cart-monitors"></div>
+                <div class="goods__title">
+                    monitors
+                </div>
+                <div class="goods__see">See all</div>
+            </a>
+        </div>
+        <div class="goods-second">
+            <a href="{% url 'steam' %}">
+                <div class="goods__cart goods__cart-chairs"></div>
+                <div class="goods__title">
+                    chairs
+                </div>
+                <div class="goods__see">See all</div>
+            </a>
+        </div>
+    </div>
+{% endblock content %}
