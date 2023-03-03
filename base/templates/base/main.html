@@ -321,7 +321,7 @@
                     </div>
                     <div class="list__friends-search__search">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" class="input-search" placeholder="Nickname...">
+                        <input type="text" id="hello" class="input-search" placeholder="Nickname...">
                     </div>
                     <div class="list__friends-content__bottom">
                         <a href="tounaments.html" class="list__friends-content__bottom-item">
@@ -482,7 +482,7 @@
     {% block js %}
     {% endblock js %}
     <script src="{% static 'js/nav.script.js' %}"></script>
-    <script src="{% static 'js/dropcs.script.js' %}"></script>
+    <script src="{% static 'js/dropcs.script.js' %}?{{ now }}"></script>
     {% if user.is_authenticated %}
         <script src="{% static 'js/friends.script.js' %}"></script>
     {% endif %}
