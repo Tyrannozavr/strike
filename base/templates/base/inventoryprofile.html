@@ -1,0 +1,16 @@
+{% extends 'base/profile.html' %}
+{% load static %}
+
+{% block active_inventory %}active{% endblock active_inventory %}
+{% block active_profile %}{% endblock active_profile %}
+
+{% block content_profile %}
+<div class="profile__inventory">
+  <div class="profile__inventory-text">My items</div>
+  <div class="profile__inventory-descr">
+    There are no items in the inventory yet. You can find them in the
+    store or earn them in hot battles!
+  </div>
+</div>
+{% endblock content_profile %}
+

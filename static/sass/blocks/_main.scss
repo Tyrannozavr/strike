@@ -38,6 +38,8 @@ main {
     @import 'main/tournaments/main';
     @import 'main/tournaments/info';
     @import 'main/tournaments/info-active';
+    @import 'main/profile/main';
+    @import 'main/profile/profile';
 
     @media (max-width: 1024px) {
         width: 100%;

@@ -21,22 +21,23 @@
                     <img src="{% static 'img/icons/logo-nav.svg' %}" alt="">
                 </a>
                 <div class="signup__cart">
-                    <form action="">
+                    <form method="POST" action="" >
+                        {% csrf_token %}
                         <div class="input">
                             <!-- <label for="login">Nickname</label> -->
-                            <input name="email" type="email" placeholder="Email" required>
+                            {{form.username}}
                         </div>
                         <div class="input">
                             <!-- <label for="login">Nickname</label> -->
-                            <input name="login" type="text" placeholder="Nickname" required>
+                            {{form.email}}
                         </div>
                         <div class="input">
                             <!-- <label for="password">Password</label> -->
-                            <input name="password" type="password" placeholder="Password" required>
+                            {{form.password1}}
                         </div>
                         <div class="input">
                             <!-- <label for="password">Password</label> -->
-                            <input name="ref" type="text" placeholder="Referal Code">
+                            {{form.password2}}
                         </div>
     
                         <div class="input input-checkbox">
@@ -47,7 +48,7 @@
                             <input type="checkbox" required>
                             <p>I accept<a href="{% url 'terms' %}">Terms of Use</a></p>
                         </div>
-                        <button href="{% url 'sign_up' %}" class="btn btn-signin">
+                        <button class="btn btn-signin">
                             Create Account
                         </button>
                         <div class="signin__cart-wrapper">
@@ -56,6 +57,7 @@
                         <a href="{% url 'login' %}" class="btn btn-grey">
                             Sign In
                         </a>
+                        {{form.errors}}
                     </form>
                 </div>
             </div>
@@ -82,5 +84,12 @@
         </div>
     </section>
     {% endblock content %}
+    <script>
+        var form_fields = document.getElementsByTagName('input')
+        form_fields[1].placeholder = 'Username';
+        form_fields[2].placeholder = 'Email';
+        form_fields[3].placeholder = 'Password';
+        form_fields[4].placeholder = 'Password Confirmation';
+    </script>
 </body>
 </html>

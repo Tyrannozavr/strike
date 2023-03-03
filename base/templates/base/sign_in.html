@@ -8,27 +8,31 @@
             <img src="{% static 'img/icons/logo-nav.svg' %}" alt="">
         </a>
         <div class="signin__cart">
-            <form action="">
+            <form method="POST" action="">
+                {% csrf_token %}
                 <div class="input">
                     <!-- <label for="login">Nickname</label> -->
-                    <input name="login" type="text" placeholder="Nickname" required>
+                    <input name="username" type="text" placeholder="Nickname">
                 </div>
                 <div class="input">
                     <!-- <label for="password">Password</label> -->
-                    <input name="password" type="password" placeholder="Password" required>
+                    <input name="password" type="password" placeholder="Password">
                 </div>
                 <div class="signin__cart-text">
                     Can't Sign in? <a href="">Recover account</a>
                 </div>
-                <a href="{% url 'login' %}" class="btn btn-signin">
+                <button class="btn btn-signin">
                     Sign In
-                </a>
+                </button>
                 <div class="signin__cart-wrapper">
                     or
                 </div>
                 <a href="{% url 'sign_up' %}" class="btn btn-grey">
                     Create Account
                 </a>
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
             </form>
         </div>
     </div>

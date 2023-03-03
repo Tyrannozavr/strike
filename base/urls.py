@@ -23,6 +23,18 @@ urlpatterns = [
     path('terms/', views.terms, name="terms"),
     path('policy/', views.policy, name="policy"),
     path('steam/', views.steam, name="steam"),
-    path('login/', views.login, name="login"),
-    path('sign_up/', views.sign_up, name="sign_up")
+    path('login/', views.loginPage, name="login"),
+    path('logout/', views.logoutUser, name="logout"),
+    path('sign_up/', views.sign_up, name="sign_up"),
+    path('profile/<str:pk>/', views.profile, name="profile"),
+    path('friends/<str:pk>/', views.profile_friends, name="friends"),
+    path('requests/<str:pk>/', views.profile_requests, name="requests"),
+    path('subscribers/<str:pk>/', views.profile_subscribers, name="subscribers"),
+    path('subscriptions/<str:pk>/', views.profile_subscriptions, name="subscriptions"),
+    path('blocked/<str:pk>/', views.profile_block, name="block"),
+    path('skins/<str:pk>/', views.profile_skins, name="skins"),
+    path('inventory/<str:pk>/', views.profile_inv, name="inv"),
+    path('program/<str:pk>/', views.profile_prog, name="prog"),
+    path('settings/<str:pk>/', views.profile_settings, name="settings"),
+
     ]

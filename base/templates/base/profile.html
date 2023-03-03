@@ -1,0 +1,257 @@
+{% extends 'base/main.html' %}
+{% load static %}
+
+{% block title %}
+  {{user.username}}
+{% endblock title %}
+
+{% block content %}
+  <div class="profile">
+    <div class="profile__nav">
+      <a href="{% url 'profile' user.id %}" class="profile__nav-link" >
+        <div class="profile__nav-link__text {% block active_profile %}active{% endblock active_profile %}">Profile</div>
+      </a>
+
+      <a href="{% url 'friends' user.id %}" class="profile__nav-link">
+        <div class="profile__nav-link__text {% block active_friends %}{% endblock active_friends %}">Friends</div>
+      </a>
+
+      <a href="{% url 'skins' user.id %}" class="profile__nav-link">
+        <div class="profile__nav-link__text {% block active_skins %}{% endblock active_skins %}">CS:GO Skins</div>
+      </a>
+
+      <a href="{% url 'inv' user.id %}" class="profile__nav-link">
+        <div class="profile__nav-link__text {% block active_inv %}{% endblock active_inv %}">Inventory</div>
+      </a>
+      {% if request.user == user %}
+      <a href="{% url 'prog' user.id %}" class="profile__nav-link">
+        <div class="profile__nav-link__text {% block active_prog %}{% endblock active_prog %}">Affiliate program</div>
+      </a>
+
+      <a href="{% url 'settings' user.id %}" class="profile__nav-link">
+        <div class="profile__nav-link__text {% block active_settings %}{% endblock active_settings %}">Settings</div>
+      </a>
+    </div>
+      {% endif %}
+
+    <div class="profile__main">
+      <div class="profile__main__content">
+        <a href="{% url 'steam' %}">
+          <div class="profile__main__content-btn">Change cover</div></a
+        >
+        <div class="profile__main__content-logo">
+          <a
+            href="{% url 'steam' %}"
+            class="profile__main__content-logo__img"
+          ></a>
+        </div>
+        <div class="profile__main__content__nickname">@{{user.username}}</div>
+        <div class="profile__main__content__level">1</div>
+      </div>
+    </div>
+    {% block content_profile %}
+      <div class="profile__main__stat">
+        <div class="profile__main__stat-item">
+          <div class="profile__main__stat-item__text">Matches played</div>
+          <div class="profile__main__stat-item__itemnum">
+            <div class="profile__main__stat-item__itemnum-number">0</div>
+          </div>
+        </div>
+
+        <div class="profile__main__stat-item">
+          <div class="profile__main__stat-item__text">Favorit weapon</div>
+          <div class="profile__main__stat-item__itemnum">
+            <div class="profile__main__stat-item__itemnum-number">
+              <img src="{% static 'img/defuse.png' %}" alt="defuse" />
+            </div>
+          </div>
+        </div>
+
+        <div class="profile__main__stat-item">
+          <div class="profile__main__stat-item__text">Winrate</div>
+          <div class="profile__main__stat-item__itemnum">
+            <div class="profile__main__stat-item__itemnum-number">0%</div>
+          </div>
+        </div>
+
+        <div class="profile__main__stat-item">
+          <div class="profile__main__stat-item__text">Headshot rate</div>
+          <div class="profile__main__stat-item__itemnum">
+            <div
+              class="profile__main__stat-item__itemnum-number profile__main__stat-item__itemnum-number"
+            >
+              0%
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile__program">
+        <div class="profile__program-bgc">
+          <div class="profile__program-bgc-title">Affiliate Program</div>
+          <div class="profile__program-bgc-descr">
+            Bring your friends and earn up to 10% of their winnings!
+          </div>
+
+          <div
+            class="profile__program-bgc-img profile__program-bgc-img__men"
+          >
+            <img src="{% static 'img/vb.webp' %}" alt="women" />
+          </div>
+          <div
+            class="profile__program-bgc-img profile__program-bgc-img__women"
+          >
+            <img src="{% static 'img/vg.webp' %}" alt="women" />
+          </div>
+          <div class="profile__program-bgc__referal">
+            <div class="profile__program-bgc__referal-wrapper">
+              <div class="profile__program-bgc__referal-wrapper__left">
+                <div
+                  class="profile__program-bgc__referal-wrapper__left-text"
+                >
+                  Referral link
+                </div>
+
+                <input
+                  class="profile__program-bgc__referal-wrapper__left-input"
+                  placeholder="link..."
+                  type="text"
+                />
+
+                <div
+                  class="profile__program-bgc__referal-wrapper__left-descr"
+                >
+                  Copy the link and send it to a friend <br />
+                  or subscribers. When registering <br />
+                  using the link, they will become your <br />
+                  referrals.
+                </div>
+              </div>
+
+              <div class="profile__program-bgc__referal-wrapper__right">
+                <div
+                  class="profile__program-bgc__referal-wrapper__right-text"
+                >
+                  Referral code
+                </div>
+
+                <input
+                  class="profile__program-bgc__referal-wrapper__right-input"
+                  placeholder="link..."
+                  type="text"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile__down">
+        <div class="profile__down__wrapper">
+          <div class="profile__down__wrapper-left">
+            <div class="profile__down__wrapper-left__text">
+              <div class="profile__down__wrapper-left__text-title">
+                Friends
+              </div>
+              <a
+                href="/profilefriends.html"
+                class="profile__down__wrapper-left__text-link"
+                >All friends</a
+              >
+            </div>
+            <div class="profile__down__wrapper-left__card">
+              <a
+                href="/profile.html"
+                class="profile__down__wrapper-left__card-user"
+              >
+                <img src="{% static 'img/icons/avatar5.jpg' %}" alt="5" />
+                <div class="profile__down__wrapper-left__card-name">
+                  sofi12
+                </div>
+                <div class="profile__down__wrapper-left__card__actions">
+                  <div
+                    class="profile__down__wrapper-left__card__actions__add"
+                  >
+                    <i class="fa-solid fa-plus"></i>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="profile__down__wrapper-left__report">Reports</div>
+            <a class="profile__down__wrapper-left__viewbtn">View</a>
+          </div>
+          <div class="profile__down__wrapper-center">
+            <div class="profile__down__wrapper-center__text">Stats</div>
+            <div class="profile__down__wrapper-center__rank">Bronze 1</div>
+            <div class="profile__down__wrapper-center__line"></div>
+            <div class="profile__down__wrapper-center__wrapstat">
+              <div class="profile__down__wrapper-center__wrapstat-col1">
+                <div
+                  class="profile__down__wrapper-center__wrapstat-col1-text"
+                >
+                  Kills 0
+                </div>
+                <div
+                  class="profile__down__wrapper-center__wrapstat-col1-text"
+                >
+                  Deaths 0
+                </div>
+                <div
+                  class="profile__down__wrapper-center__wrapstat-col1-text"
+                >
+                  Asists 0
+                </div>
+              </div>
+              <div class="profile__down__wrapper-center__wrapstat-col2">
+                <div
+                  class="profile__down__wrapper-center__wrapstat-col2-text"
+                >
+                  Wins 0
+                </div>
+                <div
+                  class="profile__down__wrapper-center__wrapstat-col2-text"
+                >
+                  B.map -
+                </div>
+                <div
+                  class="profile__down__wrapper-center__wrapstat-col2-text"
+                >
+                  W.map -
+                </div>
+              </div>
+            </div>
+            <div class="profile__down__wrapper-center__line"></div>
+            <div class="profile__down__wrapper-center__descr">
+              RATING 1.0 Play at least 20 games to see the story of elo
+            </div>
+            <div class="profile__down__wrapper-center__img">
+              <img src="{% static 'img/stat.png' %}" alt="stat" />
+            </div>
+            <div class="profile__down__wrapper-center__hist">
+              Match History
+            </div>
+            <a href="{% url 'steam' %}" class="profile__down__wrapper-center__histbtn"
+              >View all matches</a
+            >
+          </div>
+
+          <div class="profile__down__wrapper-right">
+            <div class="profile__down__wrapper-right__title">
+              Promo codes
+            </div>
+            <div class="profile__down__wrapper-right__input">
+              <input placeholder="Enter the code" type="text" />
+            </div>
+            <a class="profile__down__wrapper-right__btn">Use</a>
+            <div class="profile__down__wrapper-right__text">Team</div>
+            <div class="profile__down__wrapper-right__descr">
+              You're not on any team. Create your own team or join an
+              existing one to discover team tournaments and events
+            </div>
+            <a href="{% url 'steam' %}" class="profile__down__wrapper-right__btn2">Create team</a>
+          </div>
+        </div>
+      </div>
+    {% endblock content_profile %}
+  </div>
+{% endblock content %}

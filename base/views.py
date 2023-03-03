@@ -1,4 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm
+from .forms import CreateUserForm
+from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
+
 
 # Create your views here.
 def index(request):
@@ -56,10 +62,125 @@ def policy(request):
     return render(request, 'base/policy.html')
 
 def steam(request):
-    return render(request, 'base/steam.html')
+    if request.user.is_authenticated:
+        return render(request, 'base/steam.html')
+    else:
+        return redirect('login')
 
-def login(request):
-    return render(request, 'base/sign_in.html')
+def loginPage(request):
+    if request.user.is_authenticated:
+        return redirect('index')
+    else:
+        
+        if request.method == 'POST':
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('index')
+            else:
+                messages.info(request, 'Username or password is incorrect')
+        return render(request, 'base/sign_in.html')
+
+def logoutUser(request):
+    logout(request)
+    return redirect('index')
 
 def sign_up(request):
-    return render(request, 'base/sign_up.html')
+    if request.user.is_authenticated:
+        return redirect('index')
+    else:
+        
+        form = CreateUserForm()
+        
+        if request.method == 'POST':
+            form = CreateUserForm(request.POST)
+            if form.is_valid():
+                user = form.save(commit=False)
+                user.username = user.username.lower()
+                form.save()
+                user = form.cleaned_data.get('username')
+                messages.success(request, 'Account was created for ' + user)
+                return redirect('login')
+        context = {'form': form}
+        return render(request, 'base/sign_up.html', context)
+
+
+def profile(request, pk):
+    if request.user.is_authenticated:
+        user = User.objects.get(id=pk)
+        context = {'user': user}
+        return render(request, 'base/profile.html', context)
+    else:
+        return redirect('login')
+def profile_friends(request, pk):
+    if request.user.is_authenticated:
+        user = User.objects.get(id=pk)
+        context = {'user': user}
+        return render(request, 'base/profilefriends.html', context)
+    else:
+        return redirect('login')
+def profile_requests(request, pk):
+    if request.user.is_authenticated:
+        user = User.objects.get(id=pk)
+        context = {'user': user}
+        return render(request, 'base/requests.html', context)
+    else:
+        return redirect('login')
+def profile_subscribers(request, pk):
+    if request.user.is_authenticated:
+        user = User.objects.get(id=pk)
+        context = {'user': user}
+        return render(request, 'base/subscribers.html', context)
+    else:
+        return redirect('login')
+def profile_subscriptions(request, pk):
+    if request.user.is_authenticated:
+        user = User.objects.get(id=pk)
+        context = {'user': user}
+        return render(request, 'base/subscriptions.html', context)
+    else:
+        return redirect('login')
+def profile_block(request, pk):
+    if request.user.is_authenticated:
+        user = User.objects.get(id=pk)
+        context = {'user': user}
+        return render(request, 'base/block.html', context)
+    else:
+        return redirect('login')
+def profile_block(request, pk):
+    if request.user.is_authenticated:
+        user = User.objects.get(id=pk)
+        context = {'user': user}
+        return render(request, 'base/block.html', context)
+    else:
+        return redirect('login')
+def profile_skins(request, pk):
+    if request.user.is_authenticated:
+        user = User.objects.get(id=pk)
+        context = {'user': user}
+        return render(request, 'base/csskinsprofile.html', context)
+    else:
+        return redirect('login')
+def profile_inv(request, pk):
+    if request.user.is_authenticated:
+        user = User.objects.get(id=pk)
+        context = {'user': user}
+        return render(request, 'base/inventoryprofile.html', context)
+    else:
+        return redirect('login')
+def profile_prog(request, pk):
+    if request.user.is_authenticated:
+        user = User.objects.get(id=pk)
+        context = {'user': user}
+        return render(request, 'base/programprofile.html', context)
+    else:
+        return redirect('login')
+def profile_settings(request, pk):
+    if request.user.is_authenticated:
+        user = User.objects.get(id=pk)
+        context = {'user': user}
+        return render(request, 'base/settingsprofile.html', context)
+    else:
+        return redirect('login')

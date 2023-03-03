@@ -1,0 +1,67 @@
+{% extends 'base/profile.html' %}
+{% load static %}
+
+{% block active_inventory %}active{% endblock active_inventory %}
+{% block active_profile %}{% endblock active_profile %}
+
+{% block content_profile %}
+<div class="profile__program">
+  <div class="profile__program-bgc">
+    <div class="profile__program-bgc-title">Affiliate Program</div>
+    <div class="profile__program-bgc-descr">
+      Bring your friends and earn up to 10% of their winnings!
+    </div>
+
+    <div
+      class="profile__program-bgc-img profile__program-bgc-img__men"
+    >
+      <img src="{% static '/img/vb.webp' %}" alt="women" />
+    </div>
+    <div
+      class="profile__program-bgc-img profile__program-bgc-img__women"
+    >
+      <img src="{% static '/img/vg.webp' %}" alt="women" />
+    </div>
+    <div class="profile__program-bgc__referal">
+      <div class="profile__program-bgc__referal-wrapper">
+        <div class="profile__program-bgc__referal-wrapper__left">
+          <div
+            class="profile__program-bgc__referal-wrapper__left-text"
+          >
+            Referral link
+          </div>
+
+          <input
+            class="profile__program-bgc__referal-wrapper__left-input"
+            placeholder="link..."
+            type="text"
+          />
+
+          <div
+            class="profile__program-bgc__referal-wrapper__left-descr"
+          >
+            Copy the link and send it to a friend <br />
+            or subscribers. When registering <br />
+            using the link, they will become your <br />
+            referrals.
+          </div>
+        </div>
+
+        <div class="profile__program-bgc__referal-wrapper__right">
+          <div
+            class="profile__program-bgc__referal-wrapper__right-text"
+          >
+            Referral code
+          </div>
+
+          <input
+            class="profile__program-bgc__referal-wrapper__right-input"
+            placeholder="link..."
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content_profile %}

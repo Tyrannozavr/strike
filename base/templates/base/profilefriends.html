@@ -1,0 +1,52 @@
+{% extends 'base/profile.html' %}
+{% load static %}
+
+{% block active_friends %}active{% endblock active_friends %}
+{% block active_profile %}{% endblock active_profile %}
+
+{% block content_profile %}
+  <div class="profile__main-menu">
+    <a href="{% url 'friends' user.id %}" class="profile__main-menu__link"
+      >ALL</a
+    >
+    {% if request.user == user %}
+    <a href="{% url 'requests' user.id %}" class="profile__main-menu__link"
+      >MY REQUESTS</a
+    >
+    {% endif %}
+    <a href="{% url 'subscribers' user.id %}" class="profile__main-menu__link"
+      >SUBSCRIBERS</a
+    >
+    <a href="{% url 'subscriptions' user.id %}" class="profile__main-menu__link"
+      >SUBSCRIPTIONS</a
+    >
+    {% if request.user == user %}
+    <a href="{% url 'block' user.id %}" class="profile__main-menu__link">BLOCKED</a>
+  </div>
+  {% endif %}
+  <div class="profile__main__line"></div>
+
+  {% block content_friends %}
+    <div class="profile__main-friends">
+      {% comment %} <div class="list__friends-content__list-item">
+        <a href="profile.html" class="list__friends-content__list-item-user">
+            <img src="{% static 'img/icons/avatar.avif' %}" alt="">
+            <div class="list__friends-content__list-item__name">
+                alexander2231
+            </div>
+        </a>
+        <div class="list__friends-content__list-item-actions">
+            <div class="list__friends-content__list-item__del">
+                <i class="fa-solid fa-trash"></i>
+            </div>
+            <a href="{% url 'steam' %}" class="list__friends-content__list-item__invite">
+                <i class="fa-solid fa-user-plus"></i>
+            </a>
+        </div>
+      </div> {% endcomment %}
+      <div class="profile__main-friends__text">
+        You don't have any friends yet...
+      </div>
+    </div>
+  {% endblock content_friends %}
+{% endblock content_profile %}

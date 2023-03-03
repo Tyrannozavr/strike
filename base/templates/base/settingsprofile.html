@@ -1,0 +1,86 @@
+{% extends 'base/profile.html' %}
+{% load static %}
+
+{% block active_inventory %}active{% endblock active_inventory %}
+{% block active_profile %}{% endblock active_profile %}
+
+{% block content_profile %}
+<div class="profile__settings">
+  <div class="profile__settings__password">
+    <div class="profile__settings__password__text">
+      <div class="profile__settings__password__text-title">
+        Password
+      </div>
+      <div class="profile__settings__password__text-descr">
+        Be careful and never give your password to anybody! Attention!
+        Elo.pub staff will never ask you for your account password or
+        any account data!
+      </div>
+    </div>
+    <a href="{% url 'steam' %}" class="profile__settings__password-btn"
+      >Change password</a
+    >
+  </div>
+  <div class="profile__settings__line"></div>
+
+  <div class="profile__settings__password profile__settings__mail">
+    <div
+      class="profile__settings__password__text profile__settings__mail__text"
+    >
+      <div
+        class="profile__settings__password__text-title profile__settings__mail__text-title"
+      >
+        Email
+      </div>
+      <div
+        class="profile__settings__password__text-descr profile__settings__mail__text-descr"
+      >
+        Be careful and never give your email to anybody! Attention!
+        Elo.pub staff will never ask you for your account email or any
+        account data!
+      </div>
+    </div>
+    <a
+      href="{% url 'steam' %}"
+      class="profile__settings__password-btn profile__settings__mail-btn"
+      >Change email</a
+    >
+  </div>
+  <div class="profile__settings__line"></div>
+
+  <div class="profile__settings__password profile__settings__steam">
+    <div
+      class="profile__settings__password__text profile__settings__steam__text"
+    >
+      <div
+        class="profile__settings__password__text-title profile__settings__steam__text-title"
+      >
+        Steam
+      </div>
+    </div>
+    <a
+      href="{% url 'steam' %}"
+      class="profile__settings__password-btn profile__settings__steam-btn"
+      >Connect Steam</a
+    >
+  </div>
+  <div class="profile__settings__line"></div>
+
+  <div class="profile__settings__password">
+    <div class="profile__settings__password__text">
+      <div class="profile__settings__password__text-title">
+        SIGN OUT OF ACCOUNT
+      </div>
+      <div class="profile__settings__password__text-descr">
+        By clicking on the " Log out " button, you will be logged out,
+        your session will end and you will be redirected to the main
+        page.
+      </div>
+    </div>
+    <a href="{% url 'logout' %}" class="profile__settings__password-btn btn-log"
+      >Sign out of account</a
+    >
+  </div>
+  <div class="profile__settings__line"></div>
+</div>
+{% endblock content_profile %}

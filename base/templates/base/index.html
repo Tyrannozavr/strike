@@ -32,17 +32,17 @@
         <div class="swiper-wrapper">
             <!-- Slides -->
             <div class="swiper-slide">
-                <a href="">   
+                <a href="{% url 'create' %}">   
                     <img src="{% static 'img/banner.png' %}" alt="">
                 </a>
             </div>
             <div class="swiper-slide">
-                <a href="">   
+                <a href="{% url 'tournaments' %}">   
                     <img src="{% static 'img/slide3.png' %}" alt="">
                 </a>
             </div>
             <div class="swiper-slide">
-                <a href="">   
+                <a href="{% url 'skins' %}">   
                     <img src="{% static 'img/slide1.png' %}" alt="">
                 </a>
             </div>
@@ -54,7 +54,7 @@
         <div class="leagues-left">
             <div class="leagues-left__titles">
                 <h2>Leagues</h2>
-                <a href="#">All Leagues</a>
+                <a href="">All Leagues</a>
             </div>
             <div class="leagues-left__line">
                 <a href="">
@@ -145,7 +145,7 @@
             <div class="leagues-right__title">
                 <h2>Open lobbies</h2>
             </div>
-            <a href="">
+            <a href="{% url 'open' %}">
                 <div class="leagues-right__cart">
                     <div class="leagues-right__cart__title">
                         Try Yourself
@@ -161,101 +161,104 @@
         <div class="tournaments">
             <div class="tournaments-top">
                 <h2>Tournaments</h2>
-                <a href="">All tournaments</a>
+                <a href="{% url 'tournaments' %}">All tournaments</a>
             </div>
-            <a href=""></a>
-            <div class="tournaments__cart">
-                <div class="tournaments__cart__title">
-                    Neo Tournament 1x1 25.03.2023
-                </div>
-                <div class="tournaments__cart-elements">
-                    <div class="tournaments__cart-elements__server">
-                        <img src="{% static 'img/icons/server1.png' %}" alt="">
-                        <p>CIS</p>
+            <a href="{% url 'tournaments-info-active' %}">
+                <div class="tournaments__cart">
+                    <div class="tournaments__cart__title">
+                        Neo Tournament 1x1 25.03.2023
                     </div>
-                    <div class="tournaments__cart-elements__circle">
-                        <i class="fa-solid fa-circle"></i>
+                    <div class="tournaments__cart-elements">
+                        <div class="tournaments__cart-elements__server">
+                            <img src="{% static 'img/icons/server1.png' %}" alt="">
+                            <p>CIS</p>
+                        </div>
+                        <div class="tournaments__cart-elements__circle">
+                            <i class="fa-solid fa-circle"></i>
+                        </div>
+                        <div class="tournaments__cart-elements__people">
+                            1x1
+                        </div>
+                        <div class="tournaments__cart-elements__circle">
+                            <i class="fa-solid fa-circle"></i>
+                        </div>
+                        <div class="tournaments__cart-elements__client">
+                            Neo.Control Client
+                        </div>
                     </div>
-                    <div class="tournaments__cart-elements__people">
-                        1x1
+                    <div class="tournaments__cart__reg">
+                        Registration of participants
                     </div>
-                    <div class="tournaments__cart-elements__circle">
-                        <i class="fa-solid fa-circle"></i>
+                    <div class="tournaments__cart__line"></div>
+                    <div class="tournaments__cart__prelast">
+                        <p>Reg In</p>
+                        <p>Prize</p>
+                        <p>Participants</p>
                     </div>
-                    <div class="tournaments__cart-elements__client">
-                        Neo.Control Client
-                    </div>
-                </div>
-                <div class="tournaments__cart__reg">
-                    Registration of participants
-                </div>
-                <div class="tournaments__cart__line"></div>
-                <div class="tournaments__cart__prelast">
-                    <p>Reg In</p>
-                    <p>Prize</p>
-                    <p>Participants</p>
-                </div>
-                <div class="tournaments__cart__last">
-                    <div class="tournaments__cart__last-reg">
-                        <img src="{% static 'img/icons/coin-green.svg' %}" alt="">
-                        <p>50</p>
-                    </div>
-                    <div class="tournaments__cart__last-prize">
-                        <img src="{% static 'img/icons/coin.svg' %}" alt="">
-                        <p>100</p>
-                    </div>
-                    <div class="tournaments__cart__last-participants">
-                        <img src="{% static 'img/icons/participants.png' %}" alt="">
-                        <p>3/24</p>
-                    </div>
-                </div>
-            </div>
-            <div class="tournaments__cart">
-                <div class="tournaments__cart__title">
-                    Neo Tournament 1x1 25.03.2023
-                </div>
-                <div class="tournaments__cart-elements">
-                    <div class="tournaments__cart-elements__server">
-                        <img src="{% static 'img/icons/server1.png' %}" alt="">
-                        <p>CIS</p>
-                    </div>
-                    <div class="tournaments__cart-elements__circle">
-                        <i class="fa-solid fa-circle"></i>
-                    </div>
-                    <div class="tournaments__cart-elements__people">
-                        1x1
-                    </div>
-                    <div class="tournaments__cart-elements__circle">
-                        <i class="fa-solid fa-circle"></i>
-                    </div>
-                    <div class="tournaments__cart-elements__client">
-                        Neo.Control Client
+                    <div class="tournaments__cart__last">
+                        <div class="tournaments__cart__last-reg">
+                            <img src="{% static 'img/icons/coin-green.svg' %}" alt="">
+                            <p>50</p>
+                        </div>
+                        <div class="tournaments__cart__last-prize">
+                            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                            <p>100</p>
+                        </div>
+                        <div class="tournaments__cart__last-participants">
+                            <img src="{% static 'img/icons/participants.png' %}" alt="">
+                            <p>3/24</p>
+                        </div>
                     </div>
                 </div>
-                <div class="tournaments__cart__reg">
-                    Registration of participants
-                </div>
-                <div class="tournaments__cart__line"></div>
-                <div class="tournaments__cart__prelast">
-                    <p>Reg In</p>
-                    <p>Prize</p>
-                    <p>Participants</p>
-                </div>
-                <div class="tournaments__cart__last">
-                    <div class="tournaments__cart__last-reg">
-                        <img src="{% static 'img/icons/coin-green.svg' %}" alt="">
-                        <p>50</p>
+            </a>
+            <a href="{% url 'tournaments-info-active' %}">
+                <div class="tournaments__cart">
+                    <div class="tournaments__cart__title">
+                        Neo Tournament 1x1 25.03.2023
                     </div>
-                    <div class="tournaments__cart__last-prize">
-                        <img src="{% static 'img/icons/coin.svg' %}" alt="">
-                        <p>100</p>
+                    <div class="tournaments__cart-elements">
+                        <div class="tournaments__cart-elements__server">
+                            <img src="{% static 'img/icons/server1.png' %}" alt="">
+                            <p>CIS</p>
+                        </div>
+                        <div class="tournaments__cart-elements__circle">
+                            <i class="fa-solid fa-circle"></i>
+                        </div>
+                        <div class="tournaments__cart-elements__people">
+                            1x1
+                        </div>
+                        <div class="tournaments__cart-elements__circle">
+                            <i class="fa-solid fa-circle"></i>
+                        </div>
+                        <div class="tournaments__cart-elements__client">
+                            Neo.Control Client
+                        </div>
                     </div>
-                    <div class="tournaments__cart__last-participants">
-                        <img src="{% static 'img/icons/participants.png' %}" alt="">
-                        <p>2/24</p>
+                    <div class="tournaments__cart__reg">
+                        Registration of participants
+                    </div>
+                    <div class="tournaments__cart__line"></div>
+                    <div class="tournaments__cart__prelast">
+                        <p>Reg In</p>
+                        <p>Prize</p>
+                        <p>Participants</p>
+                    </div>
+                    <div class="tournaments__cart__last">
+                        <div class="tournaments__cart__last-reg">
+                            <img src="{% static 'img/icons/coin-green.svg' %}" alt="">
+                            <p>50</p>
+                        </div>
+                        <div class="tournaments__cart__last-prize">
+                            <img src="{% static 'img/icons/coin.svg' %}" alt="">
+                            <p>100</p>
+                        </div>
+                        <div class="tournaments__cart__last-participants">
+                            <img src="{% static 'img/icons/participants.png' %}" alt="">
+                            <p>2/24</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
         <div class="csdm">
             <div class="csdm__title"><h2>CSDM</h2></div>
@@ -283,7 +286,7 @@
                         <p>de_dust2</p>
                     </div>
                 </div>
-                <a href="" class="btn btn-connect">
+                <a href="{% url 'steam' %}" class="btn btn-connect">
                     Connect
                 </a>
                 <div class="csdm__cart-link">
@@ -317,7 +320,7 @@
                         <p>de_mirage</p>
                     </div>
                 </div>
-                <a href="" class="btn btn-connect">
+                <a href="{% url 'steam' %}" class="btn btn-connect">
                     Connect
                 </a>
                 <div class="csdm__cart-link">
@@ -397,7 +400,7 @@
                 <a href="">All offers</a>
             </div>
             <div class="balance-left-row">
-                <a href="">
+                <a href="{% url 'goods' %}">
                     <div class="balance-left__cart">
                         <div class="balance-left__cart__card">
                             <img src="{% static 'img/icons/coin.svg' %}" alt="">
@@ -419,7 +422,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="">
+                <a href="{% url 'goods' %}">
                     <div class="balance-left__cart">
                         <div class="balance-left__cart__card">
                             <img src="{% static 'img/icons/coin.svg' %}" alt="">
@@ -441,7 +444,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="">
+                <a href="{% url 'goods' %}">
                     <div class="balance-left__cart">
                         <div class="balance-left__cart__card">
                             <img src="{% static 'img/icons/coin.svg' %}" alt="">
@@ -476,7 +479,7 @@
                 <div class="balance-right__cart__text">
                     Activate promotinal codes and get skins, case keys, premium quests or currency Neo.Points/Neo.Rewards
                 </div>
-                <a href="" class="btn btn-activate">Activate</a>
+                <a href="{% url 'promo' %}" class="btn btn-activate">Activate</a>
             </div>
         </div>
     </section>
@@ -486,7 +489,7 @@
         </div>
         <div class="shop-wrapper">
             <div class="shop-left">
-                <a href="">
+                <a href="{% url 'goods' %}">
                     <div class="shop-left__cart">
                         <div class="shop-left__cart-wrapper">
                             <div class="shop-left__cart-img">
@@ -505,7 +508,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="">
+                <a href="{% url 'goods' %}">
                     <div class="shop-left__cart">
                         <div class="shop-left__cart-wrapper">
                             <div class="shop-left__cart-img">
@@ -524,7 +527,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="">
+                <a href="{% url 'goods' %}">
                     <div class="shop-left__cart">
                         <div class="shop-left__cart-wrapper">
                             <div class="shop-left__cart-img">
@@ -563,12 +566,12 @@
         <div class="swiper-wrapper">
             <!-- Slides -->
             <div class="swiper-slide">
-                <a href="">   
+                <a href="{% url 'matchmaking' %}">   
                     <img src="{% static 'img/slide4.png' %}" alt="">
                 </a>
             </div>
             <div class="swiper-slide">
-                <a href="">   
+                <a href="{% url 'goods' %}">   
                     <img src="{% static 'img/slide5.png' %}" alt="">
                 </a>
             </div>
