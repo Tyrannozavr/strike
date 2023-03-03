@@ -1,0 +1,120 @@
+{% extends 'base/main.html' %}
+{% load static %}
+
+{% block title %}
+    Leagues Info
+{% endblock title %}
+
+{% block active_nav-leagues %}
+nav-links__item-active
+{% endblock active_nav-leagues %}
+
+{% block content %}
+<div class="first">
+  <div class="first__leftpart">
+    <div class="first__leftpart__menu">
+      <a class="first__leftpart__menu-about" href="{% url 'ligi_info' %}">
+        <i class="icon fa-sharp fa-solid fa-flag"></i> About <br />
+        League
+      </a>
+      <a href="{% url 'rules' %}" class="first__leftpart__menu-rules"
+        ><i class="icon2 fa-sharp fa-solid fa-book-open"></i>Rules</a
+      >
+    </div>
+
+    <a class="first__leftpart__firstcard-btn"
+      >Season is over</a
+    >
+    <div class="first__leftpart-title">
+      February 16, 2023: TOP 10 of the day by number of games
+    </div>
+    <div class="first__leftpart-text">Participation</div>
+    <div class="first__leftpart-descr">Free</div>
+    <div class="first__leftpart-line"></div>
+
+    <div class="first__leftpart-text">PLACES WITH PRIZES</div>
+    <div class="first__leftpart-descr">10</div>
+    <div class="first__leftpart-line"></div>
+
+    <div class="first__leftpart-text">Participants</div>
+    <div class="first__leftpart-descr">12</div>
+    <div class="first__leftpart-line"></div>
+
+    <div class="first__leftpart-text">FORMAT</div>
+    <div class="first__leftpart-descr">1 vs 1</div>
+    <div class="first__leftpart-line"></div>
+
+    <div class="first__leftpart-text">SEASON IS OVER</div>
+    <div class="first__leftpart-descr">20.02.2023</div>
+    <div class="first__leftpart-line"></div>
+
+    <div class="first__leftpart-text">MINIMUM NUMBER OF MATCHES</div>
+    <div class="first__leftpart-descr">1</div>
+  </div>
+
+  <div class="first__rightpart">
+    <div class="first__rightpart__main-firstcard"></div>
+
+    <div class="first__rightpart-xelo">XELO !</div>
+    <div class="first__rightpart-xelodescr">
+      1х1 ladder with 1000 EP prize pool.
+    </div>
+    <div class="first__rightpart-work">
+      <div class="first__rightpart-work__text">How does it work?</div>
+      <ol>
+        <li class="first__rightpart-work__li">Register on Ladder</li>
+        <li class="first__rightpart-work__li">
+          Play Matchmaking matches 1x1 (on the main page)
+        </li>
+        <li class="first__rightpart-work__li">
+          For each win you will get +10 PTS. For lose also +10 PTS
+        </li>
+        <li class="first__rightpart-work__li">
+          The minimum amount of matches for getting a prise (for players
+          that are in TOP 10) - 1
+        </li>
+      </ol>
+    </div>
+
+    <div class="first__rightpart-prizesfirstcard">
+      <div class="first__rightpart-prizesfirstcard__text">Prizes</div>
+      <div class="first__rightpart-prizesfirstcard__descr">
+        1000 EP will be distributed among the TOP 10 players with most
+        number of matches(PTS). EP Distribution: 1000 EP > 1 - 10 places
+      </div>
+    </div>
+
+    <div class="first__rightpart-textrules">
+      <div class="first__rightpart-textrules__text">Main rules</div>
+      <ol>
+        <li class="first__rightpart-textrules__li">
+          No cheating. Otherwise you'll be banned. Abuse, fake matches,
+          and the use of platform vulnerabilities are prohibited
+        </li>
+        <li class="first__rightpart-textrules__li">
+          All games are played only according to the Elo-regulation
+        </li>
+
+        <li class="first__rightpart-textrules__li">
+          Prizes are added in ELO Points (EP) on your account. After
+          that you'll be able to exchange them or withdraw on your
+          Paypal Wallet.
+        </li>
+
+        <li class="first__rightpart-textrules__li">
+          Exchange rate 1 EURO = 70 ELO Points.
+        </li>
+
+        <li class="first__rightpart-textrules__li">
+          PayPal is our standard Withdrawal method. Visa / Mastercard
+          will be available soon.
+        </li>
+      </ol>
+    </div>
+    <div class="first__rightpart-start">
+      START AS SOLO, PROVE YOURSELF AND FARM YOUR <br />
+      ELO!
+    </div>
+  </div>
+</div>
+{% endblock content %}

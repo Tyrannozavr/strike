@@ -4,6 +4,7 @@ from .forms import CreateUserForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
+from .models import *
 
 
 # Create your views here.
@@ -184,3 +185,26 @@ def profile_settings(request, pk):
         return render(request, 'base/settingsprofile.html', context)
     else:
         return redirect('login')
+    
+def send_request(request, pk):
+    from_user = request.user
+    to_user = CustomUser.objects.get(id=pk)
+    frequest = FriendRequest.objects.get_or_create(from_user=from_user, to_user=to_user)
+    return redirect('friends')
+
+def accept_request(request, pk):
+    frequest = FriendRequest.objects.get(id=pk)
+    user1 = request.user
+    user2 = frequest.from_user
+    user1 = friends.add(user2)
+    user2 = friends.add(user1)
+    return redirect('friends')
+
+def ligi(request):
+    return render(request, 'base/league.html')
+
+def ligi_info(request):
+    return render(request, 'base/ligi-info.html')
+
+def rules(request):
+    return render(request, 'base/rules1.html')

@@ -36,5 +36,7 @@ urlpatterns = [
     path('inventory/<str:pk>/', views.profile_inv, name="inv"),
     path('program/<str:pk>/', views.profile_prog, name="prog"),
     path('settings/<str:pk>/', views.profile_settings, name="settings"),
-
+    path('leagues/', views.ligi, name="ligi"),
+    path('leagues-info/', views.ligi_info, name="ligi_info"),
+    path('rules/', views.rules, name="rules")
     ]

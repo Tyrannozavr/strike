@@ -1,0 +1,115 @@
+{% extends 'base/main.html' %}
+{% load static %}
+
+{% block title %}
+    Leagues
+{% endblock title %}
+
+{% block active_nav-leagues %}
+nav-links__item-active
+{% endblock active_nav-leagues %}
+
+{% block content %}
+<div class="ligi">
+  <a href="{% url 'ligi_info' %}" class="ligi__card">
+    <div class="ligi__card-title">
+      Weekly marathon: Battles for the games - 0 Ep
+    </div>
+    <div class="ligi__card-progress">League in progress</div>
+    <div class="ligi__card-format">Format</div>
+    <div class="ligi__card-formatdescr">1 vs 1</div>
+  </a>
+  <div class="ligi__banner">
+    <div class="ligi__banner-text">
+      Tournaments for players of any level are waiting for <br />you!
+    </div>
+    <div class="ligi__banner-descr">
+      Ranked tournaments are waiting for you! No boostersor cheaters.
+      Just you and <br />the opponent. Pure drive!
+    </div>
+  </div>
+
+  <div class="ligi__end">
+    <div class="ligi__end-title">Ended leagues</div>
+    <div class="ligi__end__wrapper">
+      <a href="{% url 'ligi_info' %}" class="ligi__card">
+        <div class="ligi__card-title">
+          February 20, 2023: TOP 10 of the day by number of games - 1000
+          ep
+        </div>
+        <div class="ligi__card-progress">Season is over</div>
+        <div class="ligi__card-format">Format</div>
+        <div class="ligi__card-formatdescr">1 vs 1</div>
+      </a>
+
+      <a href="{% url 'ligi_info' %}" class="ligi__card">
+        <div class="ligi__card-title">
+          February 19, 2023: TOP 10 of the day by number of games - 1000
+          ep
+        </div>
+        <div class="ligi__card-progress">Season is over</div>
+        <div class="ligi__card-format">Format</div>
+        <div class="ligi__card-formatdescr">1 vs 1</div>
+      </a>
+
+      <a href="{% url 'ligi_info' %}" class="ligi__card">
+        <div class="ligi__card-title">
+          February 18, 2023: TOP 10 of the day by number of games - 1000
+          ep
+        </div>
+        <div class="ligi__card-progress">Season is over</div>
+        <div class="ligi__card-format">Format</div>
+        <div class="ligi__card-formatdescr">1 vs 1</div>
+      </a>
+
+      <a href="{% url 'ligi_info' %}" class="ligi__card">
+        <div class="ligi__card-title">
+          February 17, 2023: TOP 10 of the day by number of games - 1000
+          ep
+        </div>
+        <div class="ligi__card-progress">Season is over</div>
+        <div class="ligi__card-format">Format</div>
+        <div class="ligi__card-formatdescr">1 vs 1</div>
+      </a>
+
+      <a href="{% url 'ligi_info' %}" class="ligi__card">
+        <div class="ligi__card-title">
+          February 16, 2023: TOP 10 of the day by number of games - 1000
+          ep
+        </div>
+        <div class="ligi__card-progress">Season is over</div>
+        <div class="ligi__card-format">Format</div>
+        <div class="ligi__card-formatdescr">1 vs 1</div>
+      </a>
+
+      <a href="{% url 'ligi_info' %}" class="ligi__card">
+        <div class="ligi__card-title">
+          February 15, 2023: TOP 10 of the day by number of games - 1000
+          ep
+        </div>
+        <div class="ligi__card-progress">Season is over</div>
+        <div class="ligi__card-format">Format</div>
+        <div class="ligi__card-formatdescr">1 vs 1</div>
+      </a>
+
+      <a href="{% url 'ligi_info' %}" class="ligi__card valen">
+        <div class="ligi__card-title">
+          Valentine's day elo.pub event 2023 - 0 ep
+        </div>
+        <div class="ligi__card-progress">Season is over</div>
+        <div class="ligi__card-format">Format</div>
+        <div class="ligi__card-formatdescr">Marathon</div>
+      </a>
+
+      <a href="{% url 'ligi_info' %}" class="ligi__card">
+        <div class="ligi__card-title">
+          February 14, 2023: TOP 10 of the day by number of games - 1000
+        </div>
+        <div class="ligi__card-progress">Season is over</div>
+        <div class="ligi__card-format">Format</div>
+        <div class="ligi__card-formatdescr">1 vs 1</div>
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock content %}

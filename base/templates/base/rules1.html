@@ -1,0 +1,115 @@
+{% extends 'base/main.html' %}
+{% load static %}
+
+{% block title %}
+    Rules
+{% endblock title %}
+
+{% block active_nav-leagues %}
+nav-links__item-active
+{% endblock active_nav-leagues %}
+
+{% block content %}
+<div class="first">
+  <div class="first__leftpart">
+    <div class="first__leftpart__menu">
+      <a class="first__leftpart__menu-about" href="{% url 'ligi_info' %}">
+        <i class="icon fa-sharp fa-solid fa-flag"></i> About <br />
+        League
+      </a>
+      <a href="{% url 'rules' %}" class="first__leftpart__menu-rules"
+        ><i class="icon2 fa-sharp fa-solid fa-book-open"></i>Rules</a
+      >
+    </div>
+
+    <a href="#" class="first__leftpart-btn">Join</a>
+    <div class="first__leftpart-title">
+      Weekly marathon: Battles for the games
+    </div>
+    <div class="first__leftpart-text">Participation</div>
+    <div class="first__leftpart-descr">Free</div>
+    <div class="first__leftpart-line"></div>
+
+    <div class="first__leftpart-text">PLACES WITH PRIZES</div>
+    <div class="first__leftpart-descr">10</div>
+    <div class="first__leftpart-line"></div>
+
+    <div class="first__leftpart-text">Participants</div>
+    <div class="first__leftpart-descr">121</div>
+    <div class="first__leftpart-line"></div>
+
+    <div class="first__leftpart-text">FORMAT</div>
+    <div class="first__leftpart-descr">1 vs 1</div>
+    <div class="first__leftpart-line"></div>
+
+    <div class="first__leftpart-text">SEASON WILL END IN:</div>
+    <div class="first__leftpart-descr">1 D. 3 h. 25 min.</div>
+    <div class="first__leftpart-line"></div>
+
+    <div class="first__leftpart-text">MINIMUM NUMBER OF MATCHES</div>
+    <div class="first__leftpart-descr">1</div>
+  </div>
+
+  <div class="first__rightpart">
+    <ol>
+      <li class="first__rightpart-rule">
+        The administration of the league reserves the right to act
+        outside the rules and in cases against the rules in order to
+        ensure a guarantee environment.
+      </li>
+      <li class="first__rightpart-rule">
+        Matches played and completed on the Elo.pub platform in 1v1
+        format are taken into account.
+      </li>
+      <li class="first__rightpart-rule">
+        Matches played in tournaments do not count towards league
+        points.
+      </li>
+      <li class="first__rightpart-rule">
+        Matches started and completed during the active phase of the
+        league are counted.
+      </li>
+      <li class="first__rightpart-rule">
+        You can join the league at any time during the active phase of
+        the league.
+      </li>
+      <li class="first__rightpart-rule">
+        Leaving the league after joining is not possible.
+      </li>
+      <li class="first__rightpart-rule">
+        Players can be excluded from the league by the Administration
+        for unilateral compliance with the platform rules.
+      </li>
+      <li class="first__rightpart-rule">
+        The transfer of the account by a third party is the basis for
+        exclusion from the league.
+      </li>
+      <li class="first__rightpart-rule">
+        Our leagues can be Global (for all regions) or Local (for
+        particular regions).
+      </li>
+      <li class="first__rightpart-rule">
+        Leagues can have an important rule - number of matches (minimum)
+        to get prizes for TOP places. Always check it out.
+      </li>
+      <li class="first__rightpart-rule">
+        Leagues can be focused only on Matchmaking matches (with
+        Reg-in).
+      </li>
+      <li class="first__rightpart-rule">
+        Prizes are distributed automatically (basically for TOP-10
+        players) and will be added to your account balance in 72 hours
+        after the league is finished.
+      </li>
+      <li class="first__rightpart-rule">
+        If all the league conditions are successfully completed and
+        there are no Elo-Regulation violations, the player will get a
+        Prize to his account balance.
+      </li>
+      <li class="first__rightpart-rule">
+        Play in our Leagues Fair and keep Focus! Good Luck on Elo.pub!
+      </li>
+    </ol>
+  </div>
+</div>
+{% endblock content %}
