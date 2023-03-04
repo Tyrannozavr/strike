@@ -3,7 +3,8 @@ from django.contrib.auth.forms import UserCreationForm
 from .forms import CreateUserForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
+from profiles.models import User
 from .models import *
 
 from time import time
@@ -149,7 +150,9 @@ def profile(request, pk):
 
 def profile_friends(request, pk):
     if request.user.is_authenticated:
+        print('user')
         user = User.objects.get(id=pk)
+        print('user', user)
         context = {'user': user}
         return render(request, 'base/profilefriends.html', context)
     else:

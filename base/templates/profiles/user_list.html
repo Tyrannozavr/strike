@@ -1,0 +1,24 @@
+{% load static %}
+{#    <link rel="stylesheet" href="{% static 'css/reset.css' %}">#}
+{#    <link rel="stylesheet" href="{% static 'css/styles.min.css' %}">#}
+
+<div class="list__friends-content__list-item">
+    {% for user in user_list %}
+    <div class="list__friends-content__list-item">
+        <a href="#" class="list__friends-content__list-item-user">
+            <img src="{{ user.image_url }}" alt="">
+            <div class="list__friends-content__list-item__name">
+                {{ user.username }}
+            </div>
+        </a>
+        <div class="list__friends-content__list-item-actions">
+            <div class="list__friends-content__list-item__del">
+                <i class="fa-solid fa-trash"></i>
+            </div>
+            <a href="{% url 'steam' %}" class="list__friends-content__list-item__invite">
+                <i class="fa-solid fa-user-plus"></i>
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+</div>

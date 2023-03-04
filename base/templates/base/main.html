@@ -7,140 +7,146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{% static 'img/icons/logo-nav.svg' %}" type="image/svg">
     <title>Neo Control - {% block title %}{% endblock title %}</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+          integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
     {% block swiper %}
     {% endblock swiper %}
     <link rel="stylesheet" href="{% static 'css/reset.css' %}">
     <link rel="stylesheet" href="{% static 'css/styles.min.css' %}">
 </head>
 <body>
-    <section class="dropcs">
-        <div class="dropcs__top">
-            <div class="dropcs__top-cross">
-                <i class="fa-solid fa-xmark"></i>
+<section class="dropcs">
+    <div class="dropcs__top">
+        <div class="dropcs__top-cross">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        GAME SELECTION
+    </div>
+    <div class="dropcs__games">
+        <div class="csgo"><img src="{% static 'img/cs.jpg' %}" alt="csgo"></div>
+        <div class="dota"><img src="{% static 'img/dota.jpg' %}" alt="dota"></div>
+        <div class="apex"><img src="{% static 'img/apex.jpg' %}" alt="apex"></div>
+        <div class="league"><img src="{% static 'img/league.jpg' %}" alt="league"></div>
+        <div class="valorant"><img src="{% static 'img/valorant.jpg' %}" alt="valorant"></div>
+    </div>
+    <div class="dropcs__logo">
+        <img src="{% static 'img/icons/cs_small.svg' %}" alt="">
+    </div>
+    <div class="dropcs__text">
+        The game pits two teams, Terrorists and Counter-Terrorists, against each other in different objective-based game
+        modes. The most common game modes involve the Terrorists planting a bomb while Counter-Terrorists attempt to
+        stop them, or Counter-Terrorists attempting to rescue hostages that the Terrorists have captured.
+    </div>
+</section>
+
+<div class="container-small">
+    <section class="small">
+        <div class="small__all">
+            <div class="small__all__el">
+                <i class="fa-solid fa-user-group"></i>
             </div>
-            GAME SELECTION
-        </div>
-        <div class="dropcs__games">
-            <div class="csgo"><img src="{% static 'img/cs.jpg' %}" alt="csgo"></div>
-            <div class="dota"><img src="{% static 'img/dota.jpg' %}" alt="dota"></div>
-            <div class="apex"><img src="{% static 'img/apex.jpg' %}" alt="apex"></div>
-            <div class="league"><img src="{% static 'img/league.jpg' %}" alt="league"></div>
-            <div class="valorant"><img src="{% static 'img/valorant.jpg' %}" alt="valorant"></div>
-        </div>
-        <div class="dropcs__logo">
-            <img src="{% static 'img/icons/cs_small.svg' %}" alt="">
-        </div>
-        <div class="dropcs__text">
-            The game pits two teams, Terrorists and Counter-Terrorists, against each other in different objective-based game modes. The most common game modes involve the Terrorists planting a bomb while Counter-Terrorists attempt to stop them, or Counter-Terrorists attempting to rescue hostages that the Terrorists have captured.
+            <div class="small__all__el">
+                <i class="fa-solid fa-bars"></i>
+            </div>
         </div>
     </section>
+</div>
 
-    <div class="container-small">
-        <section class="small">
-            <div class="small__all">
-                <div class="small__all__el">
-                    <i class="fa-solid fa-user-group"></i>
+<section class="back">
+    <header class="header">
+        <div class="container-top">
+            <div class="header-top">
+                <div class="header-top__logo">
+                    <img src="{% static 'img/icons/logo-nav.svg' %}" alt="">
                 </div>
-                <div class="small__all__el">
-                    <i class="fa-solid fa-bars"></i>
+                <div class="header-top__logo header-top__logo-2">
+                    <img src="{% static 'img/icons/CSGO_S9.webp' %}" alt="">
                 </div>
             </div>
-        </section>
-    </div>
-
-    <section class="back">
-        <header class="header">
-            <div class="container-top">
-                <div class="header-top">
-                    <div class="header-top__logo">
-                        <img src="{% static 'img/icons/logo-nav.svg' %}" alt="">
+        </div>
+        <div class="container-nav">
+            <nav class="nav">
+                <div class="nav-links">
+                    <div class="nav-links__item {% block active_nav-main %}{% endblock active_nav-main %}">
+                        <a href="{% url 'index' %}">
+                            <i class="fa-solid fa-house"></i>
+                            Main
+                        </a>
                     </div>
-                    <div class="header-top__logo header-top__logo-2">
-                        <img src="{% static 'img/icons/CSGO_S9.webp' %}" alt="">
+                    <div class="nav-links__item nav-links__item-a nav-links__item-d
+                            {% block active_nav-play %}{% endblock active_nav-play %}">
+                        <a>
+                            <i class="fa-solid fa-location-crosshairs"></i>
+                            Play
+                        </a>
+                    </div>
+                    <div class="nav-links__sub">
+                        <a href="{% url 'matches' %}">Matches</a>
+                        <a href="{% url 'ligi' %}">Leagues</a>
+                        <a href="{% url 'tournaments' %}">Tournaments</a>
+                    </div>
+                    <div class="nav-links__item nav-links__item-d
+                            {% block active_nav-shop %}{% endblock active_nav-shop %}">
+                        <a>
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            Shop
+                        </a>
+                    </div>
+                    <div class="nav-links__sub">
+                        <a href="{% url 'goods' %}">All goods</a>
+                        <a href="{% url 'skins' %}">CS:GO Skins</a>
+                    </div>
+                    <div class="nav-links__item {% block active_nav-client %}{% endblock active_nav-client %}">
+                        <a href="{% url 'client' %}">
+                            <i class="fa-solid fa-shield"></i>
+                            Client
+                        </a>
+                    </div>
+                    <div class="nav-links__item {% block active_nav-promo %}{% endblock active_nav-promo %}">
+                        <a href="{% url 'promo' %}">
+                            <i class="fa-solid fa-ticket-simple"></i>
+                            Promo codes
+                        </a>
+                    </div>
+                    <div class="nav-links__item {% block active_nav-blog %}{% endblock active_nav-blog %}">
+                        <a href="{% url 'blog' %}">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                            Blog
+                        </a>
+                    </div>
+                    <div class="nav-links__item">
+                        <a href="https://discord.com/invite/xaY6889">
+                            <i class="fa-brands fa-discord"></i>
+                            Support
+                            <div class="nav-links__item-link">
+                                <i class="fa-sharp fa-solid fa-up-right-from-square"></i>
+                            </div>
+                        </a>
                     </div>
                 </div>
+            </nav>
+        </div>
+        <div class="container-top">
+            <div class="elopub">
+                <p>Neo.Control</p>
             </div>
-            <div class="container-nav">
-                <nav class="nav">
-                    <div class="nav-links">
-                        <div class="nav-links__item {% block active_nav-main %}{% endblock active_nav-main %}">
-                            <a href="{% url 'index' %}">
-                                <i class="fa-solid fa-house"></i>
-                                Main
-                            </a>
-                        </div>
-                        <div class="nav-links__item nav-links__item-a nav-links__item-d {% block active_nav-play %}{% endblock active_nav-play %}">
-                            <a>
-                                <i class="fa-solid fa-location-crosshairs"></i>
-                                Play
-                            </a>
-                        </div>
-                        <div class="nav-links__sub">
-                            <a href="{% url 'matches' %}">Matches</a>
-                            <a href="{% url 'ligi' %}">Leagues</a>
-                            <a href="{% url 'tournaments' %}">Tournaments</a>
-                        </div>
-                        <div class="nav-links__item nav-links__item-d {% block active_nav-shop %}{% endblock active_nav-shop %}">
-                            <a>
-                                <i class="fa-solid fa-cart-shopping"></i>
-                                Shop
-                            </a>
-                        </div>
-                        <div class="nav-links__sub">
-                            <a href="{% url 'goods' %}">All goods</a>
-                            <a href="{% url 'skins' %}">CS:GO Skins</a>
-                        </div>
-                        <div class="nav-links__item {% block active_nav-client %}{% endblock active_nav-client %}">
-                            <a href="{% url 'client' %}">
-                                <i class="fa-solid fa-shield"></i>
-                                Client
-                            </a>
-                        </div>
-                        <div class="nav-links__item {% block active_nav-promo %}{% endblock active_nav-promo %}">
-                            <a href="{% url 'promo' %}">
-                                <i class="fa-solid fa-ticket-simple"></i>
-                                Promo codes
-                            </a>
-                        </div>
-                        <div class="nav-links__item {% block active_nav-blog %}{% endblock active_nav-blog %}">
-                            <a href="{% url 'blog' %}">
-                                <i class="fa-solid fa-heart-pulse"></i>
-                                Blog
-                            </a>
-                        </div>
-                        <div class="nav-links__item">
-                            <a href="https://discord.com/invite/xaY6889">
-                                <i class="fa-brands fa-discord"></i>
-                                Support
-                                <div class="nav-links__item-link">
-                                    <i class="fa-sharp fa-solid fa-up-right-from-square"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </nav>
+            <div class="language">
+                <img src="{% static 'img/icons/usa.svg' %}" alt="">
+                <p>Interface language</p>
             </div>
-            <div class="container-top">
-                <div class="elopub">
-                    <p>Neo.Control</p>
-                </div>
-                <div class="language">
-                    <img src="{% static 'img/icons/usa.svg' %}" alt="">
-                    <p>Interface language</p>
-                </div>
-                <div class="switcher">
-                    <i class="fa-solid fa-toggle-on"></i>
-                    <p>Minimize navigation</p>
-                </div>
+            <div class="switcher">
+                <i class="fa-solid fa-toggle-on"></i>
+                <p>Minimize navigation</p>
             </div>
-        </header>
-        <div class="container-back">
-            <a href="#"class="btn btn-play">
-                Play
-            </a>
-            <div class="back-user">
-                {% if user.is_authenticated %}
+        </div>
+    </header>
+    <div class="container-back">
+        <a href="#" class="btn btn-play">
+            Play
+        </a>
+        <div class="back-user">
+            {% if user.is_authenticated %}
                 <div class="back-user-wallet">
                     <div class="back-user-wallet-el">
                         <div class="back-user-wallet__item">
@@ -167,324 +173,354 @@
                 <a href="{% url 'profile' user.id %}" class="back-user-user">
                     <img src="{% static 'img/icons/avatar2.jpg' %}" alt="">
                 </a>
-            </div>
-        </div>
-        <section class="list">
-            <div class="list__friends">
-                <div class="list__friends-content">
-                    <div class="list__friends-content-top">
-                        <div class="list__friends-content__title">
-                            Friends
-                        </div>
-                        <div class="list__friends-content__cross">
-                            <i class="fa-solid fa-xmark"></i>
-                        </div>
-                    </div>
-                    <div class="list__friends-content__list">
-                        <!-- <p>You don't have friends yet</p> -->
-                        <div class="list__friends-content__list-item">
-                            <a href="profile.html" class="list__friends-content__list-item-user">
-                                <img src="{% static 'img/icons/avatar.avif' %}" alt="">
-                                <div class="list__friends-content__list-item__name">
-                                    alexander2231
-                                </div>
-                            </a>
-                            <div class="list__friends-content__list-item-actions">
-                                <div class="list__friends-content__list-item__del">
-                                    <i class="fa-solid fa-trash"></i>
-                                </div>
-                                <a href="{% url 'steam' %}" class="list__friends-content__list-item__invite">
-                                    <i class="fa-solid fa-user-plus"></i>
-                                </a>
-                            </div>
-                            
-                        </div>
-                        <div class="list__friends-content__list-item">
-                            <a href="profile.html" class="list__friends-content__list-item-user">
-                                <img src="{% static 'img/icons/avatar2.jpg' %}" alt="">
-                                <div class="list__friends-content__list-item__name">
-                                    jacob4040
-                                </div>
-                            </a>
-                            <div class="list__friends-content__list-item-actions">
-                                <div class="list__friends-content__list-item__del">
-                                    <i class="fa-solid fa-trash"></i>
-                                </div>
-                                <a href="{% url 'steam' %}" class="list__friends-content__list-item__invite">
-                                    <i class="fa-solid fa-user-plus"></i>
-                                </a>
-                            </div>
-                            
-                        </div>
-                        <div class="list__friends-content__list-item">
-                            <a href="profile.html" class="list__friends-content__list-item-user">
-                                <img src="{% static 'img/icons/avatar3.jpeg' %}" alt="">
-                                <div class="list__friends-content__list-item__name">
-                                    michelangelo22
-                                </div>
-                            </a>
-                            <div class="list__friends-content__list-item-actions">
-                                <div class="list__friends-content__list-item__del">
-                                    <i class="fa-solid fa-trash"></i>
-                                </div>
-                                <a href="{% url 'steam' %}" class="list__friends-content__list-item__invite">
-                                    <i class="fa-solid fa-user-plus"></i>
-                                </a>
-                            </div>
-                            
-                        </div>
-                        <div class="list__friends-content__list-item">
-                            <a href="profile.html" class="list__friends-content__list-item-user">
-                                <img src="{% static 'img/icons/avatar4.jpg' %}" alt="">
-                                <div class="list__friends-content__list-item__name">
-                                    dantes_01
-                                </div>
-                            </a>
-                            <div class="list__friends-content__list-item-actions">
-                                <div class="list__friends-content__list-item__del">
-                                    <i class="fa-solid fa-trash"></i>
-                                </div>
-                                <a href="{% url 'steam' %}" class="list__friends-content__list-item__invite">
-                                    <i class="fa-solid fa-user-plus"></i>
-                                </a>
-                            </div>
-                            
-                        </div>
-                        <div class="list__friends-content__list-item">
-                            <a href="profile.html" class="list__friends-content__list-item-user">
-                                <img src="{% static 'img/icons/avatar5.jpg' %}" alt="">
-                                <div class="list__friends-content__list-item__name">
-                                    sofi12
-                                </div>
-                            </a>
-                            <div class="list__friends-content__list-item-actions">
-                                <div class="list__friends-content__list-item__del">
-                                    <i class="fa-solid fa-trash"></i>
-                                </div>
-                                <a href="{% url 'steam' %}" class="list__friends-content__list-item__invite">
-                                    <i class="fa-solid fa-user-plus"></i>
-                                </a>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="list__friends-content__bottom">
-                        <a href="{% url 'tournaments' %}" class="list__friends-content__bottom-item">
-                            <div class="list__friends-content__bottom-item__title">
-                                <div class="list__friends-content__bottom-item__title-title">
-                                    That TRUE CS:GO
-                                </div>
-                                <div class="list__friends-content__bottom-item__title-subtitle">
-                                    Weekly cups & tournaments
-                                </div>
-                            </div>
-                            <div class="list__friends-content__bottom-item__arrow">
-                                <i class="fa-sharp fa-solid fa-up-right-from-square"></i>
-                            </div>
-                        </a>
-                        <a href="{% url 'matches' %}" class="list__friends-content__bottom-item list__friends-content__bottom-item-2">
-                            <div class="list__friends-content__bottom-item__title">
-                                <div class="list__friends-content__bottom-item__title-title">
-                                    24x7 HARDCORE
-                                </div>
-                                <div class="list__friends-content__bottom-item__title-subtitle">
-                                    Your reg-in = your skill
-                                </div>
-                            </div>
-                            <div class="list__friends-content__bottom-item__arrow">
-                                <i class="fa-sharp fa-solid fa-up-right-from-square"></i>
-                            </div>
-                        </a>
-                        <a href="{% url 'steam' %}" class="list__friends-content__bottom-item list__friends-content__bottom-item-3">
-                            <div class="list__friends-content__bottom-item__title">
-                                <div class="list__friends-content__bottom-item__title-title">
-                                    <span>Steam</span> Connect
-                                </div>
-                                <div class="list__friends-content__bottom-item__title-subtitle">
-                                    Connect ypur steam account to play with friends
-                                </div>
-                            </div>
-                            <div class="list__friends-content__bottom-item__arrow">
-                                <i class="fa-sharp fa-solid fa-up-right-from-square"></i>
-                            </div>
-                        </a>
-                    </div>
                 </div>
-                <div class="list__friends-search">
-                    <div class="list__friends-content-top">
-                        <div class="list__friends-content__title">
-                            Search Friends
+                </div>
+                <section class="list">
+                    <div class="list__friends">
+                        <div class="list__friends-content">
+                            <div class="list__friends-content-top">
+                                <div class="list__friends-content__title">
+                                    Friends
+                                </div>
+                                <div class="list__friends-content__cross">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </div>
+                            </div>
+                            <div class="list__friends-content__list">
+                                <!-- <p>You don't have friends yet</p> -->
+                                <div class="list__friends-content__list-item">
+                                    <a href="profile.html" class="list__friends-content__list-item-user">
+                                        <img src="{% static 'img/icons/avatar.avif' %}" alt="">
+                                        <div class="list__friends-content__list-item__name">
+                                            alexander2231
+                                        </div>
+                                    </a>
+                                    <div class="list__friends-content__list-item-actions">
+                                        <div class="list__friends-content__list-item__del">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </div>
+                                        <a href="{% url 'steam' %}" class="list__friends-content__list-item__invite">
+                                            <i class="fa-solid fa-user-plus"></i>
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <div class="list__friends-content__list-item">
+                                    <a href="profile.html" class="list__friends-content__list-item-user">
+                                        <img src="{% static 'img/icons/avatar2.jpg' %}" alt="">
+                                        <div class="list__friends-content__list-item__name">
+                                            jacob4040
+                                        </div>
+                                    </a>
+                                    <div class="list__friends-content__list-item-actions">
+                                        <div class="list__friends-content__list-item__del">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </div>
+                                        <a href="{% url 'steam' %}" class="list__friends-content__list-item__invite">
+                                            <i class="fa-solid fa-user-plus"></i>
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <div class="list__friends-content__list-item">
+                                    <a href="profile.html" class="list__friends-content__list-item-user">
+                                        <img src="{% static 'img/icons/avatar3.jpeg' %}" alt="">
+                                        <div class="list__friends-content__list-item__name">
+                                            michelangelo22
+                                        </div>
+                                    </a>
+                                    <div class="list__friends-content__list-item-actions">
+                                        <div class="list__friends-content__list-item__del">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </div>
+                                        <a href="{% url 'steam' %}" class="list__friends-content__list-item__invite">
+                                            <i class="fa-solid fa-user-plus"></i>
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <div class="list__friends-content__list-item">
+                                    <a href="profile.html" class="list__friends-content__list-item-user">
+                                        <img src="{% static 'img/icons/avatar4.jpg' %}" alt="">
+                                        <div class="list__friends-content__list-item__name">
+                                            dantes_01
+                                        </div>
+                                    </a>
+                                    <div class="list__friends-content__list-item-actions">
+                                        <div class="list__friends-content__list-item__del">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </div>
+                                        <a href="{% url 'steam' %}" class="list__friends-content__list-item__invite">
+                                            <i class="fa-solid fa-user-plus"></i>
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <div class="list__friends-content__list-item">
+                                    <a href="profile.html" class="list__friends-content__list-item-user">
+                                        <img src="{% static 'img/icons/avatar5.jpg' %}" alt="">
+                                        <div class="list__friends-content__list-item__name">
+                                            sofi12
+                                        </div>
+                                    </a>
+                                    <div class="list__friends-content__list-item-actions">
+                                        <div class="list__friends-content__list-item__del">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </div>
+                                        <a href="{% url 'steam' %}" class="list__friends-content__list-item__invite">
+                                            <i class="fa-solid fa-user-plus"></i>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="list__friends-content__bottom">
+                                <a href="{% url 'tournaments' %}" class="list__friends-content__bottom-item">
+                                    <div class="list__friends-content__bottom-item__title">
+                                        <div class="list__friends-content__bottom-item__title-title">
+                                            That TRUE CS:GO
+                                        </div>
+                                        <div class="list__friends-content__bottom-item__title-subtitle">
+                                            Weekly cups & tournaments
+                                        </div>
+                                    </div>
+                                    <div class="list__friends-content__bottom-item__arrow">
+                                        <i class="fa-sharp fa-solid fa-up-right-from-square"></i>
+                                    </div>
+                                </a>
+                                <a href="{% url 'matches' %}"
+                                   class="list__friends-content__bottom-item list__friends-content__bottom-item-2">
+                                    <div class="list__friends-content__bottom-item__title">
+                                        <div class="list__friends-content__bottom-item__title-title">
+                                            24x7 HARDCORE
+                                        </div>
+                                        <div class="list__friends-content__bottom-item__title-subtitle">
+                                            Your reg-in = your skill
+                                        </div>
+                                    </div>
+                                    <div class="list__friends-content__bottom-item__arrow">
+                                        <i class="fa-sharp fa-solid fa-up-right-from-square"></i>
+                                    </div>
+                                </a>
+                                <a href="{% url 'steam' %}"
+                                   class="list__friends-content__bottom-item list__friends-content__bottom-item-3">
+                                    <div class="list__friends-content__bottom-item__title">
+                                        <div class="list__friends-content__bottom-item__title-title">
+                                            <span>Steam</span> Connect
+                                        </div>
+                                        <div class="list__friends-content__bottom-item__title-subtitle">
+                                            Connect ypur steam account to play with friends
+                                        </div>
+                                    </div>
+                                    <div class="list__friends-content__bottom-item__arrow">
+                                        <i class="fa-sharp fa-solid fa-up-right-from-square"></i>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
-                        <div class="list__friends-search__cross">
-                            <i class="fa-solid fa-xmark"></i>
+                        <div class="list__friends-search">
+                            <div class="list__friends-content-top">
+                                <div class="list__friends-content__title">
+                                    Search Friends
+                                </div>
+                                <div class="list__friends-search__cross">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </div>
+                            </div>
+
+
+                            <div class="list__friends-search__search">
+                                <i id="search_friends" class="fa-solid fa-magnifying-glass"></i>
+                                <input type="text" class="input-search" placeholder="Nickname...">
+                            </div>
+
+
+                            <div id="list_friends">
+                                <div class="list__friends-content__list-item">
+                                    <a href="profile.html" class="list__friends-content__list-item-user">
+                                        <img src="{% static 'img/icons/avatar5.jpg' %}" alt="">
+                                        <div class="list__friends-content__list-item__name">
+                                            sofi12
+                                        </div>
+                                    </a>
+                                    <div class="list__friends-content__list-item-actions">
+                                        <div class="list__friends-content__list-item__del">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </div>
+                                        <a href="{% url 'steam' %}" class="list__friends-content__list-item__invite">
+                                            <i class="fa-solid fa-user-plus"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="list__friends-content__bottom">
+                                <a href="tounaments.html" class="list__friends-content__bottom-item">
+                                    <div class="list__friends-content__bottom-item__title">
+                                        <div class="list__friends-content__bottom-item__title-title">
+                                            That TRUE CS:GO
+                                        </div>
+                                        <div class="list__friends-content__bottom-item__title-subtitle">
+                                            Weekly cups & tournaments
+                                        </div>
+                                    </div>
+                                    <div class="list__friends-content__bottom-item__arrow">
+                                        <i class="fa-sharp fa-solid fa-up-right-from-square"></i>
+                                    </div>
+                                </a>
+                                <a href="create.html"
+                                   class="list__friends-content__bottom-item list__friends-content__bottom-item-2">
+                                    <div class="list__friends-content__bottom-item__title">
+                                        <div class="list__friends-content__bottom-item__title-title">
+                                            24x7 HARDCORE
+                                        </div>
+                                        <div class="list__friends-content__bottom-item__title-subtitle">
+                                            Your reg-in = your skill
+                                        </div>
+                                    </div>
+                                    <div class="list__friends-content__bottom-item__arrow">
+                                        <i class="fa-sharp fa-solid fa-up-right-from-square"></i>
+                                    </div>
+                                </a>
+                                <a href="{% url 'steam' %}"
+                                   class="list__friends-content__bottom-item list__friends-content__bottom-item-3">
+                                    <div class="list__friends-content__bottom-item__title">
+                                        <div class="list__friends-content__bottom-item__title-title">
+                                            <span>Steam</span> Connect
+                                        </div>
+                                        <div class="list__friends-content__bottom-item__title-subtitle">
+                                            Connect ypur steam account to play with friends
+                                        </div>
+                                    </div>
+                                    <div class="list__friends-content__bottom-item__arrow">
+                                        <i class="fa-sharp fa-solid fa-up-right-from-square"></i>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="list__friends-search__search">
+
+                    <a href="{% url 'steam' %}" class="list__user">
+                        <i class="fa-brands fa-teamspeak"></i>
+                    </a>
+                    <div class="list__user list__user-friends">
+                        <i class="fa-solid fa-user-group"></i>
+                    </div>
+                    <div class="list__user list__user-search">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" id="hello" class="input-search" placeholder="Nickname...">
                     </div>
-                    <div class="list__friends-content__bottom">
-                        <a href="tounaments.html" class="list__friends-content__bottom-item">
-                            <div class="list__friends-content__bottom-item__title">
-                                <div class="list__friends-content__bottom-item__title-title">
-                                    That TRUE CS:GO
-                                </div>
-                                <div class="list__friends-content__bottom-item__title-subtitle">
-                                    Weekly cups & tournaments
-                                </div>
+                </section>
+            {% else %}
+                <a href="{% url 'login' %}" class="btn btn-login">
+                    Sign In
+                </a>
+                <a href="{% url 'sign_up' %}" class="btn btn-signup">
+                    Create free account
+                </a>
+            {% endif %}
+</section>
+
+{% block success %}
+{% endblock success %}
+
+<main>
+    <div class="container-main">
+        {% block content %}
+        {% endblock content %}
+        <footer class="footer">
+            <div class="container-footer">
+                <div class="footer-first">
+                    <div class="footer-left">
+                        <div class="footer-left__logo">
+                            <img src="{% static 'img/icons/logo-nav.svg' %}" alt="">
+                        </div>
+                        <div class="footer-left__text">
+                            NEO.CONTROL LTD, C 100446, 86 THE OFF. LELI FALZON STR. NXR2609, NAXXAR, MALTA © 2023 IP
+                            РОВНЫЙ А.В. INN 234606684054 OGRNIP 321237500364281
+                        </div>
+                        <div class="footer-left__links">
+                            <a href="{% url 'terms' %}">Terms of Use</a>
+                            <i class="fa-solid fa-circle"></i>
+                            <a href="{% url 'policy' %}">Privacy policy</a>
+                            <i class="fa-solid fa-circle"></i>
+                            <a href="">Support</a>
+                        </div>
+                    </div>
+                    <div class="footer-right">
+                        <div class="footer-right-col">
+                            <div class="footer-right-col__title">
+                                Neo.Control
                             </div>
-                            <div class="list__friends-content__bottom-item__arrow">
-                                <i class="fa-sharp fa-solid fa-up-right-from-square"></i>
+                            <div class="footer-right-col__links">
+                                <a href="{% url 'index' %}">Main</a>
+                                <a href="{% url 'tournaments' %}">Tournaments</a>
+                                <a href="{% url 'matches' %}">Matches</a>
+                                <a href="leagues.html">Leagues</a>
+                                <a href="{% url 'steam' %}">Quests</a>
                             </div>
+                        </div>
+                        <div class="footer-right-col">
+                            <div class="footer-right-col__title">
+                                Shop
+                            </div>
+                            <div class="footer-right-col__links">
+                                <a href="{% url 'steam' %}">Currencies</a>
+                                <a href="{% url 'skins' %}">CS:GO Skins</a>
+                            </div>
+                        </div>
+                        <div class="footer-right-col">
+                            <div class="footer-right-col__title">
+                                Servises
+                            </div>
+                            <div class="footer-right-col__links">
+                                <a href="{% url 'client' %}">Client</a>
+                                <a href="{% url 'promo' %}">Promo codes</a>
+                                <a href="{% url 'steam' %}">Achievments</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-second">
+                    <div class="footer-social">
+                        <div class="footer-social__cart footer-social__cart-youtube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </div>
+                        <div class="footer-social__cart footer-social__cart-steam">
+                            <i class="fa-brands fa-steam-symbol"></i>
+                        </div>
+                        <div class="footer-social__cart footer-social__cart-twitch">
+                            <i class="fa-brands fa-twitch"></i>
+                        </div>
+                    </div>
+                    <div class="footer-payment">
+                        <a href="https://www.mastercard.com">
+                            <img src="{% static 'img/icons/mastercard.svg' %}" alt="">
                         </a>
-                        <a href="create.html" class="list__friends-content__bottom-item list__friends-content__bottom-item-2">
-                            <div class="list__friends-content__bottom-item__title">
-                                <div class="list__friends-content__bottom-item__title-title">
-                                    24x7 HARDCORE
-                                </div>
-                                <div class="list__friends-content__bottom-item__title-subtitle">
-                                    Your reg-in = your skill
-                                </div>
-                            </div>
-                            <div class="list__friends-content__bottom-item__arrow">
-                                <i class="fa-sharp fa-solid fa-up-right-from-square"></i>
-                            </div>
+                        <a href="https://www.visa.com/">
+                            <img src="{% static 'img/icons/visa.svg' %}" alt="">
                         </a>
-                        <a href="{% url 'steam' %}" class="list__friends-content__bottom-item list__friends-content__bottom-item-3">
-                            <div class="list__friends-content__bottom-item__title">
-                                <div class="list__friends-content__bottom-item__title-title">
-                                    <span>Steam</span> Connect
-                                </div>
-                                <div class="list__friends-content__bottom-item__title-subtitle">
-                                    Connect ypur steam account to play with friends
-                                </div>
-                            </div>
-                            <div class="list__friends-content__bottom-item__arrow">
-                                <i class="fa-sharp fa-solid fa-up-right-from-square"></i>
-                            </div>
+                        <a href="https://letsencrypt.org/">
+                            <img src="{% static 'img/icons/ssl.svg' %}" alt="">
+                        </a>
+                        <a href="https://gdpr-text.com/" class="gpdr">
+                            <img src="{% static 'img/icons/gpdr.svg' %}" alt="">
                         </a>
                     </div>
                 </div>
             </div>
-
-            <a href="{% url 'steam' %}" class="list__user">
-                <i class="fa-brands fa-teamspeak"></i>
-            </a>
-            <div class="list__user list__user-friends">
-                <i class="fa-solid fa-user-group"></i>           
-            </div>
-            <div class="list__user list__user-search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-        </section>
-        {% else %}
-        <a href="{% url 'login' %}" class="btn btn-login">
-            Sign In
-        </a>
-        <a href="{% url 'sign_up' %}" class="btn btn-signup">
-            Create free account
-        </a>
-        {% endif %}
-    </section>
-
-    {% block success %}
-    {% endblock success %}
-
-    <main>
-        <div class="container-main">
-            {% block content %}
-            {% endblock content %}
-            <footer class="footer">
-                <div class="container-footer">
-                    <div class="footer-first">
-                        <div class="footer-left">
-                            <div class="footer-left__logo">
-                                <img src="{% static 'img/icons/logo-nav.svg' %}" alt="">
-                            </div>
-                            <div class="footer-left__text">
-                                NEO.CONTROL LTD, C 100446, 86 THE OFF. LELI FALZON STR. NXR2609, NAXXAR, MALTA © 2023 IP РОВНЫЙ А.В. INN 234606684054 OGRNIP 321237500364281
-                            </div>
-                            <div class="footer-left__links">
-                                <a href="{% url 'terms' %}">Terms of Use</a>
-                                <i class="fa-solid fa-circle"></i>
-                                <a href="{% url 'policy' %}">Privacy policy</a>
-                                <i class="fa-solid fa-circle"></i>
-                                <a href="">Support</a>
-                            </div>
-                        </div>
-                        <div class="footer-right">
-                            <div class="footer-right-col">
-                                <div class="footer-right-col__title">
-                                    Neo.Control
-                                </div>
-                                <div class="footer-right-col__links">
-                                    <a href="{% url 'index' %}">Main</a>
-                                    <a href="{% url 'tournaments' %}">Tournaments</a>
-                                    <a href="{% url 'matches' %}">Matches</a>
-                                    <a href="leagues.html">Leagues</a>
-                                    <a href="{% url 'steam' %}">Quests</a>
-                                </div>
-                            </div>
-                            <div class="footer-right-col">
-                                <div class="footer-right-col__title">
-                                    Shop
-                                </div>
-                                <div class="footer-right-col__links">
-                                    <a href="{% url 'steam' %}">Currencies</a>
-                                    <a href="{% url 'skins' %}">CS:GO Skins</a>
-                                </div>
-                            </div>
-                            <div class="footer-right-col">
-                                <div class="footer-right-col__title">
-                                    Servises
-                                </div>
-                                <div class="footer-right-col__links">
-                                    <a href="{% url 'client' %}">Client</a>
-                                    <a href="{% url 'promo' %}">Promo codes</a>
-                                    <a href="{% url 'steam' %}">Achievments</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer-second">
-                        <div class="footer-social">
-                            <div class="footer-social__cart footer-social__cart-youtube">
-                                <i class="fa-brands fa-youtube"></i>
-                            </div>
-                            <div class="footer-social__cart footer-social__cart-steam">
-                                <i class="fa-brands fa-steam-symbol"></i>                       
-                            </div>
-                            <div class="footer-social__cart footer-social__cart-twitch">
-                                <i class="fa-brands fa-twitch"></i>                      
-                            </div>
-                        </div>
-                        <div class="footer-payment">
-                            <a href="https://www.mastercard.com">
-                                <img src="{% static 'img/icons/mastercard.svg' %}" alt="">
-                            </a>
-                            <a href="https://www.visa.com/">
-                                <img src="{% static 'img/icons/visa.svg' %}" alt="">
-                            </a>
-                            <a href="https://letsencrypt.org/">
-                                <img src="{% static 'img/icons/ssl.svg' %}" alt="">
-                            </a>
-                            <a href="https://gdpr-text.com/" class="gpdr">
-                                <img src="{% static 'img/icons/gpdr.svg' %}" alt="">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </div>
-    </main>
+        </footer>
+    </div>
+</main>
 
 
-    {% block js %}
-    {% endblock js %}
-    <script src="{% static 'js/nav.script.js' %}"></script>
-    <script src="{% static 'js/dropcs.script.js' %}?{{ now }}"></script>
-    {% if user.is_authenticated %}
-        <script src="{% static 'js/friends.script.js' %}"></script>
-    {% endif %}
+{% block js %}
+{% endblock js %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="{% static 'js/nav.script.js' %}"></script>
+<script src="{% static 'js/dropcs.script.js' %}"></script>
+<script src="{% static 'js/update_list.script.js' %}?{{ now }}"></script>
+{% if user.is_authenticated %}
+    <script src="{% static 'js/friends.script.js' %}"></script>
+{% endif %}
 </body>
 </html>
