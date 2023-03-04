@@ -2,8 +2,7 @@
 {#    <link rel="stylesheet" href="{% static 'css/reset.css' %}">#}
 {#    <link rel="stylesheet" href="{% static 'css/styles.min.css' %}">#}
 
-<div class="list__friends-content__list-item">
-    {% for user in user_list %}
+{% for user in user_list %}
     <div class="list__friends-content__list-item">
         <a href="#" class="list__friends-content__list-item-user">
             <img src="{{ user.image_url }}" alt="">
@@ -20,5 +19,4 @@
             </a>
         </div>
     </div>
-    {% endfor %}
-</div>
+{% endfor %}
