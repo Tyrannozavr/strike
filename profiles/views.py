@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import ListView
 from .models import User
 from profiles.models import Requests
-
+from time import time
 
 class UserList(ListView):
     model = User
@@ -18,14 +18,10 @@ class UserList(ListView):
             users = User.objects.filter(username__contains=username) \
                 .exclude(id=self.request.user.id) \
                 .annotate(invited=Case(When(Q(id__in=invites), then=Value('fa-user-check')),
-                                       default=Value('fa-user-plus'), output_field=CharField()))\
-                # .annotate(invited=Case(When(Q(id__in=invites), then=Value(False)),
-                #                        default=Value(True), output_field=BooleanField()))
+                                       default=Value('fa-user-plus'), output_field=CharField()))
             return users
         return super().get_queryset()
 
-
-from time import time
 
 
 def profile_friends(request, pk):

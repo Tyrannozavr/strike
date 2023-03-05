@@ -15,10 +15,10 @@
         </a>
         <div class="list__friends-content__list-item-actions">
             <a href="#" class="list__friends-content__list-item__invite" onclick="invite_friend({{ user.id }})">
-{#                <a>{{ user.invited }}</a>#}
-                <i class="fa-solid {{ user.invited }}"></i>
-{#                <i class="fa-solid fa-user-plus"></i>#}
+                <i id="{{ user.id }}" class="fa-solid {{ user.invited }}"></i>
             </a>
         </div>
     </div>
 {% endfor %}
+
+

@@ -19,6 +19,10 @@ function invite_friend(id) {
     $.ajax({
         url: '/invite_friend/',
         type: 'GET',
-        data: {'inviter_id': id}
+        data: {'inviter_id': id},
+        success: (response) => {
+            let elem = document.getElementById(id)
+            elem.classList.replace('fa-user-plus', 'fa-user-check')
+    }
     })
 }
