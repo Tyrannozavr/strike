@@ -1,4 +1,4 @@
-from django.core.exceptions import MultipleObjectsReturned, ObjectDoesNotExist
+from django.db import IntegrityError
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.generic import ListView
@@ -73,10 +73,17 @@ def invite_friend(request):
         recipient = User.objects.get(id=recipient_id)
         inviter = request.user
         try:
-            Requests.objects.get(inviter=inviter, recipient=recipient)
-        except ObjectDoesNotExist:
-            print('all right')
             Requests.objects.create(recipient=recipient, inviter=inviter)
             return HttpResponse(status=201)
-    return HttpResponse(status=400)
+        except IntegrityError:
+            return HttpResponse(status=400)
+
+
+        # try:
+        #     Requests.objects.get(inviter=inviter, recipient=recipient)
+        # except ObjectDoesNotExist:
+        #     print('all right')
+        #     Requests.objects.create(recipient=recipient, inviter=inviter)
+        #     return HttpResponse(status=201)
+    # return HttpResponse(status=400)
 
