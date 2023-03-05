@@ -1,4 +1,5 @@
 from django.db import IntegrityError
+from django.db.models import F, Count, When, Value, BooleanField, Case, Q
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.generic import ListView
@@ -6,13 +7,49 @@ from django.views import View
 from .models import User
 from profiles.models import Requests
 
+# MyModel.objects.extra(select={'custom_field': "'some string or expr'"})
+# .values('field1', 'field2', 'custom_field')
+
+# def get_user_list(request):
+#     if request.GET:
+#         user = request.user
+#         username = request.GET.get('username')
+#         ivents= [1, 2, 3]
+#         users = User.objects\
+#             .filter(username__contains=username).exclude(id=user.id)\
+#             .extra(select={'field': 'id in [1, 2, 3]'})\
+#             .values('id', 'username', 'field')
+#         users = [i for i in users]
+#         for i in users:
+#             print(i)
+#         # print(users)
+#         return render(request, 'profiles/user_list.html', {'user_list': users})
+
+'''
+Product.objects\
+    .annotate(image_count=Count('images'))\
+    .annotate(
+    has_image=
+    Case(When(image_count=0, then=Value(False)), default=Value(True), output_field=BooleanField())).order_by(
+    '-has_image')
+'''
+
+
 class UserList(ListView):
     model = User
 
     def get_queryset(self):
         if self.request:
             username = self.request.GET.get('username')
-            return User.objects.filter(username__contains=username).exclude(id=self.request.user.id)
+            user = self.request.user
+            invites = [i[0] for i in user.sender.all().values_list('recipient')]
+            users = User.objects.filter(username__contains=username) \
+                .exclude(id=self.request.user.id) \
+                .annotate(invited=Case(When(Q(id__in=invites), then=Value(False)), default=Value(True), output_field=BooleanField()))
+
+            for i in users:
+                print(i.invited)
+            return users
         return super().get_queryset()
 
 
@@ -21,9 +58,9 @@ from time import time
 
 def profile_friends(request, pk):
     if request.user.is_authenticated:
-        print('user')
+        # print('user')
         user = User.objects.get(id=pk)
-        print('user', user)
+        # print('user', user)
         context = {'user': user}
         context['now'] = time()
         return render(request, 'base/profilefriends.html', context)
@@ -77,13 +114,3 @@ def invite_friend(request):
             return HttpResponse(status=201)
         except IntegrityError:
             return HttpResponse(status=400)
-
-
-        # try:
-        #     Requests.objects.get(inviter=inviter, recipient=recipient)
-        # except ObjectDoesNotExist:
-        #     print('all right')
-        #     Requests.objects.create(recipient=recipient, inviter=inviter)
-        #     return HttpResponse(status=201)
-    # return HttpResponse(status=400)
-

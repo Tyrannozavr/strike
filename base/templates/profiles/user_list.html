@@ -1,6 +1,9 @@
 {% load static %}
-{#    <link rel="stylesheet" href="{% static 'css/reset.css' %}">#}
-{#    <link rel="stylesheet" href="{% static 'css/styles.min.css' %}">#}
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+          integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
 {% for user in user_list %}
     <div class="list__friends-content__list-item">
@@ -11,13 +14,9 @@
             </div>
         </a>
         <div class="list__friends-content__list-item-actions">
-{#            <div class="list__friends-content__list-item__del">#}
-{#                <i class="fa-solid fa-trash"></i>#}
-{#            </div>#}
-{#            <a href="{% url 'steam' %}" class="list__friends-content__list-item__invite">#}
-{#                <i class="fa-solid fa-user-plus"></i>#}
-{#            </a>#}
-            <a href="#" class="list__friends-content__list-item__invite" onclick="invite_friend({{ user.id }})"><i class="fa-solid fa-user-plus"></i></a>
+            <a href="#" class="list__friends-content__list-item__invite" onclick="invite_friend({{ user.id }})">
+                <i class="fa-solid fa-user-plus"></i>
+            </a>
         </div>
     </div>
 {% endfor %}
