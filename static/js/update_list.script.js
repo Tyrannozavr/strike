@@ -2,7 +2,7 @@ let list_friends = $(`#list_friends`);
 let search_field = document.querySelector('.input-search')
 search_field.oninput = function () {
     $.ajax({
-        url: '/profiles/user_list/',
+        url: '/user_list/',
         type: 'GET',
         data: {'username': search_field.value},
         beforeSend: function() {
@@ -13,3 +13,12 @@ search_field.oninput = function () {
         }
     })
 };
+
+
+function invite_friend(id) {
+    $.ajax({
+        url: '/invite_friend/',
+        type: 'GET',
+        data: {'inviter_id': id}
+    })
+}

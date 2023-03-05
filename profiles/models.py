@@ -14,7 +14,6 @@ class UserManager(BaseUserManager):
         user = self.model(username=username, email=self.normalize_email(email), avatar=avatar)
         user.set_password(password)
         user.save()
-
         return user
 
     def create_superuser(self, username, email, password):
@@ -25,9 +24,7 @@ class UserManager(BaseUserManager):
         user.is_superuser = True
         user.is_staff = True
         user.save()
-
         return user
-
 
     def add_friend(self, friend):
         print(self, friend, 'friends')
@@ -45,5 +42,18 @@ class User(AbstractUser, PermissionsMixin):
         if self.avatar and hasattr(self.avatar, 'url'):
             return self.avatar.url
         else:
-            return 'static/img/skins/ak47-asimov.png'
+            return '/static/img/skins/ak47-asimov.png'
 
+
+class Requests(models.Model):
+    inviter = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sender')
+    recipient = models.ForeignKey(User, on_delete=models.CASCADE, related_name='requests')
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=['inviter', 'recipient'], name='name of constraint')
+        ]
+        verbose_name_plural = 'requests'
+
+    def __str__(self):
+        return f'inviter: {self.inviter_id}, recipient_id: {self.recipient_id}'

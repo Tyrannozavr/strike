@@ -148,62 +148,6 @@ def profile(request, pk):
         return redirect('login')
 
 
-def profile_friends(request, pk):
-    if request.user.is_authenticated:
-        print('user')
-        user = User.objects.get(id=pk)
-        print('user', user)
-        context = {'user': user}
-        return render(request, 'base/profilefriends.html', context)
-    else:
-        return redirect('login')
-
-
-def profile_requests(request, pk):
-    if request.user.is_authenticated:
-        user = User.objects.get(id=pk)
-        context = {'user': user}
-        return render(request, 'base/requests.html', context)
-    else:
-        return redirect('login')
-
-
-def profile_subscribers(request, pk):
-    if request.user.is_authenticated:
-        user = User.objects.get(id=pk)
-        context = {'user': user}
-        return render(request, 'base/subscribers.html', context)
-    else:
-        return redirect('login')
-
-
-def profile_subscriptions(request, pk):
-    if request.user.is_authenticated:
-        user = User.objects.get(id=pk)
-        context = {'user': user}
-        return render(request, 'base/subscriptions.html', context)
-    else:
-        return redirect('login')
-
-
-def profile_block(request, pk):
-    if request.user.is_authenticated:
-        user = User.objects.get(id=pk)
-        context = {'user': user}
-        return render(request, 'base/block.html', context)
-    else:
-        return redirect('login')
-
-
-def profile_block(request, pk):
-    if request.user.is_authenticated:
-        user = User.objects.get(id=pk)
-        context = {'user': user}
-        return render(request, 'base/block.html', context)
-    else:
-        return redirect('login')
-
-
 def profile_skins(request, pk):
     if request.user.is_authenticated:
         user = User.objects.get(id=pk)

@@ -29,11 +29,6 @@ urlpatterns = [
     path('logout/', views.logoutUser, name="logout"),
     path('sign_up/', views.sign_up, name="sign_up"),
     path('profile/<str:pk>/', views.profile, name="profile"),
-    path('friends/<str:pk>/', views.profile_friends, name="friends"),
-    path('requests/<str:pk>/', views.profile_requests, name="requests"),
-    path('subscribers/<str:pk>/', views.profile_subscribers, name="subscribers"),
-    path('subscriptions/<str:pk>/', views.profile_subscriptions, name="subscriptions"),
-    path('blocked/<str:pk>/', views.profile_block, name="block"),
     path('skins/<str:pk>/', views.profile_skins, name="skins"),
     path('inventory/<str:pk>/', views.profile_inv, name="inv"),
     path('program/<str:pk>/', views.profile_prog, name="prog"),
@@ -41,7 +36,7 @@ urlpatterns = [
     path('leagues/', views.ligi, name="ligi"),
     path('leagues-info/', views.ligi_info, name="ligi_info"),
     path('rules/', views.rules, name="rules"),
-    path('profiles/', include('profiles.urls')),
+    path('', include('profiles.urls')),
     ]
 
 
