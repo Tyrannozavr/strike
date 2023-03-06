@@ -27,7 +27,10 @@ class UserList(ListView):
 def profile_friends(request, pk):
     if request.user.is_authenticated:
         user = User.objects.get(id=pk)
-        context = {'user': user}
+        # friends_list = user.friends.all()
+        context = {'user': user,
+                   # 'friends_list': friends_list
+                   }
         return render(request, 'base/profilefriends.html', context)
     else:
         return redirect('login')

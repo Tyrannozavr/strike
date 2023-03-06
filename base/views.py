@@ -143,7 +143,8 @@ def sign_up(request):
 def profile(request, pk):
     if request.user.is_authenticated:
         user = User.objects.get(id=pk)
-        context = {'user': user}
+        friends_list = user.friends.all()
+        context = {'user': user, 'friends_list': friends_list}
         return render(request, 'base/profile.html', context)
     else:
         return redirect('login')
