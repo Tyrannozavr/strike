@@ -7,7 +7,7 @@
 
 {% for user in user_list %}
     <div class="list__friends-content__list-item">
-        <a href="#" class="list__friends-content__list-item-user">
+        <a href="{% url 'steam' %}" class="list__friends-content__list-item-user">
             <img src="{{ user.image_url }}" alt="">
             <div class="list__friends-content__list-item__name">
                 {{ user.username }}

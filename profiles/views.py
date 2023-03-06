@@ -7,6 +7,7 @@ from .models import User
 from profiles.models import Requests
 from time import time
 
+
 class UserList(ListView):
     model = User
 
@@ -23,14 +24,11 @@ class UserList(ListView):
         return super().get_queryset()
 
 
-
 def profile_friends(request, pk):
     if request.user.is_authenticated:
         user = User.objects.get(id=pk)
-        # friends_list = user.friends.all()
-        context = {'user': user,
-                   # 'friends_list': friends_list
-                   }
+        friends_list = user.friends.all()
+        context = {'user': user, 'friends_list': friends_list}
         return render(request, 'base/profilefriends.html', context)
     else:
         return redirect('login')

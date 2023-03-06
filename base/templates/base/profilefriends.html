@@ -5,48 +5,52 @@
 {% block active_profile %}{% endblock active_profile %}
 
 {% block content_profile %}
-  <div class="profile__main-menu">
-    <a href="{% url 'friends' user.id %}" class="profile__main-menu__link"
-      >ALL</a
-    >
-    {% if request.user == user %}
-    <a href="{% url 'requests' user.id %}" class="profile__main-menu__link"
-      >MY REQUESTS</a
-    >
-    {% endif %}
-    <a href="{% url 'subscribers' user.id %}" class="profile__main-menu__link"
-      >SUBSCRIBERS</a
-    >
-    <a href="{% url 'subscriptions' user.id %}" class="profile__main-menu__link"
-      >SUBSCRIPTIONS</a
-    >
-    {% if request.user == user %}
-    <a href="{% url 'block' user.id %}" class="profile__main-menu__link">BLOCKED</a>
-  </div>
-  {% endif %}
-  <div class="profile__main__line"></div>
+    <div class="profile__main-menu">
+        <a href="{% url 'friends' user.id %}" class="profile__main-menu__link"
+        >ALL</a
+        >
+        {% if request.user == user %}
+            <a href="{% url 'requests' user.id %}" class="profile__main-menu__link"
+            >MY REQUESTS</a
+            >
+        {% endif %}
+        <a href="{% url 'subscribers' user.id %}" class="profile__main-menu__link"
+        >SUBSCRIBERS</a
+        >
+        <a href="{% url 'subscriptions' user.id %}" class="profile__main-menu__link"
+        >SUBSCRIPTIONS</a
+        >
+        {% if request.user == user %}
+            <a href="{% url 'block' user.id %}" class="profile__main-menu__link">BLOCKED</a>
+            </div>
+        {% endif %}
+    <div class="profile__main__line"></div>
 
-  {% block content_friends %}
-    <div class="profile__main-friends">
-      {% comment %} <div class="list__friends-content__list-item">
-        <a href="profile.html" class="list__friends-content__list-item-user">
-            <img src="{% static 'img/icons/avatar.avif' %}" alt="">
-            <div class="list__friends-content__list-item__name">
-                alexander2231
+    {% block content_friends %}
+        {% if friends_list %}
+            <div class="list__friends-content__list-item">
+                {% for friend in friends_list %}
+                    <a href="{% url 'steam' %}" class="list__friends-content__list-item-user">
+                        <img src="{{ friend.image_url }}" alt="">
+                        <div class="list__friends-content__list-item__name">
+                            {{ friend.username }}
+                        </div>
+                    </a>
+                    <div class="list__friends-content__list-item-actions">
+                        <a href="#" class="list__friends-content__list-item__invite"
+                           onclick="invite_friend({{ user.id }})">
+                            <i id="{{ friend.id }}" class="fa-solid {{ friend.invited }}"></i>
+                        </a>
+                    </div>
+                {% endfor %}
             </div>
-        </a>
-        <div class="list__friends-content__list-item-actions">
-            <div class="list__friends-content__list-item__del">
-                <i class="fa-solid fa-trash"></i>
+        {% else %}
+            <div class="profile__main-friends">
+                <div class="profile__main-friends__text">
+                    You don't have any friends yet...
+                </div>
             </div>
-            <a href="{% url 'steam' %}" class="list__friends-content__list-item__invite">
-                <i class="fa-solid fa-user-plus"></i>
-            </a>
-        </div>
-      </div> {% endcomment %}
-      <div class="profile__main-friends__text">
-        You don't have any friends yet...
-      </div>
-    </div>
-  {% endblock content_friends %}
+        {% endif %}
+
+    {% endblock content_friends %}
 {% endblock content_profile %}
