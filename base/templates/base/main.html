@@ -190,7 +190,7 @@
                                 {% if friends_list %}
                                     {% for friend in friends_list %}
                                         <div class="list__friends-content__list-item">
-                                            <a href="profile.html" class="list__friends-content__list-item-user">
+                                            <a href="{% url 'steam' %}" class="list__friends-content__list-item-user">
                                                 <img src="{{ friend.image_url }}" alt="">
                                                 <div class="list__friends-content__list-item__name">
                                                     {{ friend.username }}
@@ -202,7 +202,7 @@
                                                 </div>
                                                 <a href="{% url 'steam' %}"
                                                    class="list__friends-content__list-item__invite">
-                                                    <i class="fa-solid fa-user-plus"></i>
+                                                    <i class="fa-solid fa-user"></i>
                                                 </a>
                                             </div>
                                         </div>

@@ -153,7 +153,8 @@ def profile(request, pk):
 def profile_skins(request, pk):
     if request.user.is_authenticated:
         user = User.objects.get(id=pk)
-        context = {'user': user}
+        friends_list = user.friends.all()
+        context = {'user': user, 'friends_list': friends_list}
         return render(request, 'base/csskinsprofile.html', context)
     else:
         return redirect('login')
@@ -162,7 +163,8 @@ def profile_skins(request, pk):
 def profile_inv(request, pk):
     if request.user.is_authenticated:
         user = User.objects.get(id=pk)
-        context = {'user': user}
+        friends_list = user.friends.all()
+        context = {'user': user, 'friends_list': friends_list}
         return render(request, 'base/inventoryprofile.html', context)
     else:
         return redirect('login')
@@ -171,7 +173,8 @@ def profile_inv(request, pk):
 def profile_prog(request, pk):
     if request.user.is_authenticated:
         user = User.objects.get(id=pk)
-        context = {'user': user}
+        friends_list = user.friends.all()
+        context = {'user': user, 'friends_list': friends_list}
         return render(request, 'base/programprofile.html', context)
     else:
         return redirect('login')
@@ -180,7 +183,8 @@ def profile_prog(request, pk):
 def profile_settings(request, pk):
     if request.user.is_authenticated:
         user = User.objects.get(id=pk)
-        context = {'user': user}
+        friends_list = user.friends.all()
+        context = {'user': user, 'friends_list': friends_list}
         return render(request, 'base/settingsprofile.html', context)
     else:
         return redirect('login')
