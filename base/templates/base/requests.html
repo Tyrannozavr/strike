@@ -2,8 +2,27 @@
 {% load static %}
 
 {% block content_friends %}
-  <div class="profile__main-friends__text">
-    You don't have any friend requests sent...
-  </div>
+    {% if requests %}
+        {% for request in requests %}
+            <div class="list__friends-content__list-item">
+                <a href="#" class="list__friends-content__list-item-user">
+                    <img src="{{ request.inviter.image_url }}" alt="">
+                    <div class="list__friends-content__list-item__name">
+                        {{ request.inviter.username }}
+                    </div>
+                </a>
+                <div class="list__friends-content__list-item-actions">
+                    <a href="#" class="list__friends-content__list-item__invite" onclick="invite_friend({{ request.inviter.id }})">
+                        <i id="{{ request.inviter.id }}" class="fa-solid fa-user-plus"></i>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="profile__main-friends__text">
+            You don't have any friend requests sent...
+        </div>
+    {% endif %}
+
 {% endblock content_friends %}
 

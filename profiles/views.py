@@ -37,7 +37,8 @@ def profile_friends(request, pk):
 def profile_requests(request, pk):
     if request.user.is_authenticated:
         user = User.objects.get(id=pk)
-        context = {'user': user}
+        requests = Requests.objects.filter(recipient=user)
+        context = {'user': user, 'requests': requests}
         return render(request, 'base/requests.html', context)
     else:
         return redirect('login')
