@@ -11,7 +11,8 @@ from time import time
 
 def index(request):
     now = time()
-    return render(request, 'base/index.html', {'now': now})
+    friends_list = User.objects.get(id=request.user.id).friends.all()
+    return render(request, 'base/index.html', {'now': now, 'friends_list': friends_list})
 
 
 def matches(request):

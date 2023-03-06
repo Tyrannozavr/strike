@@ -187,92 +187,30 @@
                                 </div>
                             </div>
                             <div class="list__friends-content__list">
-                                <!-- <p>You don't have friends yet</p> -->
-                                <div class="list__friends-content__list-item">
-                                    <a href="profile.html" class="list__friends-content__list-item-user">
-                                        <img src="{% static 'img/icons/avatar.avif' %}" alt="">
-                                        <div class="list__friends-content__list-item__name">
-                                            alexander2231
-                                        </div>
-                                    </a>
-                                    <div class="list__friends-content__list-item-actions">
-                                        <div class="list__friends-content__list-item__del">
-                                            <i class="fa-solid fa-trash"></i>
-                                        </div>
-                                        <a href="{% url 'steam' %}" class="list__friends-content__list-item__invite">
-                                            <i class="fa-solid fa-user-plus"></i>
-                                        </a>
-                                    </div>
+                                {% if friends_list %}
+                                    {% for friend in friends_list %}
+                                        <div class="list__friends-content__list-item">
+                                            <a href="profile.html" class="list__friends-content__list-item-user">
+                                                <img src="{{ friend.image_url }}" alt="">
+                                                <div class="list__friends-content__list-item__name">
+                                                    {{ friend.username }}
+                                                </div>
+                                            </a>
+                                            <div class="list__friends-content__list-item-actions">
+                                                <div class="list__friends-content__list-item__del">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </div>
+                                                <a href="{% url 'steam' %}"
+                                                   class="list__friends-content__list-item__invite">
+                                                    <i class="fa-solid fa-user-plus"></i>
+                                                </a>
+                                            </div>
 
-                                </div>
-                                <div class="list__friends-content__list-item">
-                                    <a href="profile.html" class="list__friends-content__list-item-user">
-                                        <img src="{% static 'img/icons/avatar2.jpg' %}" alt="">
-                                        <div class="list__friends-content__list-item__name">
-                                            jacob4040
                                         </div>
-                                    </a>
-                                    <div class="list__friends-content__list-item-actions">
-                                        <div class="list__friends-content__list-item__del">
-                                            <i class="fa-solid fa-trash"></i>
-                                        </div>
-                                        <a href="{% url 'steam' %}" class="list__friends-content__list-item__invite">
-                                            <i class="fa-solid fa-user-plus"></i>
-                                        </a>
-                                    </div>
-
-                                </div>
-                                <div class="list__friends-content__list-item">
-                                    <a href="profile.html" class="list__friends-content__list-item-user">
-                                        <img src="{% static 'img/icons/avatar3.jpeg' %}" alt="">
-                                        <div class="list__friends-content__list-item__name">
-                                            michelangelo22
-                                        </div>
-                                    </a>
-                                    <div class="list__friends-content__list-item-actions">
-                                        <div class="list__friends-content__list-item__del">
-                                            <i class="fa-solid fa-trash"></i>
-                                        </div>
-                                        <a href="{% url 'steam' %}" class="list__friends-content__list-item__invite">
-                                            <i class="fa-solid fa-user-plus"></i>
-                                        </a>
-                                    </div>
-
-                                </div>
-                                <div class="list__friends-content__list-item">
-                                    <a href="profile.html" class="list__friends-content__list-item-user">
-                                        <img src="{% static 'img/icons/avatar4.jpg' %}" alt="">
-                                        <div class="list__friends-content__list-item__name">
-                                            dantes_01
-                                        </div>
-                                    </a>
-                                    <div class="list__friends-content__list-item-actions">
-                                        <div class="list__friends-content__list-item__del">
-                                            <i class="fa-solid fa-trash"></i>
-                                        </div>
-                                        <a href="{% url 'steam' %}" class="list__friends-content__list-item__invite">
-                                            <i class="fa-solid fa-user-plus"></i>
-                                        </a>
-                                    </div>
-
-                                </div>
-                                <div class="list__friends-content__list-item">
-                                    <a href="profile.html" class="list__friends-content__list-item-user">
-                                        <img src="{% static 'img/icons/avatar5.jpg' %}" alt="">
-                                        <div class="list__friends-content__list-item__name">
-                                            sofi12
-                                        </div>
-                                    </a>
-                                    <div class="list__friends-content__list-item-actions">
-                                        <div class="list__friends-content__list-item__del">
-                                            <i class="fa-solid fa-trash"></i>
-                                        </div>
-                                        <a href="{% url 'steam' %}" class="list__friends-content__list-item__invite">
-                                            <i class="fa-solid fa-user-plus"></i>
-                                        </a>
-                                    </div>
-
-                                </div>
+                                    {% endfor %}
+                                {% else %}
+                                    <a>You don't have friends yes</a>
+                                {% endif %}
                             </div>
                             <div class="list__friends-content__bottom">
                                 <a href="{% url 'tournaments' %}" class="list__friends-content__bottom-item">
