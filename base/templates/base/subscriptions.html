@@ -2,7 +2,25 @@
 {% load static %}
 
 {% block content_friends %}
-<div class="profile__main-friends__text">
-  You don't have any subscriptions yet...
-</div>
+    {% if user.friends %}
+        {% for friend in user.friends.all %}
+            <div class="list__friends-content__list-item">
+                <a href="#" class="list__friends-content__list-item-user">
+                    <img src="{{ friend.image_url }}" alt="">
+                    <div class="list__friends-content__list-item__name">
+                        {{ friend.username }}
+                    </div>
+                </a>
+                <div class="list__friends-content__list-item-actions">
+                    <a href="#" class="list__friends-content__list-item__invite">
+                        <i class="fa-solid"></i>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="profile__main-friends__text">
+            You don't have any subscribers yet...
+        </div>
+    {% endif %}
 {% endblock content_friends %}

@@ -28,7 +28,6 @@ def profile_friends(request, pk):
     if request.user.is_authenticated:
         user = User.objects.get(id=pk)
         context = {'user': user}
-        context['now'] = time()
         return render(request, 'base/profilefriends.html', context)
     else:
         return redirect('login')
@@ -76,6 +75,10 @@ def invite_friend(request):
         recipient_id = request.GET.get('inviter_id')
         recipient = User.objects.get(id=recipient_id)
         inviter = request.user
+        if Requests.objects.filter(recipient=inviter, inviter=recipient).exists():  # they  will be friends
+            recipient.friends.add(inviter)
+            Requests.objects.filter(recipient=inviter, inviter=recipient).delete()
+            return HttpResponse(status=201)
         try:
             Requests.objects.create(recipient=recipient, inviter=inviter)
             return HttpResponse(status=201)
